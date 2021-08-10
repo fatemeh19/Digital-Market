@@ -1,27 +1,27 @@
 @font-face {
     font-family: "Vazir";
     src: url(../../../);
-    src: url(../../../fonts/vazir-font-v16.1.0/Vazir.woff2) format("woff2");
+    src: url(/static/vazir-font-v16.1.0/Vazir.woff2) format("woff2");
     font-weight: normal;
 }
 @font-face {
     font-family: "Vazir";
-    src: url(../../../fonts/vazir-font-v16.1.0/Vazir-Thin.woff2) format("woff2");
+    src: url(/static/vazir-font-v16.1.0/Vazir-Thin.woff2) format("woff2");
     font-weight: thin;
 }
 @font-face {
     font-family: "Vazir";
-    src: url(../../../fonts/vazir-font-v16.1.0/Vazir-Light.woff2) format("woff2");
+    src: url(/static/vazir-font-v16.1.0/Vazir-Light.woff2) format("woff2");
     font-weight: lighter;
 }
 @font-face {
     font-family: "Vazir";
-    src: url(../../../fonts/vazir-font-v16.1.0/Vazir-Medium.woff2) format("woff2");
+    src: url(/static/vazir-font-v16.1.0/Vazir-Medium.woff2) format("woff2");
     font-weight: 700;
 }
 @font-face {
     font-family: "Vazir";
-    src: url(../../../fonts/vazir-font-v16.1.0/Vazir-Bold.woff2) format("woff2");
+    src: url(/static/vazir-font-v16.1.0/Vazir-Bold.woff2) format("woff2");
     font-weight: bold;
 }
 
@@ -29,26 +29,26 @@
 
 @font-face { /* 100 */
     font-family: "lota";
-    src: url(../fonts/lato-font/Lato-Thin.ttf) format("woff2");
+    src: url(/static/lato-font/Lato-Thin.ttf) format("woff2");
     font-weight: thin;
 }
 @font-face {/* 300 */
     font-family: "lota";
-    src: url(../fonts/lato-font/Lato-Light.ttf) format("woff2");
+    src: url(/static/lato-font/Lato-Light.ttf) format("woff2");
     font-weight: lighter;
 }
 @font-face { /* 400 */
     font-family: "lota";
-    src: url(../fonts/lato-font/Lato-Regular.ttf) format("woff2");
+    src: url(/static/lato-font/Lato-Regular.ttf) format("woff2");
     font-weight: 400;
 }
 @font-face { /* 700 */
     font-family: "lota";
-    src: url(../fonts/lato-font/Lato-Bold.ttf) format("woff2");
+    src: url(/static/lato-font/Lato-Bold.ttf) format("woff2");
     font-weight: bold;
 }
 @font-face { /* 900 */
     font-family: "lota";
-    src: url(../fonts/lato-font/Lato-Black.ttf) format("woff2");
+    src: url(/static/lato-font/Lato-Black.ttf) format("woff2");
     font-weight: 900;
 }
