@@ -1,0 +1,379 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    // font-family: "Vazir";
+}
+body,
+html {
+    direction: rtl;
+    font-family: "Vazir";
+    background-color: whitesmoke;
+}
+.site {
+    // background-color: lightblue;
+    height: 100vh;
+    width: 100%;
+}
+// ---------------------------------------------------- header
+#header {
+    position: relative;
+}
+#top_navbar,
+#bottom_navbar {
+    width: 80%;
+    margin: auto;
+    color: white;
+}
+// --------- top navbar
+#top_navbar {
+    // background: lightcoral;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+}
+// -- site logo
+#logo-section {
+    width: 10rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+#logo-section > h3 {
+    color: #4b566b;
+    font-family: "Vazir";
+    font-size: 1.5rem;
+    // font-weight: bold;
+    text-transform: capitalize;
+    position: relative;
+}
+#site-logo {
+    position: absolute;
+    right: 7.5rem;
+    border-radius: 20%;
+    color: white;
+    background: linear-gradient(to right top, rgb(214, 89, 212), rgb(55, 209, 233));
+    padding: 0.2rem;
+    font-size: 1.5rem;
+    margin-left: 1rem;
+}
+// -- search box
+#search {
+    margin-right: 1rem;
+    width: 58%;
+    display: flex;
+
+    position: relative;
+}
+.search_input {
+    width: 80%;
+    padding: 0.7rem 2.2rem;
+    border-radius: 5px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border: 1px solid #dae1e7;
+    outline: none;
+
+    font-family: "Vazir";
+    font-weight: bold;
+    font-size: 0.9rem;
+    color: #15203a;
+}
+////////////////////////////////////////////////
+
+// #search_input:focus,
+// .form_select:focus {
+//     outline: none;
+//     border: 1px solid rgb(52, 117, 230);
+// }
+.search-icon {
+    color: #4b566b;
+    font-weight: lighter;
+    position: absolute;
+    top: 1rem;
+    right: 0.7rem;
+    background: white;
+}
+// -- select & option
+.form_select {
+    margin: -1;
+    background-color: white;
+    border: 1px solid #dae1e7;
+    border-radius: 4px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    padding: 0.6rem 0.8rem;
+    font-family: "Vazir";
+    font-size: 0.9rem;
+    color: #4b566b;
+    font-weight: bold;
+}
+.border-focus:focus {
+    outline: none;
+    border: 1px solid rgb(52, 117, 230);
+}
+// -- nav tools
+
+.nav_tool {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+.nav-icon-box {
+    color: $black-gray;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 3.2rem;
+    font-size: 1.3rem;
+}
+
+.nav-icon-box_cart {
+    background: rgba(194, 193, 193, 0.5);
+}
+.nav-text {
+    display: flex;
+    flex-direction: column;
+    color: #4b566b;
+    font-size: 0.9rem;
+    font-weight: bold;
+    position: relative;
+}
+.nav-caret {
+    position: absolute;
+    top: 1.5rem;
+    left: -0.7rem;
+    color: #4b566b;
+    font-size: 0.77rem;
+}
+.nav-text-box_cart {
+    margin-right: 10px;
+}
+.small_text {
+    color: #7d879c;
+    font-size: 0.68rem;
+    font-weight: bold;
+}
+.good-num-box {
+    background: linear-gradient(to right top, rgb(214, 89, 212), rgb(55, 209, 233));
+    position: absolute;
+    top: 0rem;
+    left: 3.6rem;
+    border-radius: 50%;
+    width: 1.3rem;
+    height: 1.3rem;
+    text-align: center;
+    line-height: 1.15rem;
+}
+.good-num {
+    font-size: 0.6rem;
+    font-weight: bold;
+    color: white;
+}
+
+// -- media query : responsive
+
+@media (max-width: 1100px) {
+    #search {
+        width: 50%;
+    }
+    .search-icon-box {
+        position: relative;
+    }
+    .search_icon {
+        position: absolute;
+        top: 0.8rem;
+        right: 1rem;
+    }
+}
+
+// --------- bottom navbar
+
+#bottom_navbar {
+    background: lightgreen;
+}
+
+// -------------------------------------------------------- signin/up
+// ---------- login
+.sign-model {
+    display: none;
+}
+.sign-page {
+    height: 100vh;
+    background: rgba(56, 56, 56, 0.5);
+    position: relative;
+    top: -5.8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+.signin {
+    width: 33%;
+    height: 25rem;
+    position: relative;
+    overflow: hidden;
+    background: white;
+    border-radius: 10px;
+}
+.signin-header {
+    border-radius: 10px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+    font-weight: bold;
+    ul {
+        display: relative;
+    }
+}
+.signin-header-list {
+    display: inline-block;
+    margin: 1rem 1rem 0.5rem 1rem;
+
+    a {
+        color: $black-gray;
+        position: relative;
+    }
+    .active-login,
+    .active-signup {
+        color: rgb(0, 107, 238);
+    }
+}
+.login-page-btn::before,
+.signup-page-btn::before {
+    position: absolute;
+    display: block;
+    bottom: -0.55rem;
+    width: 100%;
+    height: 1.5px;
+    background-color: transparent;
+    transition: color 0.25s ease-in-out, background-color 0.25s ease-in-out, box-shadow 0.25s ease-in-out,
+        border-color 0.25s ease-in-out;
+    content: "";
+}
+
+.active-login::before,
+.active-signup::before {
+    background-color: #fe696a;
+    right: 0.2rem;
+    z-index: 1;
+}
+.signin-header {
+    background: #eaecee;
+    display: flex;
+    justify-content: space-between;
+}
+.close-button {
+    border: none;
+    background: inherit;
+    cursor: pointer;
+    font-size: 1.7rem;
+    font-weight: lighter;
+    margin: 0.35rem 0.8rem;
+    transform: rotate(45deg);
+}
+#login-form,
+#signup-form {
+    // background: white;
+    border-radius: 10px;
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;
+    height: calc(100% - (1.5rem) *2 );
+    padding: 1.5rem;
+    font-size: 0.88rem;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .sign-lable {
+        color: $black-gray;
+        font-weight: bold;
+    }
+    .password-confrim-box {
+        display: flex;
+        justify-content: space-between;
+    }
+    .email-box,
+    .password-box {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+    }
+
+    .w50 {
+        width: 49%;
+    }
+    .forget-remember-box {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .sign-input {
+        padding: 0.7rem;
+        width: 100%;
+        outline: none;
+    }
+
+    .eye {
+        position: absolute;
+        top: 2.3rem;
+        left: 0.5rem;
+        cursor: pointer;
+        color: rgba(0, 0, 0, 0.3);
+        padding: 0.5rem;
+    }
+
+    .sign-lable,
+    .sign-input {
+        margin: 0.2rem;
+    }
+
+    .login-button {
+        padding: 0.7rem;
+        background-color: rgb(75, 75, 247);
+        border: none;
+        box-shadow: 0 0.5rem 1.125rem -0.5rem rgb(70, 70, 206);
+        cursor: pointer;
+        color: white;
+        font-family: "vazir";
+        font-size: 1rem;
+        font-weight: bold;
+    }
+
+    .login-button:hover {
+        background-color: rgb(75, 75, 247);
+        transition: color 0.25s ease-in-out, background-color 0.25s ease-in-out, border-color 0.25s ease-in-out,
+            box-shadow 0.2s ease-in-out;
+        box-shadow: none;
+    }
+}
+
+#login-form {
+    // display: none;
+    position: relative;
+    top: 0;
+    right: -3px;
+    // left: 500px;
+}
+
+#signup-form {
+    // background-color: red;
+    position: absolute;
+    top: 3.05rem;
+    left: 503px;
+    width: 100%;
+}
+// ----------defult
+.active {
+    display: block;
+}
+li {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+}
+// -------------------------------------------------------- body

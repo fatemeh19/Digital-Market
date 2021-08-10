@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/font-face.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link rel="stylesheet" href="css/style.css">
+    <title>fa_digi_fa</title>
+</head>
+
+<body>
+    <div class="site">
+        <!-- ------------------------------------------ header ------------------------------------------- -->
+        <header id="header">
+            <nav id="top_navbar">
+                <!-- 1 -->
+                <a href="#" id="logo-section">
+                    <h3 class="logo-site-name">site name</h3>
+                    <i id="site-logo" class="fa fa-phone-laptop"></i> <!-- or img tag -->
+                </a>
+                <div id="search">
+                    <i class="fa fa-search search-icon"></i>
+                    <input class="search_input border-focus" type="text" placeholder="جستجو برای محصول">
+                    <select name="" class="form_select border-focus ">
+                        <option class="select_option" value=""> همه دسته بندی </option>
+                        <option class="select_option" value=""> کامپیوتر </option>
+                        <option class="select_option" value=""> موبایل </option>
+                        <option class="select_option" value=""> دوربین </option>
+                        <option class="select_option" value=""> هدست </option>
+                    </select>
+                </div>
+                <a href="#" class="nav_tool" onclick="showSignPage()">
+                    <div class="nav-icon-box">
+                        <i class="vav-icon fa fa-user"></i>
+                    </div>
+
+                    <p class="nav-text">
+                        <small class="small_text"> سلام وارد شوید </small>
+                        حساب من
+                    </p>
+                </a>
+                <div class="nav_tool">
+                    <a href="#" class="nav_icon">
+                        <!--تعداد کالاهای موجود در سبد خرید-->
+                        <div class="good-num-box">
+                            <span class="good-num">0</span>
+                        </div>
+
+                        <div class="nav-icon-box nav-icon-box_cart">
+                            <i class="vav-icon fa fa-cart-arrow-down"></i>
+                        </div>
+
+                    </a>
+                    <a href="#" class="nav_text_box nav-text-box_cart">
+                        <p class="nav-text nav-text-arrow">
+                            <small class="small_text">سبد خرید</small>
+                            124700
+
+                        </p>
+                    </a>
+                    <i class="fa fa-caret-down  nav-caret "></i>
+                </div>
+            </nav>
+            <nav id="bottom_navbar">
+                2
+            </nav>
+        </header>
+        <!-- ------------------------------------------ login / sign up ------------------------------------------- -->
+        <!-- for show sign in/up page add active class to sign-model class (first div) -->
+        <div class="sign-model " id="sign-page">
+            <div class="sign-page ">
+                <div class="signin">
+                    <div class="signin-header">
+                        <ul>
+                            <li class="signin-header-list">
+
+                                <!--if user select sign up btn add "active-login" to class list of a tag -->
+                                <a href="#" id="login-page-btn" class="login-page-btn active-login" onclick="login()">
+                                    <i class="fa fa-lock"></i>
+                                    ورود
+                                </a>
+                            </li>
+                            <li class="signin-header-list">
+
+                                <!--if user select sign up btn add "active-signup" to class list of a tag -->
+                                <a href="#" id="signup-page-btn" class="signup-page-btn" onclick="register()">
+                                    <i class="fa fa-user "></i>
+                                    ثبت نام
+                                </a>
+                            </li>
+                        </ul>
+                        <div class="close">
+                            <button class="close-button" id="close-signPage-button" onclick="clode_signPage()">+</button>
+                        </div>
+                    </div>
+
+                    <!-- login form -->
+                    <form action="" id="login-form" class="flex">
+                        <div class="email-box">
+                            <label for="email" class="sign-lable">آدرس ایمیل</label>
+                            <input type="text" class="sign-input border-focus" placeholder="addres@gmail.com">
+                        </div>
+
+                        <div class="password-box">
+                            <label for="password" class="sign-lable">پسورد</label>
+                            <div>
+                                <input type="text" class="sign-input border-focus">
+                                <!-- need one function for eye icon : when click show the password 
+                                        and remove "fa-eye" class and add "fa-eye-slash" class to i list class
+                                        and need a function to make password hash -->
+                                <!--  -->
+                                <i class="fa fa-eye eye"></i>
+
+                            </div>
+                        </div>
+
+                        <div class="forget-remember-box">
+                            <div class="checkbox">
+                                <input type="checkbox" class="checkbox"> مرا به خاطر بسپار
+                            </div>
+
+                            <a href="#forget-password-page">فراموشی رمز؟</a>
+                        </div>
+
+                        <button class="login-button"> ورود </button>
+
+                    </form>
+                    <!-- sogm up form -->
+
+                    <form action="" id="signup-form" class="">
+                        <div class="email-box">
+                            <label for="username" class="sign-lable">نام کاربری</label>
+                            <input type="text" class="sign-input border-focus">
+                        </div>
+
+                        <div class="email-box">
+                            <label for="email" class="sign-lable">آدرس ایمیل</label>
+                            <input type="text" class="sign-input border-focus" placeholder="addres@gmail.com">
+                        </div>
+
+                        <div class="password-confrim-box">
+                            <div class="password-box w50">
+                                <label for="password" class="sign-lable">پسورد</label>
+                                <div>
+                                    <input type="text" class="sign-input border-focus">
+                                    <!-- need one function for eye icon : when click show the password 
+                                            and remove "fa-eye" class and add "fa-eye-slash" class to i list class
+                                            and need a function to make password hash -->
+                                    <!--  -->
+                                    <i class="fa fa-eye eye"></i>
+                                </div>
+                            </div>
+    
+                            <div class="password-box w50">
+                                <label for="password" class="sign-lable">پسورد</label>
+                                <div>
+                                    <input type="text" class="sign-input border-focus">
+                                    <!-- need one function for eye icon : when click show the password 
+                                            and remove "fa-eye" class and add "fa-eye-slash" class to i list class
+                                            and need a function to make password hash -->
+                                    <!--  -->
+                                    <i class="fa fa-eye eye"></i>
+                                </div>
+                            </div>
+                        </div>
+                        
+
+                        <div class="forget-remember-box">
+                            <div class="checkbox">
+                                <input type="checkbox" class="checkbox"> مرا به خاطر بسپار
+                            </div>
+
+                            <a href="#forget-password-page">فراموشی رمز؟</a>
+                        </div>
+
+                        <button class="login-button"> ثبت نام </button>
+
+                    </form>
+
+
+
+
+                </div>
+            </div>
+
+        </div>
+        <section class="container">
+
+        </section>
+        <footer id="footer">
+
+        </footer>
+    </div>
+
+
+
+
+    <script>
+        let x = document.getElementById('login-page-btn');
+        let y = document.getElementById('signup-page-btn');
+        let z = document.getElementById('login-form');
+        let l = document.getElementById('signup-form');
+        
+        function login() {
+            z.style.right = '-3px'
+            l.style.left = '503px'
+            z.style.transition = 'right 0.25s ease-in-out'
+        }
+        function register() {
+            z.style.right = "503px";
+            l.style.left = "3px";
+            l.style.transition = 'left 0.25s ease-in-out'
+        }
+        
+        let signPage = document.getElementById('sign-page');
+        function showSignPage() {
+            signPage.classList.add('active');
+        }
+        function clode_signPage() {
+            signPage.classList.remove('active');
+            login();
+        }
+    </script>
+</body>
+
+</html>
