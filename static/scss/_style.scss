@@ -81,13 +81,7 @@ html {
     font-size: 0.9rem;
     color: #15203a;
 }
-////////////////////////////////////////////////
 
-// #search_input:focus,
-// .form_select:focus {
-//     outline: none;
-//     border: 1px solid rgb(52, 117, 230);
-// }
 .search-icon {
     color: #4b566b;
     font-weight: lighter;
@@ -212,6 +206,9 @@ html {
 .signin {
     width: 33%;
     height: 25rem;
+
+    
+
     position: relative;
     overflow: hidden;
     background: white;
@@ -272,9 +269,14 @@ html {
     margin: 0.35rem 0.8rem;
     transform: rotate(45deg);
 }
+
+.singIn-height {
+    height: 25rem;
+    display: flex;
+    align-items: center;
+}
 #login-form,
 #signup-form {
-    // background: white;
     border-radius: 10px;
     border-top-right-radius: 0;
     border-top-left-radius: 0;
@@ -301,9 +303,7 @@ html {
         position: relative;
     }
 
-    .w50 {
-        width: 49%;
-    }
+    
     .forget-remember-box {
         display: flex;
         justify-content: space-between;
@@ -350,21 +350,21 @@ html {
 }
 
 #login-form {
-    // display: none;
     position: relative;
     top: 0;
     right: -3px;
-    // left: 500px;
 }
 
 #signup-form {
-    // background-color: red;
     position: absolute;
     top: 3.05rem;
     left: 503px;
     width: 100%;
 }
-// ----------defult
+
+
+
+// ----------defult class
 .active {
     display: block;
 }
@@ -374,13 +374,20 @@ li {
 a {
     text-decoration: none;
 }
+
+.w100 {
+    width: 100%;
+}
+.w50 {
+    width: 49%;
+}
 .border-focus:focus {
     outline: none;
     border: 1px solid rgb(52, 117, 230);
 }
 .input-error,
 .input-error:focus {
-    border: 2px solid red;
+    border: 1px solid red;
     
 }
 
@@ -399,8 +406,8 @@ a {
         border-radius: 50%;
   }
 }
+
+
+
 // -------------------------------------------------------- body
 
-
-
-//this is a test for checkin if it is gone or note

@@ -74,7 +74,7 @@
         <!-- for show sign in/up page add active class to sign-model class (first div) -->
         <div class="sign-model " id="sign-page">
             <div class="sign-page ">
-                <div class="signin">
+                <div class="signin" id="signIn">
                     <div class="signin-header">
                         <ul>
                             <li class="signin-header-list">
@@ -100,53 +100,74 @@
                     </div>
 
                     <!-- login form -->
-                    <form action="" id="login-form" class="flex">
-                        <div class="email-box">
-                            <label for="email" class="sign-lable">آدرس ایمیل</label>
-                            <input type="text" class="sign-input border-focus" placeholder="addres@gmail.com">
-                            <div class="invalid-box">
-                                <p class="invalid-text">لطفا ورودی معتبری وارد کنید!</p>
+                    <div class="singIn-height">
+                        <form action="" id="login-form" class="flex w100">
+                            <div class="email-box">
+                                <label for="email" class="sign-lable">آدرس ایمیل</label>
+                                <input type="text" class="sign-input border-focus" placeholder="addres@gmail.com">
+    
+                                <!-- error effect -->
+                                <div class="invalid-box" >
+                                    <p class="invalid-text"> لطفا ورودی معتبری وارد کنید! </p>
+                                </div>
+    
                             </div>
-                        </div>
-
-                        <div class="password-box">
-                            <label for="password" class="sign-lable">پسورد</label>
-                            <div>
-                                <input type="text" class="sign-input border-focus">
-                                <!-- need one function for eye icon : when click show the password 
-                                        and remove "fa-eye" class and add "fa-eye-slash" class to i list class
-                                        and need a function to make password hash -->
-                                <!--  -->
-                                <i class="fa fa-eye eye"></i>
+    
+                            <div class="password-box">
+                                <label for="password" class="sign-lable">پسورد</label>
+                                <div>
+                                    <input type="text" class="sign-input border-focus input-error">
+                                    <!-- need one function for eye icon : when click show the password 
+                                            and remove "fa-eye" class and add "fa-eye-slash" class to i list class
+                                            and need a function to make password hash -->
+                                    <!--  -->
+                                    <i class="fa fa-eye eye"></i>
+                                </div>
+                                
+                                <!-- error effect -->
+                                <div class="invalid-box">
+                                    <p class="invalid-text"> لطفا ورودی معتبری وارد کنید! </p>
+                                </div>
+    
                             </div>
-                            
-                            <div class="invalid-box">
-                                <p class="invalid-text">لطفا ورودی معتبری وارد کنید!</p>
+    
+                            <div class="forget-remember-box">
+                                <div class="checkbox">
+                                    <input type="checkbox" class="checkbox"> مرا به خاطر بسپار
+                                </div>
+    
+                                <a href="#forget-password-page">فراموشی رمز؟</a>
                             </div>
-                        </div>
+    
+                            <button class="login-button"> ورود </button>
+    
+                        </form>
+                    </div>
 
-                        <div class="forget-remember-box">
-                            <div class="checkbox">
-                                <input type="checkbox" class="checkbox"> مرا به خاطر بسپار
-                            </div>
 
-                            <a href="#forget-password-page">فراموشی رمز؟</a>
-                        </div>
-
-                        <button class="login-button"> ورود </button>
-
-                    </form>
-                    <!-- sogm up form -->
+                    <!-- sign up form -->
 
                     <form action="" id="signup-form" class="">
                         <div class="email-box">
                             <label for="username" class="sign-lable">نام کاربری</label>
                             <input type="text" class="sign-input border-focus">
+
+                            <!-- error effect -->
+                            <div class="invalid-box" id="invalid">
+                                <p class="invalid-text"> لطفا ورودی معتبری وارد کنید! </p>
+                            </div>
+
                         </div>
 
                         <div class="email-box">
                             <label for="email" class="sign-lable">آدرس ایمیل</label>
                             <input type="text" class="sign-input border-focus" placeholder="addres@gmail.com">
+
+                            <!-- error effect -->
+                            <div class="invalid-box" id="invalid2">
+                                <p class="invalid-text"> لطفا ورودی معتبری وارد کنید!</p>
+                            </div>
+
                         </div>
 
                         <div class="password-confrim-box">
@@ -159,8 +180,12 @@
                                             and need a function to make password hash -->
                                     <!--  -->
                                     <i class="fa fa-eye eye"></i>
+                                    <div class="invalid-box" id="invalid3">
+                                        <p class="invalid-text"> لطفا ورودی معتبری وارد کنید!</p>
+                                    </div>
                                 </div>
                             </div>
+                                <!-- error effect -->
     
                             <div class="password-box w50">
                                 <label for="password" class="sign-lable">پسورد</label>
@@ -171,6 +196,10 @@
                                             and need a function to make password hash -->
                                     <!--  -->
                                     <i class="fa fa-eye eye"></i>
+
+                                    <div class="invalid-box" id="invalid4">
+                                        <p class="invalid-text"> لطفا ورودی معتبری وارد کنید!</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -201,12 +230,7 @@
         <footer id="footer">
 
         </footer>
-        <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 10rem; ">
-            <div style="display: flex; flex-direction: column; align-items: flex-end;" class="invalid-box">
-                <input class="border-focus input-error" type="text" placeholder="test input" >
-                <p class="invalid-text">لطفا ورودی معتبری وارد کنید!</p>
-            </div>
-        </div>
+
 
     </div>
 
@@ -238,6 +262,20 @@
             signPage.classList.remove('active');
             login();
         }
+        
+        let invalid = document.getElementById('invalid').style.display= 'block';
+        let invalid2 = document.getElementById('invalid2').style.display = 'block';
+        let invalid3 = document.getElementById('invalid3').style.display = 'block';
+        let invalid4 = document.getElementById('invalid4').style.display = 'block';
+
+        let signin = document.getElementById('signIn');
+
+        if (true) {
+            console.log("true")
+            signin.style.height = '29rem';
+        }
+
+
     </script>
 </body>
 

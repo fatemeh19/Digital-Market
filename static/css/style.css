@@ -271,6 +271,12 @@ html {
   transform: rotate(45deg);
 }
 
+.singIn-height {
+  height: 25rem;
+  display: flex;
+  align-items: center;
+}
+
 #login-form,
 #signup-form {
   border-radius: 10px;
@@ -301,10 +307,6 @@ html {
   display: flex;
   flex-direction: column;
   position: relative;
-}
-#login-form .w50,
-#signup-form .w50 {
-  width: 49%;
 }
 #login-form .forget-remember-box,
 #signup-form .forget-remember-box {
@@ -376,6 +378,14 @@ a {
   text-decoration: none;
 }
 
+.w100 {
+  width: 100%;
+}
+
+.w50 {
+  width: 49%;
+}
+
 .border-focus:focus {
   outline: none;
   border: 1px solid #3475e6;
@@ -383,7 +393,7 @@ a {
 
 .input-error,
 .input-error:focus {
-  border: 2px solid red;
+  border: 1px solid red;
 }
 
 .invalid-box {
