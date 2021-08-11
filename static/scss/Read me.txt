@@ -1,0 +1,1 @@
+input-error : error class for input = add this class for input that you want to have error effect

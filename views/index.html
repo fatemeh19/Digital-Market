@@ -104,6 +104,9 @@
                         <div class="email-box">
                             <label for="email" class="sign-lable">آدرس ایمیل</label>
                             <input type="text" class="sign-input border-focus" placeholder="addres@gmail.com">
+                            <div class="invalid-box">
+                                <p class="invalid-text">لطفا ورودی معتبری وارد کنید!</p>
+                            </div>
                         </div>
 
                         <div class="password-box">
@@ -115,7 +118,10 @@
                                         and need a function to make password hash -->
                                 <!--  -->
                                 <i class="fa fa-eye eye"></i>
-
+                            </div>
+                            
+                            <div class="invalid-box">
+                                <p class="invalid-text">لطفا ورودی معتبری وارد کنید!</p>
                             </div>
                         </div>
 
@@ -195,6 +201,13 @@
         <footer id="footer">
 
         </footer>
+        <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 10rem; ">
+            <div style="display: flex; flex-direction: column; align-items: flex-end;" class="invalid-box">
+                <input class="border-focus input-error" type="text" placeholder="test input" >
+                <p class="invalid-text">لطفا ورودی معتبری وارد کنید!</p>
+            </div>
+        </div>
+
     </div>
 
 
@@ -207,7 +220,7 @@
         let l = document.getElementById('signup-form');
         
         function login() {
-            z.style.right = '-3px'
+            z.style.right = '-3px' 
             l.style.left = '503px'
             z.style.transition = 'right 0.25s ease-in-out'
         }
