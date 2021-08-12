@@ -36,10 +36,10 @@ let signin = document.getElementById('signIn');
 let invelidPass = document.getElementById('password-login').classList.add('input-error');
 
 
-if (true) {
-    console.log("true")
-    signin.style.height = '29rem';
-}
+// if (true) {
+//     console.log("true")
+//     signin.style.height = '29rem';
+// }
 
 /*************************************************************************************************/
  
