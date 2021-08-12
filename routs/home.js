@@ -1,7 +1,6 @@
 const express = require('express')
 const Router = express.Router()
 const path = require('path')
-var mongoose = require('mongoose')
 var User = require('../models/User');
 
 /* this module uses for delete,put,patch request handling */
@@ -11,28 +10,61 @@ var methodOverride = require('method-override')
 the multiparty and will use it for extracting and saving in the database */
 const bodyParser = require('body-parser')
 
+/**************************************MiddleWares**************************************************/
 Router.use(bodyParser.urlencoded({extended:false}))
 Router.use(bodyParser.json())
 
 
 
 Router.get('/',(req, res) => {
-    var newUser = new User({
-        name:"fatemeh",
-        username:"veysi",
-        password:"1234",
-        email:"fatemehveysi1378@gmail.com"
-    });
-
-        // Create User
-        User.createUser(newUser, function(err, user){
-            if(err)throw err;
-            console.log(user);
-        });
-
-    res.sendFile(path.join(__dirname,'../views/index.html'))
     
-  })
+
+    res.sendFile(path.join(__dirname,'../views/home.html'))
+
+})
+
+     
+
+
+Router.post('/register',(req, res) => {
+
+
+        console.log("a post request")
+        
+        user = req.body
+        
+        User.RegisterCheck(user.username,user.password,user.email,user.confirm_password,(errors)=>{
+          console.log(errors)
+          res.json({
+          empty_password : errors[0],
+          empty_email : errors[1],
+          empty_username : errors[2],
+          empty_confirm:errors[3],
+          available_username : errors[4],
+          password_not_equal_confirm : errors[5],
+          user_saved : errors[6]
+         })
+
+
+
+
+
+        })
+        
+
+        // 0 => empty password
+        // 1 => empty email
+        // 2 => empty username
+        // 3 => empty confirm_password
+        // 4 => username is available
+        // 5 => password not equals confirm_password 
+        // 6 => user saved
+         
+        
+})
+    
+
+  
 
 
   module.exports = Router

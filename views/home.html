@@ -6,9 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/static/font-face.css">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
         integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
     <link rel="stylesheet" href="/static/style.css">
+   
     <title>fa_digi_fa</title>
 </head>
 <!-- just for sure fv :) -->
@@ -100,11 +102,11 @@
                     </div>
 
                     <!-- login form -->
-                    <div class="singIn-height">
+                    <div class="singIn-height ">
                         <form action="" id="login-form" class="flex w100">
                             <div class="email-box">
                                 <label for="email" class="sign-lable">آدرس ایمیل</label>
-                                <input type="text" class="sign-input border-focus" placeholder="addres@gmail.com">
+                                <input type="text" class="sign-input border-focus" id="email_username" placeholder="addres@gmail.com">
     
                                 <!-- error effect -->
                                 <div class="invalid-box" >
@@ -116,7 +118,7 @@
                             <div class="password-box">
                                 <label for="password" class="sign-lable">پسورد</label>
                                 <div>
-                                    <input type="text" class="sign-input border-focus input-error">
+                                    <input type="password" id="password-login" class="sign-input border-focus">
                                     <!-- need one function for eye icon : when click show the password 
                                             and remove "fa-eye" class and add "fa-eye-slash" class to i list class
                                             and need a function to make password hash -->
@@ -139,7 +141,7 @@
                                 <a href="#forget-password-page">فراموشی رمز؟</a>
                             </div>
     
-                            <button class="login-button"> ورود </button>
+                            <button class="login-button" id="login-btn"> ورود </button>
     
                         </form>
                     </div>
@@ -150,7 +152,7 @@
                     <form action="" id="signup-form" class="">
                         <div class="email-box">
                             <label for="username" class="sign-lable">نام کاربری</label>
-                            <input type="text" class="sign-input border-focus">
+                            <input type="text" id="username" class="sign-input border-focus">
 
                             <!-- error effect -->
                             <div class="invalid-box" id="invalid">
@@ -161,7 +163,7 @@
 
                         <div class="email-box">
                             <label for="email" class="sign-lable">آدرس ایمیل</label>
-                            <input type="text" class="sign-input border-focus" placeholder="addres@gmail.com">
+                            <input type="text" id="email" class="sign-input border-focus" placeholder="addres@gmail.com">
 
                             <!-- error effect -->
                             <div class="invalid-box" id="invalid2">
@@ -174,7 +176,7 @@
                             <div class="password-box w50">
                                 <label for="password" class="sign-lable">پسورد</label>
                                 <div>
-                                    <input type="text" class="sign-input border-focus">
+                                    <input type="password" id="password-signup" class="sign-input border-focus">
                                     <!-- need one function for eye icon : when click show the password 
                                             and remove "fa-eye" class and add "fa-eye-slash" class to i list class
                                             and need a function to make password hash -->
@@ -190,7 +192,7 @@
                             <div class="password-box w50">
                                 <label for="password" class="sign-lable">پسورد</label>
                                 <div>
-                                    <input type="text" class="sign-input border-focus">
+                                    <input type="password" id="password-confrim" class="sign-input border-focus">
                                     <!-- need one function for eye icon : when click show the password 
                                             and remove "fa-eye" class and add "fa-eye-slash" class to i list class
                                             and need a function to make password hash -->
@@ -237,46 +239,7 @@
 
 
 
-    <script>
-        let x = document.getElementById('login-page-btn');
-        let y = document.getElementById('signup-page-btn');
-        let z = document.getElementById('login-form');
-        let l = document.getElementById('signup-form');
-        
-        function login() {
-            z.style.right = '-3px' 
-            l.style.left = '503px'
-            z.style.transition = 'right 0.25s ease-in-out'
-        }
-        function register() {
-            z.style.right = "503px";
-            l.style.left = "3px";
-            l.style.transition = 'left 0.25s ease-in-out'
-        }
-        
-        let signPage = document.getElementById('sign-page');
-        function showSignPage() {
-            signPage.classList.add('active');
-        }
-        function clode_signPage() {
-            signPage.classList.remove('active');
-            login();
-        }
-        
-        let invalid = document.getElementById('invalid').style.display= 'block';
-        let invalid2 = document.getElementById('invalid2').style.display = 'block';
-        let invalid3 = document.getElementById('invalid3').style.display = 'block';
-        let invalid4 = document.getElementById('invalid4').style.display = 'block';
-
-        let signin = document.getElementById('signIn');
-
-        if (true) {
-            console.log("true")
-            signin.style.height = '29rem';
-        }
-
-
-    </script>
+    <script src="/static/home.js"></script>
 </body>
 
 </html>
