@@ -59,10 +59,11 @@ SignForm.addEventListener('submit',(event)=>{
         if(errors.empty_password==true){
            document.getElementById('invalid_password_sign').style.display= 'block'
            document.getElementById('invalid_password_sign').firstChild.nextSibling.textContent="لطفا رمز خود را وارد کنید"
-
+           document.getElementById('password-signup').classList.add('input-error');
 
         }else{
             document.getElementById('invalid_password_sign').style.display= 'none'
+            document.getElementById('password-signup').classList.remove('input-error');
 
         }
 
@@ -70,20 +71,27 @@ SignForm.addEventListener('submit',(event)=>{
         if(errors.empty_email==true){
             document.getElementById('invalid_email_sign').style.display= 'block'
             document.getElementById('invalid_password_sign').firstChild.nextSibling.textContent="لطفاایمیل معتبری وارد کنید"
-
+           
+            document.getElementById('email').classList.add('input-error');
  
          }else{
              document.getElementById('invalid_email_sign').style.display= 'none'
+
+             document.getElementById('email').classList.remove('input-error');
  
          }
 
          if(errors.empty_username==true){
+            
             document.getElementById('invalid_username_sign').style.display= 'block'
-            document.getElementById('invalid_password_sign').firstChild.nextSibling.textContent="لطفا نام کاربری خود را وارد کنید"
+            document.getElementById('invalid_username_sign').firstChild.nextSibling.textContent="لطفا نام کاربری خود را وارد کنید"
 
+            document.getElementById('username').classList.add('input-error');
  
          }else{
              document.getElementById('invalid_username_sign').style.display= 'none'
+
+             document.getElementById('username').classList.remove('input-error');
  
          }
 
@@ -91,10 +99,13 @@ SignForm.addEventListener('submit',(event)=>{
              console.log("invalid_confirm")
             document.getElementById('invalid_confirm').style.display= 'block'
             document.getElementById('invalid_confirm').firstChild.nextSibling.textContent="لطفا رمز خود را تایید کنید"
-
+               
+            document.getElementById('password-confrim').classList.add('input-error');
  
          }else{
              document.getElementById('invalid_confirm').style.display= 'none'
+
+             document.getElementById('password-confrim').classList.remove('input-error');
 
  
          }
@@ -102,9 +113,16 @@ SignForm.addEventListener('submit',(event)=>{
             document.getElementById('invalid_username_sign').style.display= 'block'
             document.getElementById('invalid_password_sign').firstChild.nextSibling.textContent="نام کاربری موجود است"
 
+            document.getElementById('username').classList.add('input-error');
  
          }else{
-            document.getElementById('invalid_username_sign').style.display= 'none'
+             if(errors.empty_username==false)
+             {
+                document.getElementById('invalid_username_sign').style.display= 'none'
+
+                document.getElementById('username').classList.remove('input-error');
+             }
+            
 
  
          }
@@ -112,13 +130,16 @@ SignForm.addEventListener('submit',(event)=>{
          if(errors.password_not_equal_confirm==true){
             document.getElementById('invalid_confirm').style.display= 'block'
             document.getElementById('invalid_confirm').firstChild.nextSibling.textContent="لطفارمز خود رابه درستی تاییدکنید"
-
+ 
+            document.getElementById('password-confrim').classList.add('input-error');
  
  
          }else{
              if(errors.empty_confirm==false)
              {
                 document.getElementById('invalid_confirm').style.display= 'none'
+
+                document.getElementById('password-confrim').classList.remove('input-error');
              }
             
 
