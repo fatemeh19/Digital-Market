@@ -70,7 +70,7 @@ SignForm.addEventListener('submit',(event)=>{
 
         if(errors.empty_email==true){
             document.getElementById('invalid_email_sign').style.display= 'block'
-            document.getElementById('invalid_password_sign').firstChild.nextSibling.textContent="لطفاایمیل معتبری وارد کنید"
+            document.getElementById('invalid_email_sign').firstChild.nextSibling.textContent="لطفاایمیل معتبری وارد کنید"
            
             document.getElementById('email').classList.add('input-error');
  
