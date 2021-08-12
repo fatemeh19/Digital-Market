@@ -26,10 +26,10 @@ function clode_signPage() {
     signPage.classList.remove('active');
     login();
 }
-let invalid = document.getElementById('invalid').style.display= 'block';
-let invalid2 = document.getElementById('invalid2').style.display = 'block';
-let invalid3 = document.getElementById('invalid3').style.display = 'block';
-let invalid4 = document.getElementById('invalid4').style.display = 'block';
+// 
+// let invalid2 = document.getElementById('invalid2').style.display = 'block';
+// let invalid3 = document.getElementById('invalid3').style.display = 'block';
+// let invalid4 = document.getElementById('invalid4').style.display = 'block';
 
 let signin = document.getElementById('signIn');
 
@@ -53,11 +53,82 @@ SignForm.addEventListener('submit',(event)=>{
        password: document.getElementById("password-signup").value,
        email:    document.getElementById("email").value,
        confirm_password:    document.getElementById("password-confrim").value
-     },(data)=>{
-        console.log(data)
+     },(errors)=>{
+        console.log(errors)
 
-       
-        
+        if(errors.empty_password==true){
+           document.getElementById('invalid_password_sign').style.display= 'block'
+           document.getElementById('invalid_password_sign').firstChild.nextSibling.textContent="لطفا رمز خود را وارد کنید"
+
+
+        }else{
+            document.getElementById('invalid_password_sign').style.display= 'none'
+
+        }
+
+
+        if(errors.empty_email==true){
+            document.getElementById('invalid_email_sign').style.display= 'block'
+            document.getElementById('invalid_password_sign').firstChild.nextSibling.textContent="لطفاایمیل معتبری وارد کنید"
+
+ 
+         }else{
+             document.getElementById('invalid_email_sign').style.display= 'none'
+ 
+         }
+
+         if(errors.empty_username==true){
+            document.getElementById('invalid_username_sign').style.display= 'block'
+            document.getElementById('invalid_password_sign').firstChild.nextSibling.textContent="لطفا نام کاربری خود را وارد کنید"
+
+ 
+         }else{
+             document.getElementById('invalid_username_sign').style.display= 'none'
+ 
+         }
+
+         if(errors.empty_confirm==true){
+             console.log("invalid_confirm")
+            document.getElementById('invalid_confirm').style.display= 'block'
+            document.getElementById('invalid_confirm').firstChild.nextSibling.textContent="لطفا رمز خود را تایید کنید"
+
+ 
+         }else{
+             document.getElementById('invalid_confirm').style.display= 'none'
+
+ 
+         }
+         if(errors.available_username==true){
+            document.getElementById('invalid_username_sign').style.display= 'block'
+            document.getElementById('invalid_password_sign').firstChild.nextSibling.textContent="نام کاربری موجود است"
+
+ 
+         }else{
+            document.getElementById('invalid_username_sign').style.display= 'none'
+
+ 
+         }
+
+         if(errors.password_not_equal_confirm==true){
+            document.getElementById('invalid_confirm').style.display= 'block'
+            document.getElementById('invalid_confirm').firstChild.nextSibling.textContent="لطفارمز خود رابه درستی تاییدکنید"
+
+ 
+ 
+         }else{
+             if(errors.empty_confirm==false)
+             {
+                document.getElementById('invalid_confirm').style.display= 'none'
+             }
+            
+
+ 
+         }
+         if(errors.user_saved==true){
+             
+            window.location.href = "/";
+ 
+         }
 
 
 

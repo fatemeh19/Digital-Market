@@ -27,7 +27,7 @@ let User_Model =  module.exports = mongoose.model("User",User_Schema);
 // };
 
 module.exports.RegisterCheck = (username,password,email,confirm_password,callback)=>{
-    let errors=[false,false,false,false,false,false]
+    let errors=[false,false,false,false,false,false,false]
     console.log("Entered to function")
    
     // 0 => empty password
