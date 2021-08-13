@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/font-face.css">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link rel="stylesheet" href="/static/style.css">
+   
+
+    <!-- THIS LINKS SHOULD BE EDITED -->
+    <link rel="stylesheet" href="/static/css/live-font-face.css">
+    <link rel="stylesheet" href="/static/css/style.css">
+
+
+    <!--  -->
+    <title>fa_digi_fa</title>
+</head>
+<!-- just for sure fv :) -->
+
+<body>
+    
+    
+    <div class="site">
+        <!-- ------------------------------------------ header ------------------------------------------- -->
+        <%- include ('./header') %>
+
+        <!-- ------------------------------------------ login / sign up ------------------------------------------- -->
+        <!-- for show sign in/up page add active class to sign-model class (first div) -->
+        <div class="sign-model " id="sign-page">
+            <div class="sign-page ">
+                <div class="signin" id="signIn">
+                    <div class="signin-header">
+                        <ul>
+                            <li class="signin-header-list">
+
+                                <!--if user select sign up btn add "active-login" to class list of a tag -->
+                                <a href="#" id="login-page-btn" class="login-page-btn active-login" onclick="login()">
+                                    <i class="fa fa-lock"></i>
+                                    ورود
+                                </a>
+                            </li>
+                            <li class="signin-header-list">
+
+                                <!--if user select sign up btn add "active-signup" to class list of a tag -->
+                                <a href="#" id="signup-page-btn" class="signup-page-btn" onclick="register()">
+                                    <i class="fa fa-user "></i>
+                                    ثبت نام
+                                </a>
+                            </li>
+                        </ul>
+                        <div class="close">
+                            <button class="close-button" id="close-signPage-button" onclick="clode_signPage()">+</button>
+                        </div>
+                    </div>
+
+                    <!-- login form -->
+                    <div class="singIn-height ">
+                        <form action="" id="login-form" class="flex w100">
+                            <div class="email-box">
+                                <label for="email" class="sign-lable">آدرس ایمیل</label>
+                                <input type="text" class="sign-input border-focus" id="email_username" placeholder="addres@gmail.com">
+    
+                                <!-- error effect -->
+                                <div class="invalid-box" >
+                                    <p class="invalid-text"> لطفا ایمیل معتبری وارد کنید! </p>
+                                </div>
+    
+                            </div>
+    
+                            <div class="password-box">
+                                <label for="password" class="sign-lable">پسورد</label>
+                                <div>
+                                    <input type="password" id="password-login" class="sign-input border-focus">
+                                    <!-- need one function for eye icon : when click show the password 
+                                            and remove "fa-eye" class and add "fa-eye-slash" class to i list class
+                                            and need a function to make password hash -->
+                                    <!--  -->
+                                    <i class="fa fa-eye eye"></i>
+                                </div>
+                                
+                                <!-- error effect -->
+                                <div class="invalid-box">
+                                    <p class="invalid-text"> لطفا رمز را به درستی وارد کنید! </p>
+                                </div>
+    
+                            </div>
+    
+                            <div class="forget-remember-box">
+                                <div class="checkbox">
+                                    <input type="checkbox" class="checkbox"> مرا به خاطر بسپار
+                                </div>
+    
+                                <a href="#forget-password-page">فراموشی رمز؟</a>
+                            </div>
+    
+                            <button class="login-button" id="login-btn"> ورود </button>
+    
+                        </form>
+                    </div>
+
+
+                    <!-- sign up form -->
+
+                    <form action="" id="signup-form" class="">
+                        <div class="email-box">
+                            <label for="username" class="sign-lable">نام کاربری</label>
+                            <input type="text" id="username" class="sign-input border-focus">
+
+                            <!-- error effect -->
+                            <div class="invalid-box" id="invalid_username_sign">
+                                <p class="invalid-text"> </p>
+                            </div>
+
+                        </div>
+
+                        <div class="email-box">
+                            <label for="email" class="sign-lable">آدرس ایمیل</label>
+                            <input type="text" id="email" class="sign-input border-focus" placeholder="addres@gmail.com">
+
+                            <!-- error effect -->
+                            <div class="invalid-box" id="invalid_email_sign">
+                                <p class="invalid-text"> !</p>
+                            </div>
+
+                        </div>
+
+                        <div class="password-confrim-box">
+                            <div class="password-box w50">
+                                <label for="password" class="sign-lable">پسورد</label>
+                                <div>
+                                    <input type="password" id="password-signup" class="sign-input border-focus">
+                                    <!-- need one function for eye icon : when click show the password 
+                                            and remove "fa-eye" class and add "fa-eye-slash" class to i list class
+                                            and need a function to make password hash -->
+                                    <!--  -->
+                                    <i class="fa fa-eye eye"></i>
+                                    <div class="invalid-box" id="invalid_password_sign">
+                                        <p class="invalid-text" > !</p>
+                                    </div>
+                                </div>
+                            </div>
+                                <!-- error effect -->
+    
+                            <div class="password-box w50">
+                                <label for="password" class="sign-lable">پسورد</label>
+                                <div>
+                                    <input type="password" id="password-confrim" class="sign-input border-focus">
+                                    <!-- need one function for eye icon : when click show the password 
+                                            and remove "fa-eye" class and add "fa-eye-slash" class to i list class
+                                            and need a function to make password hash -->
+                                    <!--  -->
+                                    <i class="fa fa-eye eye"></i>
+
+                                    <div class="invalid-box" id="invalid_confirm">
+                                        <p class="invalid-text"> !</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+
+                        <!-- <div class="forget-remember-box">
+                            <div class="checkbox">
+                                <input type="checkbox" class="checkbox"> مرا به خاطر بسپار
+                            </div>
+
+                            <a href="#forget-password-page">فراموشی رمز؟</a>
+                        </div> -->
+
+                        <button class="login-button"> ثبت نام </button>
+
+                    </form>
+
+
+
+
+                </div>
+            </div>
+
+        </div>
+
+
+
+        <section class="container">
+
+        </section>
+        <footer id="footer">
+
+        </footer>
+
+
+    </div>
+
+
+
+
+    <script src="/static/home.js"></script>
+</body>
+
+</html>

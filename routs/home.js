@@ -16,14 +16,13 @@ Router.use(bodyParser.json())
 
 
 
-Router.get('/',(req, res) => {
+Router.get('/',(req, res) =>  res.render('home'))
     
 
-    res.sendFile(path.join(__dirname,'../views/home.html'))
-    // res.render('home')
+   
 
 
-})
+
 
      
 
