@@ -27,7 +27,7 @@ let User_Model =  module.exports = mongoose.model("User",User_Schema);
 // };
 
 module.exports.RegisterCheck = (username,password,email,confirm_password,callback)=>{
-    let errors=[false,false,false,false,false,false,false]
+    let errors=[false,false,false,false,false,false,false,false]
     console.log("Entered to function")
    
     // 0 => empty password
@@ -78,24 +78,41 @@ module.exports.RegisterCheck = (username,password,email,confirm_password,callbac
                 callback(errors)
                 
             }
+           
             else{
-
-                if(password!=confirm_password){
-                    errors[5]=true
-                    callback(errors)
-                }else{
-
-                    let NewUser=new User_Model({
-                       
-                        username : username,
-                        password :password,
-                        email : email
-                    
+                
+                    User_Model.findOne({email:email},function(err, user){
+                
+                
+                        if(user){
+                            console.log("email is avaiable")
+                            errors[7]=true
+                            console.log(errors)
+                            callback(errors)
+                            
+                        }
+                        else if(password!=confirm_password){
+                            errors[5]=true
+                            callback(errors)
+                        }
+                        else{
+        
+                            let NewUser=new User_Model({
+                               
+                                username : username,
+                                password :password,
+                                email : email
+                            
+                            })
+                            NewUser.save()
+                             errors[6]=true
+                            callback(errors)
+                        }
                     })
-                    NewUser.save()
-                     errors[6]=true
-                    callback(errors)
-                }
+                    
+               
+
+                
             }
 
         })  
