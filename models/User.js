@@ -14,7 +14,9 @@ mongoose.connect("mongodb://localhost:27017/Digital_Market", {useNewUrlParser: t
 let User_Schema=new mongoose.Schema({
     username : String,
     password :String,
-    email : String
+    email : String,
+    rememberMe:false
+    
 });
 let User_Model =  module.exports = mongoose.model("User",User_Schema);
 
@@ -22,10 +24,8 @@ let User_Model =  module.exports = mongoose.model("User",User_Schema);
 
 /***************************************Functions**********************************************/
 
-// module.exports.createUser = (newUser)=>{
-//     newUser.save(callback);
-// };
 
+         /****************************RegisterCheck*********************************/
 module.exports.RegisterCheck = (username,password,email,confirm_password,callback)=>{
     let errors=[false,false,false,false,false,false,false,false]
     console.log("Entered to function")
@@ -101,7 +101,8 @@ module.exports.RegisterCheck = (username,password,email,confirm_password,callbac
                                
                                 username : username,
                                 password :password,
-                                email : email
+                                email : email,
+                                rememberMe:false
                             
                             })
                             NewUser.save()
@@ -119,40 +120,58 @@ module.exports.RegisterCheck = (username,password,email,confirm_password,callbac
 
     }
     
-
-     
-    
-    // if(password!=confirm_password)
-    //  {
-    //   errors[errors.length()]="password confirm is incorrect"  
-    //  }
-     
-    
-    
-    
-    
-    
-    
-    
 }
 
+         /****************************LoginCheck*********************************/
+
+    module.exports.LoginCheck=(username_or_email,password,rememberMe,callback)=>{
+        
+
+        User_Model.findOne({username:username_or_email},function(err, user){
+            
+            if(user){
+               if(user.password==password){
+                   user.rememberMe = rememberMe
+                   user.save()
+                   callback(true,"true")
+               }
+               else{
+                 callback(false,"password")
+
+               }
+                
+                
+                
+            }
+            else{
+                User_Model.findOne({email:username_or_email},function(err, user){
+            
+            
+                    if(user)
+                    {
+                        
+                        if(user.password==password){
+                            user.rememberMe = rememberMe
+                            user.save()
+                            callback(true,"true")
+                        }
+                        else{
+                          callback(false,"password")
+         
+                        }
+                        
+                        
+                    }
+                    else{
+                        callback(false,"username")
+                    }
+                })
+            }
+        })
 
 
 
-// user_student_model.findOne({username:req.session.auth.username},function(err,student){
-//     if(student!=undefined){
-//         var new_cm=new cm_model({
-//             sender:req.session.auth.username,
-//             content:req.body.cm
-//         })
-//         student.comments.push(new_cm)
-//         res.json({status: true,cm:new_cm})
-//         student.save()
-//     }
-//     else{
-//         // res.json({status: false})
-//     }
+
+    }     
 
 
-
-// })

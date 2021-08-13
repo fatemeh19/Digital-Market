@@ -1,11 +1,12 @@
+<!-- log in -->
 <div class="singIn-height ">
     <form action="" id="login-form" class="flex w100">
         <div class="email-box">
-            <label for="email" class="sign-lable">آدرس ایمیل</label>
+            <label for="email" class="sign-lable"> آدرس ایمیل یا نام کاربری</label>
             <input type="text" class="sign-input border-focus" id="email_username" placeholder="addres@gmail.com">
 
             <!-- error effect -->
-            <div class="invalid-box" >
+            <div class="invalid-box" id="invalid_email_log" >
                 <p class="invalid-text"> لطفا ایمیل معتبری وارد کنید! </p>
             </div>
 
@@ -23,7 +24,7 @@
             </div>
             
             <!-- error effect -->
-            <div class="invalid-box">
+            <div class="invalid-box" id="invalid_password_log">
                 <p class="invalid-text"> لطفا رمز را به درستی وارد کنید! </p>
             </div>
 
@@ -31,7 +32,7 @@
 
         <div class="forget-remember-box">
             <div class="checkbox">
-                <input type="checkbox" class="checkbox"> مرا به خاطر بسپار
+                <input type="checkbox" id="checkbox_rememberMe" class="checkbox"> مرا به خاطر بسپار
             </div>
 
             <a href="#forget-password-page">فراموشی رمز؟</a>
@@ -42,6 +43,7 @@
     </form>
 </div>
 
+<!-- sign up -->
 <form action="" id="signup-form" class="">
     <div class="email-box">
         <label for="username" class="sign-lable">نام کاربری</label>
@@ -100,13 +102,6 @@
     </div>
     
 
-    <!-- <div class="forget-remember-box">
-        <div class="checkbox">
-            <input type="checkbox" class="checkbox"> مرا به خاطر بسپار
-        </div>
-
-        <a href="#forget-password-page">فراموشی رمز؟</a>
-    </div> -->
 
     <button class="login-button"> ثبت نام </button>
 
