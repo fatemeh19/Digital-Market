@@ -22,7 +22,7 @@ html {
 }
 #top_navbar,
 #bottom_navbar {
-    padding: 10px;
+    padding: 20px 10px 0;
 
     .container {
         width: 80%;
@@ -206,39 +206,99 @@ html {
         color: white;
         font-weight: bold;
 
-        .right-bottom-navbar {
-            display: flex;
-        }
 
+        // ------- right & left
         .right-bottom-navbar-item,
         .left-bottom-navbar-item {
+            position: relative;
             padding: .7rem 1.5rem;
+           
 
             .bottom-nav-link:hover{
                 color: $pink;
                 transition: color .3s ease-out;
             }
 
+            .right-bottom-navbar-item:hover,
             .bottom-nav-link:hover + .dropDown-menu,
             .dropDown-menu:hover{
-               
                 display: block;
-
             }
 
-            .dropDown-menu:hover {
-            }
+            
             .dropDown-menu {
                 position: absolute;
+                padding: 1rem;
+                width: 40vw;
+                top: 2.4rem;
+                right: .7rem;
                 display: none;
                 background-color: white;
+                border-radius: 5px;
+                box-shadow: 0 0 1.2rem rgba(0, 0, 0, .1), 0 0 0 2px white;
+
+                ul {
+                    display: flex;
+                    justify-content: space-between;
+                    flex-wrap: wrap;
+
+                    .list {
+                        width: 50%;
+                        display: flex;
+                        flex-direction: column;
+
+                        .dropDown-menu-item {
+                            margin: .3rem .5rem;
+                            font-size: .8rem;
+                            width: 100%;
+                        }
+                    }
+                }
             }
-           
+
+            .dropDown-menu.mobile {   
+                width: 13vw !important;
+            }
         }
 
+        //-------- right
+        .right-bottom-navbar {
+            display: flex;
+        }
+        
 
+        //------- left
         .left-bottom-navbar-item {
             position: relative;
+
+            .dropDown-menu.Admin {
+                width: 12vw !important;
+                padding: 0;
+                margin: 0;
+
+
+                ul {
+                    font-size: .88rem;
+
+                    .dropDown-menu-item {
+                        border-bottom: 1px solid rgba(191, 189, 189, .5);
+                        width: 100%;
+                        margin: .3rem 0;
+                        padding: 0 0 .6rem;
+
+                        a {
+                            width: 100%;
+                            display: inline-block;
+                        }
+
+                        span {
+                            padding: 0.4rem 1rem !important;
+                            display: inline-block;
+                        }
+                    }
+                }
+            }
+            
         }
         
 
@@ -478,6 +538,9 @@ a {
 .border-focus:focus {
     outline: none;
     border: 1px solid rgb(52, 117, 230);
+}
+.no-border{
+    border-bottom: none !important;
 }
 .input-error,
 .input-error:focus {
