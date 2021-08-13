@@ -42,7 +42,8 @@ Router.post('/register',(req, res) => {
           empty_confirm:errors[3],
           available_username : errors[4],
           password_not_equal_confirm : errors[5],
-          user_saved : errors[6]
+          user_saved : errors[6],
+          email_exists:errors[7]
          })
 
 
@@ -59,6 +60,7 @@ Router.post('/register',(req, res) => {
         // 4 => username is available
         // 5 => password not equals confirm_password 
         // 6 => user saved
+        // 7=> email  exists
          
         
 })
