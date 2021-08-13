@@ -2,6 +2,7 @@ const express = require('express')
 const Router = express.Router()
 const path = require('path')
 var User = require('../models/User');
+var session=require("express-session");
 
 /* this module uses for delete,put,patch request handling */
 var methodOverride = require('method-override')
@@ -14,6 +15,11 @@ const bodyParser = require('body-parser')
 Router.use(bodyParser.urlencoded({extended:false}))
 Router.use(bodyParser.json())
 
+Router.use(express.static(__dirname));
+Router.use(session({
+    secret:"secret"
+
+}))
 
 
 Router.get('/',(req, res) =>  res.render('home'))
@@ -30,11 +36,12 @@ Router.get('/',(req, res) =>  res.render('home'))
 Router.post('/register',(req, res) => {
 
 
-        console.log("a post request")
+        
         
         user = req.body
         
         User.RegisterCheck(user.username,user.password,user.email,user.confirm_password,(errors)=>{
+          
           console.log(errors)
           res.json({
           empty_password : errors[0],
@@ -63,11 +70,38 @@ Router.post('/register',(req, res) => {
         // 6 => user saved
         // 7=> email  exists
          
-        
 })
     
-
+Router.post('/Login',(req, res)=>{
   
+  let user = req.body
+  console.log(user)
+  User.LoginCheck(user.username_email,user.password,user.rememberMe,(status,problem)=>{
+  
+    if(status==true){
+      
+
+      req.session.auth={username:user.username_email,password:user.password}
+      req.session.checkbox=user.rememberMe
+      console.log(req.session)
+
+    }
+    res.json({
+      status:status,
+      problem: problem
+    })
+    
+
+
+  })
+
+})
+  
+Router.post('/rememberMe',(req,res)=>{
+  res.json(req.session)
+    // variable is undefined
+})
+
 
 
   module.exports = Router

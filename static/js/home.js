@@ -1,8 +1,18 @@
+$.post('/rememberMe',(data)=>{
+    console.log(data)
+       
+    if(data.checkbox=="true"){
+      document.getElementById("email_username").value=data.auth.username
+      document.getElementById("password-login").value=data.auth.password
+      document.getElementById("checkbox_rememberMe").checked=true
+ 
+    }
 
-let LoginBtn = document.getElementById('login-page-btn');
-let SignBtn = document.getElementById('signup-page-btn');
-let LoginForm = document.getElementById('login-form');
-let SignForm = document.getElementById('signup-form');
+})
+let LoginBtn = document.getElementById('login-page-btn')
+let SignBtn = document.getElementById('signup-page-btn')
+let LoginForm = document.getElementById('login-form')
+let SignForm = document.getElementById('signup-form')
 
 /************************************Due to Translation Login Sign up Forms***************************************************/
 
@@ -37,7 +47,7 @@ function clode_signPage() {
 
 let signin = document.getElementById('signIn');
 
-let invelidPass = document.getElementById('password-login').classList.add('input-error');
+//let invelidPass = document.getElementById('password-login').classList.add('input-error');
 
 
 // if (true) {
@@ -170,7 +180,7 @@ SignForm.addEventListener('submit',(event)=>{
          }
          if(errors.user_saved==true){
              
-            window.location.href = "/";
+            window.location.href = "/"
  
          }
 
@@ -179,7 +189,71 @@ SignForm.addEventListener('submit',(event)=>{
      })
 
     })   
+
+/*************************************************************************************************/
+LoginForm.addEventListener('submit',(event)=>{
+    event.preventDefault()
+    console.log("login form clicked")
    
+    $.post('/Login',
+    {
+      username_email: document.getElementById("email_username").value,
+      password: document.getElementById("password-login").value,
+      rememberMe: document.getElementById("checkbox_rememberMe").checked,
+      
+    },(data)=>{
+        if(data.status==true)
+        {  
+            window.location.href = "/"
+          
+        }
+        
+        if(data.problem=="username"){
+            document.getElementById('invalid_email_log').style.display= 'block'
+            document.getElementById('invalid_email_log').firstChild.nextSibling.textContent="ایمیل یا نام کاربری نامتبر است"
+ 
+            document.getElementById('email_username').classList.add('input-error');
+ 
+
+        }else{
+                document.getElementById('invalid_email_log').style.display= 'none'
+                document.getElementById('email_username').classList.remove('input-error');
+
+        }
+        if(data.problem=="password"){
+            document.getElementById('invalid_password_log').style.display= 'block'
+            document.getElementById('invalid_password_log').firstChild.nextSibling.textContent="رمز اشتباه است"
+ 
+            document.getElementById('password-login').classList.add('input-error');
+ 
+
+        }else{
+                document.getElementById('invalid_password_log').style.display= 'none'
+                document.getElementById('password-login').classList.remove('input-error');
+
+        }
+        
+             
+
+   
+      
+      
+        // else if(data.problem=="username"){
+
+        // }
+
+
+
+
+
+    })
+
+
+
+
+
+
+})  
  
    
  
