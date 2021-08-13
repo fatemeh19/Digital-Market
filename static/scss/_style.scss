@@ -139,6 +139,10 @@ html {
     font-weight: bold;
     position: relative;
 }
+///////////////////////////////
+
+
+///////////////////////////////
 .nav-caret {
     position: absolute;
     top: 1.5rem;
@@ -191,31 +195,51 @@ html {
 // --------- bottom navbar
 
 #bottom_navbar {
-    // background: lightgreen;
-    // display: flex;
-    // justify-content: space-between;
-    // font-weight: bold;
+
+    a:hover {
+        color: $pink;
+        transition: color .3s ease-out;
+    }
 
     .container {
         width: 80%;
         color: white;
-        // background: lightgreen;
         font-weight: bold;
 
         .right-bottom-navbar {
             display: flex;
-        
         }
 
-        li {
+        .right-bottom-navbar-item,
+        .left-bottom-navbar-item {
             padding: .7rem 1.5rem;
+
+            .bottom-nav-link:hover{
+                color: $pink;
+                transition: color .3s ease-out;
+            }
+
+            .bottom-nav-link:hover + .dropDown-menu,
+            .dropDown-menu:hover{
+               
+                display: block;
+
+            }
+
+            .dropDown-menu:hover {
+            }
+            .dropDown-menu {
+                position: absolute;
+                display: none;
+                background-color: white;
+            }
+           
         }
 
-        .botton-nav-link:hover{
-            color: $pink;
-            transition: color .19s ease-in-out;
+
+        .left-bottom-navbar-item {
+            position: relative;
         }
-    
         
 
     }
@@ -448,6 +472,9 @@ a {
 .rp0 {
     padding-right: 0 !important;
 }
+.lp0 {
+    padding-left: 0 !important;
+}
 .border-focus:focus {
     outline: none;
     border: 1px solid rgb(52, 117, 230);
@@ -457,7 +484,13 @@ a {
     border: 1px solid red;
     
 }
-
+.caret-down {
+    position: absolute;
+    top: 1.15rem;
+    left: -.7rem;
+    color: #4b566b;
+    font-size: 0.77rem;
+}
 .invalid-box{
     color: red; 
     font-weight: normal;
