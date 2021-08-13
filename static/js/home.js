@@ -11,11 +11,15 @@ function login() {
     LoginForm.style.right = '-3px'
     SignForm.style.left = '503px'
     LoginForm.style.transition = 'right 0.25s ease-in-out'
+    LoginBtn.classList.add('active-login')
+    SignBtn.classList.remove('active-signup')
 }
 function register() {
     LoginForm.style.right = "503px";
     SignForm.style.left = "3px";
     SignForm.style.transition = 'left 0.25s ease-in-out'
+    SignBtn.classList.add('active-signup')
+    LoginBtn.classList.remove('active-login')
 }
 
 let signPage = document.getElementById('sign-page');

@@ -20,66 +20,71 @@
         <!-- ------------------------------------------ header ------------------------------------------- -->
         <header id="header">
             <nav id="top_navbar">
-                <!-- 1 -->
-                <a href="#" id="logo-section">
-                    <h3 class="logo-site-name">site name</h3>
-                    <i id="site-logo" class="fa fa-phone-laptop"></i> <!-- or img tag -->
-                </a>
-                <div id="search">
-                    <i class="fa fa-search search-icon"></i>
-                    <input class="search_input border-focus" type="text" placeholder="جستجو برای محصول">
-                    <select name="" class="form_select border-focus ">
-                        <option class="select_option" value=""> همه دسته بندی </option>
-                        <option class="select_option" value=""> کامپیوتر </option>
-                        <option class="select_option" value=""> موبایل </option>
-                        <option class="select_option" value=""> دوربین </option>
-                        <option class="select_option" value=""> هدست </option>
-                    </select>
-                </div>
-                <a href="#" class="nav_tool" onclick="showSignPage()">
-                    <div class="nav-icon-box">
-                        <i class="vav-icon fa fa-user"></i>
-                    </div>
-
-                    <p class="nav-text">
-                        <small class="small_text"> سلام وارد شوید </small>
-                        حساب من
-                    </p>
-                </a>
-                <div class="nav_tool">
-                    <a href="#" class="nav_icon">
-                        <!--تعداد کالاهای موجود در سبد خرید-->
-                        <div class="good-num-box">
-                            <span class="good-num">0</span>
-                        </div>
-
-                        <div class="nav-icon-box nav-icon-box_cart">
-                            <i class="vav-icon fa fa-cart-arrow-down"></i>
-                        </div>
-
+                <div class="container">
+                    <a href="#" id="logo-section">
+                        <h3 class="logo-site-name">site name</h3>
+                        <i id="site-logo" class="fa fa-phone-laptop"></i> <!-- or img tag -->
                     </a>
-                    <a href="#" class="nav_text_box nav-text-box_cart">
-                        <p class="nav-text nav-text-arrow">
-                            <small class="small_text">سبد خرید</small>
-                            124700
-
+                    <div id="search">
+                        <i class="fa fa-search search-icon"></i>
+                        <input class="search_input border-focus" type="text" placeholder="جستجو برای محصول">
+                        <select name="" class="form_select border-focus ">
+                            <option class="select_option" value=""> همه دسته بندی </option>
+                            <option class="select_option" value=""> کامپیوتر </option>
+                            <option class="select_option" value=""> موبایل </option>
+                            <option class="select_option" value=""> دوربین </option>
+                            <option class="select_option" value=""> هدست </option>
+                        </select>
+                    </div>
+                    <a href="#" class="nav_tool" onclick="showSignPage()">
+                        <div class="nav-icon-box">
+                            <i class="vav-icon fa fa-user"></i>
+                        </div>
+    
+                        <p class="nav-text">
+                            <small class="small_text"> سلام وارد شوید </small>
+                            حساب من
                         </p>
                     </a>
-                    <i class="fa fa-caret-down  nav-caret "></i>
+                    <div class="nav_tool">
+                        <a href="#" class="nav_icon">
+                            <!--تعداد کالاهای موجود در سبد خرید-->
+                            <div class="good-num-box">
+                                <span class="good-num">0</span>
+                            </div>
+    
+                            <div class="nav-icon-box nav-icon-box_cart">
+                                <i class="vav-icon fa fa-cart-arrow-down"></i>
+                            </div>
+    
+                        </a>
+                        <a href="#" class="nav_text_box nav-text-box_cart">
+                            <p class="nav-text nav-text-arrow">
+                                <small class="small_text">سبد خرید</small>
+                                124700
+    
+                            </p>
+                        </a>
+                        <i class="fa fa-caret-down  nav-caret "></i>
+                    </div>
                 </div>
             </nav>
             <nav id="bottom_navbar">
-                <ul class="right-bottom-navbar">
-                    <li><a href="#">خانه</a></li>
-                    <li><a href="#">موبایل</a></li>
-                    <li><a href="#">تبلت</a></li>
-                    <li><a href="#">لب تاپ</a></li>
-                </ul>
-                <ul class="left-bottom-navbar">
-                    <li><a href="#">مدیریت محصولات</a></li>
-                </ul>
+                <div class="container">
+                    <ul class="right-bottom-navbar">
+                        <li class="rp0"><a href="#" class="botton-nav-link ">خانه</a></li>
+                        <li><a href="#" class="botton-nav-link">موبایل</a></li>
+                        <li><a href="#" class="botton-nav-link">تبلت</a></li>
+                        <li><a href="#" class="botton-nav-link">لب تاپ</a></li>
+                    </ul>
+                    <ul class="left-bottom-navbar">
+                        <li><a href="#" class="botton-nav-link">مدیریت محصولات</a></li>
+                    </ul>
+                </div>
             </nav>
         </header>
+
+
         <!-- ------------------------------------------ login / sign up ------------------------------------------- -->
         <!-- for show sign in/up page add active class to sign-model class (first div) -->
         <div class="sign-model " id="sign-page">
@@ -234,6 +239,8 @@
             </div>
 
         </div>
+
+
 
         <section class="container">
 

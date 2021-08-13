@@ -12,26 +12,32 @@ html {
 }
 .site {
     // background-color: lightblue;
-    height: 100vh;
+    height: 200vh;
     width: 100%;
 }
 // ---------------------------------------------------- header
 #header {
     position: relative;
+    background-color: white;
 }
 #top_navbar,
 #bottom_navbar {
-    width: 80%;
-    margin: auto;
-    color: white;
-}
-// --------- top navbar
-#top_navbar {
-    // background: lightcoral;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
     padding: 10px;
+
+    .container {
+        width: 80%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: auto;
+    }
+}
+
+// --------- top navbar
+
+.stuck-nav {
+    position: fixed;
+    top: -1rem;
 }
 // -- site logo
 #logo-section {
@@ -185,22 +191,36 @@ html {
 // --------- bottom navbar
 
 #bottom_navbar {
-    background: lightgreen;
-    display: flex;
-    justify-content: space-between;
-    font-weight: bold;
-    li {
-        padding: .7rem 1.5rem;
-    }
-    li:hover {
-        color: red;
-    }
+    // background: lightgreen;
+    // display: flex;
+    // justify-content: space-between;
+    // font-weight: bold;
 
-    .right-bottom-navbar {
-        display: flex;
+    .container {
+        width: 80%;
+        color: white;
+        // background: lightgreen;
+        font-weight: bold;
+
+        .right-bottom-navbar {
+            display: flex;
         
+        }
+
+        li {
+            padding: .7rem 1.5rem;
+        }
+
+        .botton-nav-link:hover{
+            color: $pink;
+            transition: color .19s ease-in-out;
+        }
+    
         
+
     }
+    
+    
 }
 
 
@@ -268,9 +288,36 @@ html {
 .active-login::before,
 .active-signup::before {
     background-color: #fe696a;
+    animation: underline 1s ease-in-out;
     right: 0.2rem;
     z-index: 1;
 }
+
+.active-login::before{
+    animation: underline_login 1s ease-out; 
+}
+.active-signup::before {
+    animation: underline_signup 1s ease-out;
+}
+
+
+@keyframes underline_signup {
+    from {
+        right: -.2rem;
+    }
+    to {
+        right: .2rem;
+    }
+}
+@keyframes underline_login {
+    from {
+        right: .6rem;
+    }
+    to {
+        right: .2rem;
+    }
+}
+
 .signin-header {
     background: #eaecee;
     display: flex;
@@ -397,6 +444,9 @@ a {
 }
 .w50 {
     width: 49%;
+}
+.rp0 {
+    padding-right: 0 !important;
 }
 .border-focus:focus {
     outline: none;

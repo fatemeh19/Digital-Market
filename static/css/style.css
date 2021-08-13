@@ -12,26 +12,31 @@ html {
 }
 
 .site {
-  height: 100vh;
+  height: 200vh;
   width: 100%;
 }
 
 #header {
   position: relative;
+  background-color: white;
 }
 
 #top_navbar,
 #bottom_navbar {
+  padding: 10px;
+}
+#top_navbar .container,
+#bottom_navbar .container {
   width: 80%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   margin: auto;
-  color: white;
 }
 
-#top_navbar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 10px;
+.stuck-nav {
+  position: fixed;
+  top: -1rem;
 }
 
 #logo-section {
@@ -185,20 +190,20 @@ html {
     right: 1rem;
   }
 }
-#bottom_navbar {
-  background: lightgreen;
-  display: flex;
-  justify-content: space-between;
+#bottom_navbar .container {
+  width: 80%;
+  color: white;
   font-weight: bold;
 }
-#bottom_navbar li {
+#bottom_navbar .container .right-bottom-navbar {
+  display: flex;
+}
+#bottom_navbar .container li {
   padding: 0.7rem 1.5rem;
 }
-#bottom_navbar li:hover {
-  color: red;
-}
-#bottom_navbar .right-bottom-navbar {
-  display: flex;
+#bottom_navbar .container .botton-nav-link:hover {
+  color: #fe696a;
+  transition: color 0.19s ease-in-out;
 }
 
 .sign-model {
@@ -265,10 +270,35 @@ html {
 .active-login::before,
 .active-signup::before {
   background-color: #fe696a;
+  animation: underline 1s ease-in-out;
   right: 0.2rem;
   z-index: 1;
 }
 
+.active-login::before {
+  animation: underline_login 1s ease-out;
+}
+
+.active-signup::before {
+  animation: underline_signup 1s ease-out;
+}
+
+@keyframes underline_signup {
+  from {
+    right: -0.2rem;
+  }
+  to {
+    right: 0.2rem;
+  }
+}
+@keyframes underline_login {
+  from {
+    right: 0.6rem;
+  }
+  to {
+    right: 0.2rem;
+  }
+}
 .signin-header {
   background: #eaecee;
   display: flex;
@@ -399,6 +429,10 @@ a {
 
 .w50 {
   width: 49%;
+}
+
+.rp0 {
+  padding-right: 0 !important;
 }
 
 .border-focus:focus {
