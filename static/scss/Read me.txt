@@ -3,3 +3,8 @@ input-error : error class for input = add this class for input that you want to 
 
 
 I put "invalid-box" div after any input if the input is invalid by javascript make the display block to show the invalid message
+
+////////////////////////////////////////////////////////////////////////
+
+14/8/2021
+if press on the toggle bar in mobile size add "active" class to bottom navbar

@@ -1,4 +1,4 @@
-<header id="header">
+<!-- <header id="header"> -->
     <nav id="top_navbar">
         <div class="container">
             <a href="#" id="logo-section">
@@ -16,43 +16,56 @@
                     <option class="select_option" value=""> هدست </option>
                 </select>
             </div>
-            <a href="#" class="nav_tool" onclick="showSignPage()">
-                <div class="nav-icon-box">
-                    <i class="vav-icon fa fa-user"></i>
-                </div>
-
-                <p class="nav-text">
-                    <small class="small_text"> سلام وارد شوید </small>
-                    حساب من
-                </p>
-            </a>
-            <div class="nav_tool">
-                <a href="#" class="nav_icon">
-                    <!--تعداد کالاهای موجود در سبد خرید-->
-                    <div class="good-num-box">
-                        <span class="good-num">0</span>
+            <div class="d-flex left-top-nav ">
+               
+                <!-- acount -->
+                <a href="#" class="nav_tool acount" onclick="showSignPage()">
+                    <div class="nav-icon-box">
+                        <i class="vav-icon fa fa-user"></i>
                     </div>
 
-                    <div class="nav-icon-box nav-icon-box_cart">
-                        <i class="vav-icon fa fa-cart-arrow-down"></i>
-                    </div>
-
-                </a>
-                <a href="#" class="nav_text_box nav-text-box_cart">
-                    <p class="nav-text nav-text-arrow">
-                        <small class="small_text">سبد خرید</small>
-                        124700
-
+                    <p class="nav-text">
+                        <small class="small_text"> سلام وارد شوید </small>
+                        حساب من
                     </p>
                 </a>
-                <i class="fa fa-caret-down  nav-caret "></i>
+                <!-- shop -->
+                <div class="nav_tool shop">
+                    <a href="#" class="nav_icon">
+                        <!--تعداد کالاهای موجود در سبد خرید-->
+                        <div class="good-num-box">
+                            <span class="good-num">0</span>
+                        </div>
+    
+                        <div class="nav-icon-box nav-icon-box_cart">
+                            <i class="vav-icon fa fa-cart-arrow-down"></i>
+                        </div>
+    
+                    </a>
+                    <a href="#" class="nav_text_box nav-text-box_cart">
+                        <p class="nav-text nav-text-arrow">
+                            <small class="small_text">سبد خرید</small>
+                            124700
+    
+                        </p>
+                    </a>
+                    <i class="fa fa-caret-down  nav-caret "></i>
+                </div>
+                <!-- toggle -->
+                <a href="#" class="nav_tool navbar-toggler-icon">
+                    <div class="nav-icon-box">
+                        <i class="vav-icon fa fa-bars"></i>
+                    </div>
+                </a>
+                
+                   
             </div>
         </div>
     </nav>
     <nav id="bottom_navbar">
         <div class="container">
             <ul class="right-bottom-navbar">
-                <li class="right-bottom-navbar-item rp0">
+                <li class="right-bottom-navbar-item rp0 maxWmobile">
                     <a href="#" class="bottom-nav-link ">خانه</a>
                     <ul class="dropDown-menu">
                          </ul>
@@ -165,7 +178,7 @@
             </ul>
         </div>
     </nav>
-</header>
+<!-- </header> -->
  
 
 
