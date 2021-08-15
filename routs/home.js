@@ -22,7 +22,7 @@ Router.use(session({
 }))
 
 
-Router.get('/',(req, res) =>  res.render('home'))
+Router.get('/',(req, res) =>  res.render('Admin/admin-page'))
     
 
    
