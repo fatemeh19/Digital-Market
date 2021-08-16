@@ -11,22 +11,77 @@ mongoose.connect("mongodb://localhost:27017/Digital_Market", {useNewUrlParser: t
 });
 
 /**********************************************User Model***************************************/
-var MobileSchema = Product.product({
-    text: String,
-    author: String
+let MobileSchema = Product.product({
+    General :{
+        SimCardNumber : Number,
+        ProductYear : Number
+    },
+    Processor :{
+         Type : String,
+        GraphicProcessor : String
+    },
+    Memory :{
+        InternalMemory : String,
+        Ram : String,
+        ExternalMemSupporting :String
+    },
+    Camera :{
+        Type : String,
+        PicQuality : String,
+         Panorama : String,
+        VideoQuality : String,
+        SelfieCamera : String
+    },
+    Screen :{
+        Touch : String,
+        Size : Number,
+        ScreenDimensions : String,
+        resolution : String ,
+        ScreenProtector : String
+
+    },
+    Body :{
+        Dimensions : String,
+        Weight : String,
+        Material : String,
+        ExteraAbility : String
+    },
+    SoftwareAbility :{
+        OperatingSystem : String,
+        PersianSupporting : String,
+        PersainMenu : String,
+        PlayMusicFormats : String,
+        PlayVideoFormats : String
+    },
+    Connections :{
+        ConnectionNetWorks: String,
+        ConnectionTechnology: String,
+        Wifi : String,
+        Bluetooth : String,
+        Radio :String,
+        GpsTechnology : String,
+        ConnectionPort : String
+    },
+    Sound :{
+        Speaker : String,
+        SoundOutput : String,
+        Jack : String
+
+    },
+    Battery :{
+        Changable : String,
+        Property : String,
+        PlayMusiccharge: String
+    }
+
+
+
 }
     
 );
-// MobileSchema.add({
-    
-// });
+module.exports.MobileSchema = MobileSchema
 
-// var userSchema = UserSchema();
-// var adminSchema = UserSchema({
-//   anotherField: String
-// });
-
-let MobileModel = mongoose.model('Mobile', MobileSchema);
+let MobileModel = mongoose.model('Mobile', MobileSchema)
 module.exports.MobileModel=MobileModel
 
 

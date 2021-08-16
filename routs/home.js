@@ -11,7 +11,9 @@ var methodOverride = require('method-override')
 /* bodyParser using for extracting the body of requests.but for extracting the file you should use 
 the multiparty and will use it for extracting and saving in the database */
 const bodyParser = require('body-parser');
-const Mobile = require('../models/products/Mobile');
+ const Mobile = require('../models/products/Mobile');
+const Tablet = require('../models/products/Tablet');
+const Laptop = require('../models/products/Laptop');
 
 /**************************************MiddleWares**************************************************/
 Router.use(bodyParser.urlencoded({extended:false}))
@@ -27,20 +29,40 @@ Router.use(session({
 Router.get('/',(req, res) =>  res.render('Admin/admin-page'))
 Router.get('/',(req, res) => {
   res.render('home')
-  let mobile = new Mobile.MobileModel({
-        type:"String",  
-        name:"String",                            
-        // product_number: Math.floor(Math.random() * 10000),
-        brand:"String",
-        price:"String",
-        text: "String",
-        author: "String"
 
+//   var tablet = new Tablet.TabletModel({
+        
+//         General:{
+//           SimCardNumber : 1000,
+//           ProductYear : 1111
+//         }
+   
+//   })
 
+//    tablet.save()
 
-  })
+//    var mobile = new Mobile.MobileModel({
+        
+//     General:{
+//       SimCardNumber : 1000,
+//       ProductYear : 1111
+//     }
 
-  console.log(mobile)
+// })
+
+// mobile.save()
+
+// var laptop = new Laptop.LaptopModel({
+        
+//   Battery :{
+//     Property : "String,"
+   
+// }
+
+// })
+// laptop.save()
+
+// mobile.save()
 
 
 

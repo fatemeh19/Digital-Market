@@ -1,5 +1,4 @@
 let mongoose = require('mongoose');
-let util = require('util');
 
 /*************************************Connecting To MongoDB***************************************/
 
@@ -26,25 +25,16 @@ module.exports.product = (add)=> {
     let schema =new mongoose.Schema({
         type:String,  
         name:String,                            
-        // product_number: Math.floor(Math.random() * 10000),
+        product_number: Number,
         brand:String,
-        price:String
+        price:String,
+        colors:[]
 
     })
     if(add) {
         schema.add(add);
       }
       return schema;
-    //call super        
-    //mongoose.Schema.apply(this, arguments);     
-    //add                                     
-    this.add({
-        type:String,  
-        name:String,                            
-        product_number: Math.floor(Math.random() * 10000),
-        brand:String,
-        price:String
-    });                                     
+    
+                                     
 };
-
-//util.inherits(module.exports.product, mongoose.Schema);
