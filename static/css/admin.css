@@ -29,25 +29,6 @@ header .admin-nav-box .caret-down {
   top: 0.18rem;
 }
 
-.Product-management,
-.Order-management,
-.Add-product {
-  background-color: red;
-  position: absolute;
-  right: 9.5rem;
-  top: 4rem;
-  width: 90%;
-  height: 100vh;
-}
-
-.Order-management {
-  background-color: yellow;
-}
-
-.Add-product {
-  background-color: blue;
-}
-
 .right-nav {
   width: 10%;
   height: 100vh;
@@ -93,6 +74,57 @@ header .admin-nav-box .caret-down {
   color: #1e1e62;
 }
 
+.Product-management,
+.Order-management,
+.Add-product {
+  position: absolute;
+  right: 9.5rem;
+  top: 4rem;
+  width: 89%;
+  height: 100vh;
+}
+
+.Product-management .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+}
+.Product-management .container .buttons {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 1rem 2rem;
+}
+.Product-management .container .products {
+  width: 100%;
+}
+.Product-management .container .products .Ptable {
+  width: 100%;
+  margin: 0 0.5rem;
+  border: 1px solid #ddd;
+  border-collapse: collapse;
+}
+.Product-management .container .products .Ptable tr td {
+  border: 1px solid #ddd;
+  padding: 0.5rem 1rem;
+}
+.Product-management .container .products .Ptable tr td[class=tcheckbox] {
+  display: none;
+}
+.Product-management .container .products .Ptable .thead {
+  background-color: #1e1e62;
+  color: white;
+}
+
+.Order-management {
+  background-color: yellow;
+}
+
+.Add-product {
+  background-color: blue;
+}
+
 a {
   text-decoration: none;
 }
@@ -109,6 +141,38 @@ a {
 
 .relative {
   position: relative;
+}
+
+.active-table-cell {
+  display: table-cell;
+}
+
+.active {
+  display: block;
+}
+
+li {
+  list-style: none;
+}
+
+.center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button {
+  padding: 0.5rem 2rem;
+  background-color: #1e1e62;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.5);
+}
+
+.button:hover {
+  background-color: #4d4d91;
 }
 
 /*# sourceMappingURL=admin.css.map */

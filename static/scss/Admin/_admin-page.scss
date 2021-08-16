@@ -11,6 +11,7 @@ body, html {
     font-family: "vazir";
 }
 
+// ------------------------------------- header
 header {
     width: 100%;
     background-color: white;
@@ -20,7 +21,6 @@ header {
         display: flex;
         align-items: center;
         direction: ltr;
-
         .caret-down {
             font-size: .8rem;
             position: relative;
@@ -30,46 +30,19 @@ header {
     }
 }
 
-
-.Product-management,
-.Order-management,
-.Add-product {
-    background-color: red;
-    position: absolute;
-    right: 9.5rem;
-    top: 4rem;
-    width: 90%;
-    height: 100vh;
-}
-.Order-management {
-    background-color: yellow;
-
-}
-
-.Add-product {
-    background-color: blue;
-}
-
+// ------------------------------------- right nav
 .right-nav {
     width: 10%;
     height: 100vh;
     position: absolute;
-    
     top: 0;
     right: 0;
     background-color: $blue-admin;
-
     font-size: .97rem;
-
-
-    
     .right-nav-box{
         height: 4rem;
         background-color: $blue-admin;
-        
-        
         border-bottom: 1px solid rgba(245, 245, 248, .5);
-
         .rn-link {
             color: white;
             height: 100%;
@@ -78,45 +51,91 @@ header {
             align-items: center;
             justify-content: center;
             cursor: pointer;
-
             i, small {
-                
                 -webkit-text-stroke-color: white;
             } 
-            
             .add-product {
                 padding-top: .5rem;
             }
-
             small {
                 font-size: .6rem;
                 position: absolute;
                 right: -4.5px;
                 top: 3.5px;
             }
-            
-
         }
-        
     }
     .right-nav-box:not(.white):hover {
         background-color: rgb(77, 77, 145);
     }
-
     .white {
         background-color: whitesmoke;
         a strong, a i {
             color: $blue-admin;
         }
     }
+}
 
+// ------------------------------------- pages
+.Product-management,
+.Order-management,
+.Add-product {
+    position: absolute;
+    right: 9.5rem;
+    top: 4rem;
+    width: 89%;
+    height: 100vh;
+}
+.Product-management {
+    .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: column;
+        .buttons {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            padding: 1rem 2rem;
+        }
+        .products {
+            width: 100%;
+            .Ptable {
+                width: 100%;
+                margin: 0 .5rem;
+                border: 1px solid #ddd;
+                border-collapse: collapse;
+                tr {
+                    // background-color: blue;
+                    
+                    td {
+                        border: 1px solid #ddd;
+                        padding: .5rem 1rem;
+                    }
+                    td[class = "tcheckbox"]{
+                        display: none;;
+                    }
+                }
+            }
+            .Ptable .thead {
+                background-color: $blue-admin;
+                color: white;
+            }
+        }
+    }
+}
+.Order-management {
+    background-color: yellow;
+}
+
+.Add-product {
+    background-color: blue;
 }
 
 
 
 
-
-// defult 
+// -------------------------------------- defult 
 a {
     text-decoration: none;
 }
@@ -130,4 +149,30 @@ a {
 }
 .relative {
     position: relative;
+}
+.active-table-cell {
+    display: table-cell;
+}
+.active {
+    display: block;
+}
+li {
+    list-style: none;
+}
+.center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.button {
+    padding: .5rem 2rem;
+    background-color: $blue-admin;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.5);
+}
+.button:hover {
+    background-color: rgb(77, 77, 145);
 }
