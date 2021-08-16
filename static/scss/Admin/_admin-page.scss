@@ -85,6 +85,7 @@ header {
     top: 4rem;
     width: 89%;
     height: 100vh;
+    display: none;
 }
 .Product-management {
     .container {
@@ -125,6 +126,7 @@ header {
     }
 }
 .Order-management {
+    display: block;
     background-color: yellow;
 }
 

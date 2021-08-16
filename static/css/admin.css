@@ -82,6 +82,7 @@ header .admin-nav-box .caret-down {
   top: 4rem;
   width: 89%;
   height: 100vh;
+  display: none;
 }
 
 .Product-management .container {
@@ -118,6 +119,7 @@ header .admin-nav-box .caret-down {
 }
 
 .Order-management {
+  display: block;
   background-color: yellow;
 }
 
