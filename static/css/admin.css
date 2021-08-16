@@ -1,0 +1,178 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  background-color: #f5f4f4;
+  height: 100vh;
+  direction: rtl;
+  font-family: "vazir";
+}
+
+header {
+  width: 100%;
+  background-color: white;
+  color: #1e1e62;
+}
+header .admin-nav-box {
+  padding: 1.2rem 3rem;
+  display: flex;
+  align-items: center;
+  direction: ltr;
+}
+header .admin-nav-box .caret-down {
+  font-size: 0.8rem;
+  position: relative;
+  left: -4.7rem;
+  top: 0.18rem;
+}
+
+.right-nav {
+  width: 10%;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: #1e1e62;
+  font-size: 0.97rem;
+}
+.right-nav .right-nav-box {
+  height: 4rem;
+  background-color: #1e1e62;
+  border-bottom: 1px solid rgba(245, 245, 248, 0.5);
+}
+.right-nav .right-nav-box .rn-link {
+  color: white;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.right-nav .right-nav-box .rn-link i, .right-nav .right-nav-box .rn-link small {
+  -webkit-text-stroke-color: white;
+}
+.right-nav .right-nav-box .rn-link .add-product {
+  padding-top: 0.5rem;
+}
+.right-nav .right-nav-box .rn-link small {
+  font-size: 0.6rem;
+  position: absolute;
+  right: -4.5px;
+  top: 3.5px;
+}
+.right-nav .right-nav-box:not(.white):hover {
+  background-color: #4d4d91;
+}
+.right-nav .white {
+  background-color: whitesmoke;
+}
+.right-nav .white a strong, .right-nav .white a i {
+  color: #1e1e62;
+}
+
+.Product-management,
+.Order-management,
+.Add-product {
+  position: absolute;
+  right: 9.5rem;
+  top: 4rem;
+  width: 89%;
+  height: 100vh;
+}
+
+.Product-management .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+}
+.Product-management .container .buttons {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 1rem 2rem;
+}
+.Product-management .container .products {
+  width: 100%;
+}
+.Product-management .container .products .Ptable {
+  width: 100%;
+  margin: 0 0.5rem;
+  border: 1px solid #ddd;
+  border-collapse: collapse;
+}
+.Product-management .container .products .Ptable tr td {
+  border: 1px solid #ddd;
+  padding: 0.5rem 1rem;
+}
+.Product-management .container .products .Ptable tr td[class=tcheckbox] {
+  display: none;
+}
+.Product-management .container .products .Ptable .thead {
+  background-color: #1e1e62;
+  color: white;
+}
+
+.Order-management {
+  background-color: yellow;
+}
+
+.Add-product {
+  background-color: blue;
+}
+
+a {
+  text-decoration: none;
+}
+
+.empty {
+  color: transparent;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: #4b566b;
+}
+
+.mt0 {
+  margin-top: 0 !important;
+}
+
+.relative {
+  position: relative;
+}
+
+.active-table-cell {
+  display: table-cell;
+}
+
+.active {
+  display: block;
+}
+
+li {
+  list-style: none;
+}
+
+.center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button {
+  padding: 0.5rem 2rem;
+  background-color: #1e1e62;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.5);
+}
+
+.button:hover {
+  background-color: #4d4d91;
+}
+
+/*# sourceMappingURL=admin.css.map */

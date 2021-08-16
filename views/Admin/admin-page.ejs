@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- links -->
+    <link rel="stylesheet" href="/static/font-face.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
+    <link rel="stylesheet" href="/static/admin.css">
+    
+    <title>Document</title>
+</head>
+<body>
+    <!-- header -->
+    <header>
+        <div class="admin-nav-box">
+            <a href="">
+                <span>ادمین</span>
+                <i class="fa fa-user empty"></i>
+                <i class="fa fa-caret-down caret-down empty"></i>
+            </a>
+        </div>
+    </header>
+
+
+    <!-- ---------------------------- right navbar --------------------- -->
+    <nav class="right-nav">
+        <!-- admin -->
+        <div class="right-nav-box white">
+            <a class="rn-link">
+                <i class="fa fa-user-circle empty"></i>
+                <strong>ادمین منو</strong>
+            </a>
+        </div>
+        <!-- home -->
+        <div class="right-nav-box">
+            <a class="rn-link">
+                <i class="fa fa-home empty"></i>
+                <span>خانه</span>
+            </a>
+        </div>
+        <!-- product-management -->
+        <div class="right-nav-box">
+            <a class="rn-link" href="">
+                <i class="fa fa-cubes"></i>
+                <span>مدیریت محصولات</span>
+            </a>
+        </div>
+        <!-- order-management -->
+        <div class="right-nav-box">
+            <a class="rn-link">
+                <i class="fa fa-shopping-basket empty"></i>
+                <span>مدیریت سفارشات</span>
+            </a>
+        </div>
+        <!-- add product -->
+        <div class="right-nav-box">
+            <a class="rn-link">
+                <div class="relative add-product">
+                    <small class="fa fa-plus empty"></small>
+                    <i class="fa fa-cubes"></i>
+                </div>
+                <span>اضافه کردن محصول</span>
+            </a>
+        </div>
+    </nav>
+
+    <!-- ---------------------------- pages------------------------------ -->
+    <!-- hint : add "active" class for show -->
+    <!-- ------- product-managment page -->
+    <div class="Product-management">
+        <!-- کل صفحه -->
+        <div class="container">
+            <!-- delete select buttons -->
+            <div class="buttons">
+                <button class="select button">علامت زدن</button>
+                <button class="remove button">حذف</button>
+            </div>
+            <!-- product list -->
+            <div class="products">
+                <!-- table : product -->
+                <!-- description : firs element of each tr is checkbox
+                                   td direction is column -->
+                <table class="Ptable">
+                    <!-- HEAD -->
+                    <tr class="thead"> 
+                        <!-- hint : if user press on select button add "active-table-cell" 
+                                    class to firs td of each tr -->
+                        <td class="tcheckbox">
+                            <div class="center">
+                                <input type="checkbox" name="" id="">
+                            </div>
+                        </td>
+                        <td>خالی</td>
+                        <td>خالی</td>
+                        <td>خالی</td>
+                        <td>خالی</td>
+                        <td>خالی</td>
+                        <td>خالی</td>
+                        <td>خالی</td>
+                        <td>خالی</td>
+                        <td>
+                            <div class="center">
+                                <span>ویرایش</span>
+                            </div>
+                        </td>
+                    </tr>
+                    <!-- BODY -->
+                    <!-- row : 1 -->
+                    <tr> 
+                        <td class="tcheckbox">
+                            <div class="center">
+                                <input type="checkbox" name="" id="">
+                            </div>
+                        </td>
+                        <td>خالی</td>
+                        <td>خالی</td>
+                        <td>خالی</td>
+                        <td>خالی</td>
+                        <td>خالی</td>
+                        <td>خالی</td>
+                        <td>خالی</td>
+                        <td>خالی</td>
+                        <td>
+                            <div class="center">
+                                <button class="Pedit button">ویرایش</button>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <!-- row : 2 -->
+                    <tr> 
+                        <td class="tcheckbox">
+                            <div class="center">
+                                <input type="checkbox" name="" id="">
+                            </div>
+                        </td>
+                        <td>خالی</td>
+                        <td>خالی</td>
+                        <td>خالی</td>
+                        <td>خالی</td>
+                        <td>خالی</td>
+                        <td>خالی</td>
+                        <td>خالی</td>
+                        <td>خالی</td>
+                        <td>
+                            <div class="center">
+                                <button class="Pedit button">ویرایش</button>
+                            </div>
+                        </td>
+                    </tr>
+                    <!-- row : 3 -->
+                    <tr> 
+                        <td class="tcheckbox">
+                            <div class="center">
+                                <input type="checkbox" name="" id="">
+                            </div>
+                        </td>
+                        <td>خالی</td>
+                        <td>خالی</td>
+                        <td>خالی</td>
+                        <td>خالی</td>
+                        <td>خالی</td>
+                        <td>خالی</td>
+                        <td>خالی</td>
+                        <td>خالی</td>
+                        <td>
+                            <div class="center">
+                                <button class="Pedit button">ویرایش</button>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        
+    </div>
+
+    <!-- hint : add "active" class for show -->
+    <!-- ------ order managment page -->
+    <!-- <div class="Order-management">
+        <h1>lor</h1>
+    </div> -->
+
+    <!-- hint : add "active" class for show -->
+    <!-- ------- add product page -->
+    <!-- <div class="Add-product">
+        <h1>lor</h1>
+    </div> -->
+
+
+
+</body>
+</html>
