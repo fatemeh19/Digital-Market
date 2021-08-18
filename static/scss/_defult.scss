@@ -36,6 +36,10 @@ a {
 .border-focus:focus {
     outline: none;
     border: 1px solid rgb(52, 117, 230);
+    // outline: 1.1px solid rgb(52, 117, 230);
+    // border: none !important;
+    // border-radius: 1px;
+    // padding: .6rem !important;
 }
 .no-border{
     border-bottom: none !important;

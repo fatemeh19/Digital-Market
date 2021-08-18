@@ -34,11 +34,13 @@ header {
 .right-nav {
     width: 10%;
     height: 100vh;
+    height: 100%;
     position: absolute;
     top: 0;
     right: 0;
     background-color: $blue-admin;
     font-size: .97rem;
+    border-bottom-left-radius: 90px;
     .right-nav-box{
         height: 4rem;
         background-color: $blue-admin;
@@ -66,13 +68,14 @@ header {
         }
     }
     .right-nav-box:not(.white):hover {
-        background-color: rgb(77, 77, 145);
+        background-color: $blue-admin-hover;
     }
     .white {
         background-color: whitesmoke;
         a strong, a i {
             color: $blue-admin;
         }
+
     }
 }
 
@@ -80,13 +83,37 @@ header {
 .Product-management,
 .Order-management,
 .Add-product {
+    display: none;
     position: absolute;
     right: 9.5rem;
     top: 4rem;
-    width: 89%;
-    height: 100vh;
-    display: none;
+    width: 90.04%;
+    height: 91.3vh;
 }
+//  ------- after
+.Add-product::after,
+.Order-management::after,
+.Product-management::after {
+    position: absolute;
+    right: -.82rem;
+    width: 0px;
+    height: 0px;
+    border-top: 13px solid transparent;
+    border-bottom: 11px solid transparent;
+    border-left: 13px solid whitesmoke;
+    display: inline-block;
+    content: '';
+}
+.Product-management::after {
+    top: 5.35rem;
+}
+.Order-management::after {
+    top: 9.35rem;
+}
+.Add-product::after {
+    top: 13.35rem;
+}
+// producti managment page
 .Product-management {
     .container {
         display: flex;
@@ -102,13 +129,11 @@ header {
         .products {
             width: 100%;
             .Ptable {
-                width: 100%;
+                width: 98.8%;
                 margin: 0 .5rem;
                 border: 1px solid #ddd;
                 border-collapse: collapse;
                 tr {
-                    // background-color: blue;
-                    
                     td {
                         border: 1px solid #ddd;
                         padding: .5rem 1rem;
@@ -117,25 +142,184 @@ header {
                         display: none;;
                     }
                 }
+                tr:not(.thead):hover {
+                    background-color: rgb(207, 208, 216);
+                }
             }
             .Ptable .thead {
                 background-color: $blue-admin;
-                color: white;
+                color: whitesmoke;
+                td {
+                    p {
+                        font-weight: 1.5rem;
+                    }
+                }
             }
         }
     }
 }
+// order managment page
 .Order-management {
-    display: block;
-    background-color: yellow;
+    background-color: rgba(255, 255, 0, .4);
 }
-
+// add product page
 .Add-product {
-    background-color: blue;
+    // background-color: rgba(0, 0, 255, .4);
+    // -------- HEAD
+    .head {
+        display: flex;
+        align-items: center;
+        margin-top: 1rem;
+        margin-right: 1.5rem;
+        .Pcategory {
+            align-items: flex-end;
+            margin-right: 2rem;
+            .container {
+                display: flex;
+                align-items: center;
+                .Pselect{
+                    padding: .4rem 1rem;
+                    outline: none;
+                    background-color: $blue-admin;
+                    color: whitesmoke;
+                    border: none;
+                    border-radius: 5px;
+                    cursor: pointer;
+                }
+                .Pselect,
+                label {
+                    margin: 0 .5rem;
+                }
+            }
+            
+        }
+    }
+    // -------- مشترک
+    .public-Pinfo,
+    .mobile-info-box,
+    .tablet-info-box,
+    .labtop-info-box {
+        display: flex;
+        justify-content: space-between;
+        margin: 1rem 2rem;
+        padding: 1rem;
+        box-shadow: 0 0px 20px rgba(87, 87, 137, 0.1);
+    }
+    .mobile-info-box,
+    .tablet-info-box,
+    .labtop-info-box {
+        background-color: white;
+        padding: 0 !important;
+        display: none;
+        border-bottom-right-radius: 5px;
+        border-bottom-left-radius: 5px;
+        .info-head{
+            background-color: $blue-admin;
+            color: whitesmoke;
+            width: 100%;
+            border-top-right-radius: 5px;
+            border-top-left-radius: 5px;
+            padding: .8rem;
+        }
+        .info-container {
+            padding-right: 2rem;
+            .info-subBox {
+                margin: 1.5rem 0;  
+                .info-subBox-title {
+                    margin: .5rem 0;
+                } 
+                .info-subBox-title::before {
+                    position: absolute;
+                    right: 3.3rem;
+                    width: 0px;
+                    height: 0px;
+                    border-top: 0 solid transparent;
+                    border-bottom: 8px solid transparent;
+                    border-right: 6px solid black;
+                    display: inline-block;
+                    content: "";
+                }
+                .info-subBox-item {
+                    display: flex;
+                    justify-content: space-between;
+                    width: 80%;
+                    margin-bottom: .2rem;
+                    label {
+                        width: 15rem;
+                        background-color: #e5e5e5;
+                        padding: 0.3rem .5rem;
+                        color: black;
+                        font-size: .85rem;
+                        
+                    }
+                    input {
+                        width: 48rem;
+                        padding: .4rem;
+                        border: none;
+                        border-bottom: 1px solid rgba(177, 175, 175, .7);
+                        margin-bottom: .1rem;
+                    }
+                    input:focus {
+                        outline: none;
+                        border-bottom: 1.3px solid #32a1ce;
+                        transition: all .4s linear;
+                    }
+                    
+                }
+            }
+        }
+        .btn-box {
+            display: flex;
+            justify-content: flex-end;
+            margin: 1rem;
+            padding: 1rem;
+            .Padd {
+                // margin: 1rem 0;
+                direction: ltr;
+            }
+        }
+    }
+    
+    // ------- public information
+    .public-Pinfo {
+        background-color: white;
+        border-radius: 5px;
+        .Pinfo, 
+        .Pcategory, 
+        .Pimage {
+            display: flex;
+            justify-content: center;
+            margin: 0 1rem ;
+        }
+        .Pinfo {
+            width: 50%;
+            flex-direction: column;
+            .Pinfo-item-box {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin: .5rem 0;
+                input {
+                    width: 78%;
+                    padding: .6rem;
+                    border: 1px solid rgba(0, 0, 0, .2);
+                    border-radius: 3px;
+                }
+            }
+        }
+        .Pimage {
+            border: 1px solid red;
+            width: 30%;
+            height: 380px;
+        }
+    }
+    // ------- mobile information box
+    // .mobile-info-box {
+
+    // }
+
+
 }
-
-
-
 
 // -------------------------------------- defult 
 a {
@@ -156,7 +340,7 @@ a {
     display: table-cell;
 }
 .active {
-    display: block;
+    display: block !important;
 }
 li {
     list-style: none;
@@ -176,5 +360,12 @@ li {
     box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.5);
 }
 .button:hover {
-    background-color: rgb(77, 77, 145);
+    background-color: $blue-admin-hover;
+}
+.border-focus:focus {
+    outline: none;
+    border: 1.1px solid #32a1ce !important;
+    padding: .6rem !important;
+    border-radius: 1px;
+    transition: border .4s linear;
 }

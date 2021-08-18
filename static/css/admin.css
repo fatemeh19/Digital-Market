@@ -32,11 +32,13 @@ header .admin-nav-box .caret-down {
 .right-nav {
   width: 10%;
   height: 100vh;
+  height: 100%;
   position: absolute;
   top: 0;
   right: 0;
   background-color: #1e1e62;
   font-size: 0.97rem;
+  border-bottom-left-radius: 90px;
 }
 .right-nav .right-nav-box {
   height: 4rem;
@@ -77,12 +79,38 @@ header .admin-nav-box .caret-down {
 .Product-management,
 .Order-management,
 .Add-product {
+  display: none;
   position: absolute;
   right: 9.5rem;
   top: 4rem;
-  width: 89%;
-  height: 100vh;
-  display: none;
+  width: 90.04%;
+  height: 91.3vh;
+}
+
+.Add-product::after,
+.Order-management::after,
+.Product-management::after {
+  position: absolute;
+  right: -0.82rem;
+  width: 0px;
+  height: 0px;
+  border-top: 13px solid transparent;
+  border-bottom: 11px solid transparent;
+  border-left: 13px solid whitesmoke;
+  display: inline-block;
+  content: "";
+}
+
+.Product-management::after {
+  top: 5.35rem;
+}
+
+.Order-management::after {
+  top: 9.35rem;
+}
+
+.Add-product::after {
+  top: 13.35rem;
 }
 
 .Product-management .container {
@@ -101,7 +129,7 @@ header .admin-nav-box .caret-down {
   width: 100%;
 }
 .Product-management .container .products .Ptable {
-  width: 100%;
+  width: 98.8%;
   margin: 0 0.5rem;
   border: 1px solid #ddd;
   border-collapse: collapse;
@@ -113,18 +141,182 @@ header .admin-nav-box .caret-down {
 .Product-management .container .products .Ptable tr td[class=tcheckbox] {
   display: none;
 }
+.Product-management .container .products .Ptable tr:not(.thead):hover {
+  background-color: #cfd0d8;
+}
 .Product-management .container .products .Ptable .thead {
   background-color: #1e1e62;
-  color: white;
+  color: whitesmoke;
+}
+.Product-management .container .products .Ptable .thead td p {
+  font-weight: 1.5rem;
 }
 
 .Order-management {
-  display: block;
-  background-color: yellow;
+  background-color: rgba(255, 255, 0, 0.4);
 }
 
-.Add-product {
-  background-color: blue;
+.Add-product .head {
+  display: flex;
+  align-items: center;
+  margin-top: 1rem;
+  margin-right: 1.5rem;
+}
+.Add-product .head .Pcategory {
+  align-items: flex-end;
+  margin-right: 2rem;
+}
+.Add-product .head .Pcategory .container {
+  display: flex;
+  align-items: center;
+}
+.Add-product .head .Pcategory .container .Pselect {
+  padding: 0.4rem 1rem;
+  outline: none;
+  background-color: #1e1e62;
+  color: whitesmoke;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.Add-product .head .Pcategory .container .Pselect,
+.Add-product .head .Pcategory .container label {
+  margin: 0 0.5rem;
+}
+.Add-product .public-Pinfo,
+.Add-product .mobile-info-box,
+.Add-product .tablet-info-box,
+.Add-product .labtop-info-box {
+  display: flex;
+  justify-content: space-between;
+  margin: 1rem 2rem;
+  padding: 1rem;
+  box-shadow: 0 0px 20px rgba(87, 87, 137, 0.1);
+}
+.Add-product .mobile-info-box,
+.Add-product .tablet-info-box,
+.Add-product .labtop-info-box {
+  background-color: white;
+  padding: 0 !important;
+  display: none;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+.Add-product .mobile-info-box .info-head,
+.Add-product .tablet-info-box .info-head,
+.Add-product .labtop-info-box .info-head {
+  background-color: #1e1e62;
+  color: whitesmoke;
+  width: 100%;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+  padding: 0.8rem;
+}
+.Add-product .mobile-info-box .info-container,
+.Add-product .tablet-info-box .info-container,
+.Add-product .labtop-info-box .info-container {
+  padding-right: 2rem;
+}
+.Add-product .mobile-info-box .info-container .info-subBox,
+.Add-product .tablet-info-box .info-container .info-subBox,
+.Add-product .labtop-info-box .info-container .info-subBox {
+  margin: 1.5rem 0;
+}
+.Add-product .mobile-info-box .info-container .info-subBox .info-subBox-title,
+.Add-product .tablet-info-box .info-container .info-subBox .info-subBox-title,
+.Add-product .labtop-info-box .info-container .info-subBox .info-subBox-title {
+  margin: 0.5rem 0;
+}
+.Add-product .mobile-info-box .info-container .info-subBox .info-subBox-title::before,
+.Add-product .tablet-info-box .info-container .info-subBox .info-subBox-title::before,
+.Add-product .labtop-info-box .info-container .info-subBox .info-subBox-title::before {
+  position: absolute;
+  right: 3.3rem;
+  width: 0px;
+  height: 0px;
+  border-top: 0 solid transparent;
+  border-bottom: 8px solid transparent;
+  border-right: 6px solid black;
+  display: inline-block;
+  content: "";
+}
+.Add-product .mobile-info-box .info-container .info-subBox .info-subBox-item,
+.Add-product .tablet-info-box .info-container .info-subBox .info-subBox-item,
+.Add-product .labtop-info-box .info-container .info-subBox .info-subBox-item {
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  margin-bottom: 0.2rem;
+}
+.Add-product .mobile-info-box .info-container .info-subBox .info-subBox-item label,
+.Add-product .tablet-info-box .info-container .info-subBox .info-subBox-item label,
+.Add-product .labtop-info-box .info-container .info-subBox .info-subBox-item label {
+  width: 15rem;
+  background-color: #e5e5e5;
+  padding: 0.3rem 0.5rem;
+  color: black;
+  font-size: 0.85rem;
+}
+.Add-product .mobile-info-box .info-container .info-subBox .info-subBox-item input,
+.Add-product .tablet-info-box .info-container .info-subBox .info-subBox-item input,
+.Add-product .labtop-info-box .info-container .info-subBox .info-subBox-item input {
+  width: 48rem;
+  padding: 0.4rem;
+  border: none;
+  border-bottom: 1px solid rgba(177, 175, 175, 0.7);
+  margin-bottom: 0.1rem;
+}
+.Add-product .mobile-info-box .info-container .info-subBox .info-subBox-item input:focus,
+.Add-product .tablet-info-box .info-container .info-subBox .info-subBox-item input:focus,
+.Add-product .labtop-info-box .info-container .info-subBox .info-subBox-item input:focus {
+  outline: none;
+  border-bottom: 1.3px solid #32a1ce;
+  transition: all 0.4s linear;
+}
+.Add-product .mobile-info-box .btn-box,
+.Add-product .tablet-info-box .btn-box,
+.Add-product .labtop-info-box .btn-box {
+  display: flex;
+  justify-content: flex-end;
+  margin: 1rem;
+  padding: 1rem;
+}
+.Add-product .mobile-info-box .btn-box .Padd,
+.Add-product .tablet-info-box .btn-box .Padd,
+.Add-product .labtop-info-box .btn-box .Padd {
+  direction: ltr;
+}
+.Add-product .public-Pinfo {
+  background-color: white;
+  border-radius: 5px;
+}
+.Add-product .public-Pinfo .Pinfo,
+.Add-product .public-Pinfo .Pcategory,
+.Add-product .public-Pinfo .Pimage {
+  display: flex;
+  justify-content: center;
+  margin: 0 1rem;
+}
+.Add-product .public-Pinfo .Pinfo {
+  width: 50%;
+  flex-direction: column;
+}
+.Add-product .public-Pinfo .Pinfo .Pinfo-item-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0.5rem 0;
+}
+.Add-product .public-Pinfo .Pinfo .Pinfo-item-box input {
+  width: 78%;
+  padding: 0.6rem;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
+}
+.Add-product .public-Pinfo .Pimage {
+  border: 1px solid red;
+  width: 30%;
+  height: 380px;
 }
 
 a {
@@ -150,7 +342,7 @@ a {
 }
 
 .active {
-  display: block;
+  display: block !important;
 }
 
 li {
@@ -175,6 +367,14 @@ li {
 
 .button:hover {
   background-color: #4d4d91;
+}
+
+.border-focus:focus {
+  outline: none;
+  border: 1.1px solid #32a1ce !important;
+  padding: 0.6rem !important;
+  border-radius: 1px;
+  transition: border 0.4s linear;
 }
 
 /*# sourceMappingURL=admin.css.map */

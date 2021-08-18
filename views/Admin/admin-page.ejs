@@ -10,6 +10,12 @@
     <link rel="stylesheet" href="/static/admin.css">
     
     <title>Document</title>
+
+    <!-- guide -->
+    <!-- mhead minfo -> mobile :: m -> mobile -->
+    <!-- thead tinfo -> tablet :: t -> tablet -->
+    <!-- lhead linfo -> labtop :: l -> labtop -->
+
 </head>
 <body>
     <!-- header -->
@@ -92,17 +98,17 @@
                                 <input type="checkbox" name="" id="">
                             </div>
                         </td>
-                        <td>خالی</td>
-                        <td>خالی</td>
-                        <td>خالی</td>
-                        <td>خالی</td>
-                        <td>خالی</td>
-                        <td>خالی</td>
-                        <td>خالی</td>
-                        <td>خالی</td>
+                        <td><strong>خالی</strong></td>
+                        <td><strong>خالی</strong></td>
+                        <td><strong>خالی</strong></td>
+                        <td><strong>خالی</strong></td>
+                        <td><strong>خالی</strong></td>
+                        <td><strong>خالی</strong></td>
+                        <td><strong>خالی</strong></td>
+                        <td><strong>خالی</strong></td>
                         <td>
                             <div class="center">
-                                <span>ویرایش</span>
+                                <strong>ویرایش</strong>
                             </div>
                         </td>
                     </tr>
@@ -186,11 +192,842 @@
 
     <!-- hint : add "active" class for show -->
     <!-- ------- add product page -->
-    <!-- <div class="Add-product">
-        <h1>lor</h1>
-    </div> -->
+    <div class="Add-product active">
+        <div class="head">
+            <!-- product category selecttion -->
+            <div class="Pcategory">
+                <div class="container">
+                    <label for="Pcat">نوع محصول</label>
+                    <select class="Pselect" name="category-list" id="">
+                        <option class="Pselect-option" value="Pmobile">موبایل</option>
+                        <option class="Pselect-option" value="Ptablet">تبلت</option>
+                        <option class="Pselect-option" value="Plabtop">لبتاب</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <!-- always showing -->
+        <!-- product info form -->
+        <div class="public-Pinfo">
+            <form action="" class="Pinfo">
+                <!-- name -->
+                <div class="Pinfo-item-box">
+                    <label for="Pname">اسم محصول :</label>
+                    <input class="border-focus" type="text">
+                </div>
+                <!-- brand -->
+                <div class="Pinfo-item-box">
+                    <label for="Pbrand">برند محصول :</label>
+                    <input class="border-focus" type="text">
+                </div>
+                <!-- color -->
+                <div class="Pinfo-item-box">
+                    <label for="Pcolor">رنگ بندی محصول :</label>
+                    <input class="border-focus" type="text">
+                </div>
+                <!-- cost -->
+                <div class="Pinfo-item-box">
+                    <label for="Pcost">قیمت محصول :</label>
+                    <input class="border-focus" type="text">
+                </div>
+            </form>
+             <!-- product image -->
+             <div class="Pimage"> 
+                 <!-- doesn't show!!!!!!!!!!!!!!!! -->
+                <!-- <img src="2.png" > -->
+             </div>
+        </div>
+
+        <!-- hint : add "active" class for show -->
+        <!-- MOBLILE -->
+        <div class="mobile-info-box active">
+            <!-- head -->
+            <div class="info-head">
+                <h3>مشخصات کلی موبایل</h3>
+            </div>
+            <div class="info-container">
+                <div class="info-subBox">
+                    <h5 class="info-subBox-title">مشخصات کلی</h5>
+                    <!-- 1 -->
+                    <div class="info-subBox-item">
+                        <label for="">تعداد سیم کارت</label>
+                        <input type="text">
+                    </div>
+                    <!-- 2 -->
+                    <div class="info-subBox-item">
+                        <label for="">سال تولید</label>
+                        <input type="text">
+                    </div>
+                    <!-- 3 -->
+                    <div class="info-subBox-item">
+                        <label for="">رنگ بندی</label>
+                        <input type="text">
+                    </div>
+                </div>
+                <!-- 2 -->
+                <div class="info-subBox">
+                    <h5 class="info-subBox-title">پردازنده</h5>
+                    <!-- 1 -->
+                    <!-- <div class="info-subBox-item">
+                        <label for="">پردازنده مرکزی</label>
+                        <input type="text">
+                    </div> -->
+                    <!-- 2 -->
+                    <div class="info-subBox-item">
+                        <label for="">نوع پردازنده</label>
+                        <input type="text">
+                    </div>
+                    <!-- 3 -->
+                    <div class="info-subBox-item">
+                        <label for="">پردازنده گرافیکی</label>
+                        <input type="text">
+                    </div>
+                </div>
+                <!-- 3 -->
+                <div class="info-subBox">
+                    <h5 class="info-subBox-title">حافظه</h5>
+                    <!-- 1 -->
+                    <div class="info-subBox-item">
+                        <label for="">حافظه داخلی</label>
+                        <input type="text">
+                    </div>
+                    <!-- 2 -->
+                    <div class="info-subBox-item">
+                        <label for="">حافظه رم (RAM)</label>
+                        <input type="text">
+                    </div>
+                    <!-- 3 -->
+                    <div class="info-subBox-item">
+                        <label for="">پشتیبانی از کارت حافظه جانبی</label>
+                        <input type="text">
+                    </div>
+                </div>
+                <!-- 4 -->
+                <div class="info-subBox">
+                    <h5 class="info-subBox-title">دوربین</h5>
+                    <!-- 1 -->
+                    <div class="info-subBox-item">
+                        <label for="">دوربین</label>
+                        <input type="text">
+                    </div>
+                    <!-- 2 -->
+                    <div class="info-subBox-item">
+                        <label for="">کیفیت دوربین</label>
+                        <input type="text">
+                    </div>
+                    <!-- 3 -->
+                    <div class="info-subBox-item">
+                        <label for="">عکس پانوراما</label>
+                        <input type="text">
+                    </div>
+                    <!-- 4 -->
+                    <div class="info-subBox-item">
+                        <label for="">کیفیت فیلمبرداری</label>
+                        <input type="text">
+                    </div>
+                    <!-- 5 -->
+                    <div class="info-subBox-item">
+                        <label for="">دوربین سلفی</label>
+                        <input type="text">
+                    </div>
+                </div>
+                <!-- 5 -->
+                <div class="info-subBox">
+                    <h5 class="info-subBox-title">صفحه نمایش</h5>
+                    <!-- 1 -->
+                    <div class="info-subBox-item">
+                        <label for="">صفحه نمایش لمسی</label>
+                        <input type="text">
+                    </div>
+                    <!-- 2 -->
+                    <div class="info-subBox-item">
+                        <label for="">اندازه</label>
+                        <input type="text">
+                    </div>
+                    <!-- 3 -->
+                    <div class="info-subBox-item">
+                        <label for="">نسبت ابعاد نمایشگر</label>
+                        <input type="text">
+                    </div>
+                    <!-- 4 -->
+                    <div class="info-subBox-item">
+                        <label for="">رزولوشن</label>
+                        <input type="text">
+                    </div>
+                    <!-- 5 -->
+                    <div class="info-subBox-item">
+                        <label for="">فناوری محافظت از صفحه نمایش</label>
+                        <input type="text">
+                    </div>
+                </div>
+                <!-- 6 -->
+                <div class="info-subBox">
+                    <h5 class="info-subBox-title">بدنه</h5>
+                    <!-- 1 -->
+                    <div class="info-subBox-item">
+                        <label for="">ابعاد</label>
+                        <input type="text">
+                    </div>
+                    <!-- 2 -->
+                    <div class="info-subBox-item">
+                        <label for="">وزن</label>
+                        <input type="text">
+                    </div>
+                    <!-- 3 -->
+                    <div class="info-subBox-item">
+                        <label for="">جنس بدنه</label>
+                        <input type="text">
+                    </div>
+                    <!-- 4 -->
+                    <div class="info-subBox-item">
+                        <label for="">سایر قابلیت ها</label>
+                        <input type="text">
+                    </div>
+                </div>
+                <!-- 7 -->
+                <div class="info-subBox">
+                    <h5 class="info-subBox-title">امکانات نرم افزاری</h5>
+                    <!-- 1 -->
+                    <div class="info-subBox-item">
+                        <label for="">سیستم عامل</label>
+                        <input type="text">
+                    </div>
+                    <!-- 2 -->
+                    <div class="info-subBox-item">
+                        <label for="">پشتیبانی از زبان فارسی</label>
+                        <input type="text">
+                    </div>
+                    <!-- 3 -->
+                    <div class="info-subBox-item">
+                        <label for="">منوی فارسی</label>
+                        <input type="text">
+                    </div>
+                    <!-- 4 -->
+                    <div class="info-subBox-item">
+                        <label for="">فرمت های پخش موسیقی</label>
+                        <input type="text">
+                    </div>
+                    <!-- 5 -->
+                    <div class="info-subBox-item">
+                        <label for="">فرمت های پخش ویدیو</label>
+                        <input type="text">
+                    </div>
+                </div>
+                <!-- 8 -->
+                <div class="info-subBox">
+                    <h5 class="info-subBox-title">ارتباطات</h5>
+                    <!-- 1 -->
+                    <div class="info-subBox-item">
+                        <label for="">شبکه های ارتباطی</label>
+                        <input type="text">
+                    </div>
+                    <!-- 2 -->
+                    <div class="info-subBox-item">
+                        <label for="">فناوری های ارتباطی</label>
+                        <input type="text">
+                    </div>
+                    <!-- 3 -->
+                    <div class="info-subBox-item">
+                        <label for="">wi-fi</label>
+                        <input type="text">
+                    </div>
+                    <!-- 4 -->
+                    <div class="info-subBox-item">
+                        <label for="">بلوتوث</label>
+                        <input type="text">
+                    </div>
+                    <!-- 5 -->
+                    <div class="info-subBox-item">
+                        <label for="">رادیو</label>
+                        <input type="text">
+                    </div>
+                    <!-- 6 -->
+                    <div class="info-subBox-item">
+                        <label for="">فناوری مکان یابی</label>
+                        <input type="text">
+                    </div>
+                    <!-- 7 -->
+                    <div class="info-subBox-item">
+                        <label for="">درگاه ارتباطی</label>
+                        <input type="text">
+                    </div>
+                </div>
+                <!-- 9 -->
+                <div class="info-subBox">
+                    <h5 class="info-subBox-title">صدا</h5>
+                    <!-- 1 -->
+                    <div class="info-subBox-item">
+                        <label for="">بلند گو</label>
+                        <input type="text">
+                    </div>
+                    <!-- 2 -->
+                    <div class="info-subBox-item">
+                        <label for="">خروجی صدا</label>
+                        <input type="text">
+                    </div>
+                    <!-- 3 -->
+                    <div class="info-subBox-item">
+                        <label for="">جک 3.5 میلیمتری صدا</label>
+                        <input type="text">
+                    </div>
+                </div>
+                <!-- 10 -->
+                <div class="info-subBox">
+                    <h5 class="info-subBox-title">باتری</h5>
+                    <!-- 1 -->
+                    <div class="info-subBox-item">
+                        <label for="">باتری قابل تعویض</label>
+                        <input type="text">
+                    </div>
+                    <!-- 2 -->
+                    <div class="info-subBox-item">
+                        <label for="">مشخصات باتری</label>
+                        <input type="text">
+                    </div>
+                    <!-- 3 -->
+                    <div class="info-subBox-item">
+                        <label for="">میزان شارژ پخش آهنگ</label>
+                        <input type="text">
+                    </div>
+                </div>
+                <!-- 11 -->
+                <div class="info-subBox">
+                    <h5 class="info-subBox-title">سایر مشخصات</h5>
+                    <!-- 1 -->
+                    <div class="info-subBox-item">
+                        <label for="">حسگر ها</label>
+                        <input type="text">
+                    </div>
+                    <!-- 2 -->
+                    <div class="info-subBox-item">
+                        <label for="">اقلام همراه</label>
+                        <input type="text">
+                    </div>
+                    <!-- 3 -->
+                    <div class="info-subBox-item">
+                        <label for="">سایر قابلیت ها</label>
+                        <input type="text">
+                    </div>
+                    <!-- 4 -->
+                    <div class="info-subBox-item">
+                        <label for="">بلوتوث</label>
+                        <input type="text">
+                    </div>
+                    <!-- 5 -->
+                    <div class="info-subBox-item">
+                        <label for="">رادیو</label>
+                        <input type="text">
+                    </div>
+                    <!-- 6 -->
+                    <div class="info-subBox-item">
+                        <label for="">فناوری مکان یابی</label>
+                        <input type="text">
+                    </div>
+                    <!-- 7 -->
+                    <div class="info-subBox-item">
+                        <label for="">درگاه ارتباطی</label>
+                        <input type="text">
+                    </div>
+                </div>
+            </div>
+            <div class="btn-box">
+                <button class="Padd button">اضافه کردن</button>
+            </div>
+
+        </div>
+
+        <!-- hint : add "active" class for show -->
+         <!-- TABLET -->
+        <div class="tablet-info-box ">
+            <div class="info-head">
+                <h3>مشخصات کلی تبلت</h3>
+            </div>
+            <div class="info-container">
+                <div class="info-subBox">
+                    <h5 class="info-subBox-title">مشخصات کلی</h5>
+                    <!-- 1 -->
+                    <div class="info-subBox-item">
+                        <label for="">تعداد سیم کارت</label>
+                        <input type="text">
+                    </div>
+                    <!-- 2 -->
+                    <div class="info-subBox-item">
+                        <label for="">سال تولید</label>
+                        <input type="text">
+                    </div>
+                    <!-- 3 -->
+                    <div class="info-subBox-item">
+                        <label for="">رنگ بندی</label>
+                        <input type="text">
+                    </div>
+                </div>
+                <!-- 2 -->
+                <div class="info-subBox">
+                    <h5 class="info-subBox-title">پردازنده</h5>
+                    <!-- 1 -->
+                    <!-- <div class="info-subBox-item">
+                        <label for="">پردازنده مرکزی</label>
+                        <input type="text">
+                    </div> -->
+                    <!-- 2 -->
+                    <div class="info-subBox-item">
+                        <label for="">نوع پردازنده</label>
+                        <input type="text">
+                    </div>
+                    <!-- 3 -->
+                    <div class="info-subBox-item">
+                        <label for="">پردازنده گرافیکی</label>
+                        <input type="text">
+                    </div>
+                </div>
+                <!-- 3 -->
+                <div class="info-subBox">
+                    <h5 class="info-subBox-title">حافظه</h5>
+                    <!-- 1 -->
+                    <div class="info-subBox-item">
+                        <label for="">حافظه داخلی</label>
+                        <input type="text">
+                    </div>
+                    <!-- 2 -->
+                    <div class="info-subBox-item">
+                        <label for="">حافظه رم (RAM)</label>
+                        <input type="text">
+                    </div>
+                    <!-- 3 -->
+                    <div class="info-subBox-item">
+                        <label for="">پشتیبانی از کارت حافظه جانبی</label>
+                        <input type="text">
+                    </div>
+                </div>
+                <!-- 4 -->
+                <div class="info-subBox">
+                    <h5 class="info-subBox-title">دوربین</h5>
+                    <!-- 1 -->
+                    <div class="info-subBox-item">
+                        <label for="">دوربین</label>
+                        <input type="text">
+                    </div>
+                    <!-- 2 -->
+                    <div class="info-subBox-item">
+                        <label for="">کیفیت دوربین</label>
+                        <input type="text">
+                    </div>
+                    <!-- 3 -->
+                    <div class="info-subBox-item">
+                        <label for="">عکس پانوراما</label>
+                        <input type="text">
+                    </div>
+                    <!-- 4 -->
+                    <div class="info-subBox-item">
+                        <label for="">کیفیت فیلمبرداری</label>
+                        <input type="text">
+                    </div>
+                    <!-- 5 -->
+                    <div class="info-subBox-item">
+                        <label for="">دوربین سلفی</label>
+                        <input type="text">
+                    </div>
+                </div>
+                <!-- 5 -->
+                <div class="info-subBox">
+                    <h5 class="info-subBox-title">صفحه نمایش</h5>
+                    <!-- 1 -->
+                    <div class="info-subBox-item">
+                        <label for="">صفحه نمایش لمسی</label>
+                        <input type="text">
+                    </div>
+                    <!-- 2 -->
+                    <div class="info-subBox-item">
+                        <label for="">اندازه</label>
+                        <input type="text">
+                    </div>
+                    <!-- 3 -->
+                    <div class="info-subBox-item">
+                        <label for="">نسبت ابعاد نمایشگر</label>
+                        <input type="text">
+                    </div>
+                    <!-- 4 -->
+                    <div class="info-subBox-item">
+                        <label for="">رزولوشن</label>
+                        <input type="text">
+                    </div>
+                    <!-- 5 -->
+                    <div class="info-subBox-item">
+                        <label for="">فناوری محافظت از صفحه نمایش</label>
+                        <input type="text">
+                    </div>
+                </div>
+                <!-- 6 -->
+                <div class="info-subBox">
+                    <h5 class="info-subBox-title">بدنه</h5>
+                    <!-- 1 -->
+                    <div class="info-subBox-item">
+                        <label for="">ابعاد</label>
+                        <input type="text">
+                    </div>
+                    <!-- 2 -->
+                    <div class="info-subBox-item">
+                        <label for="">وزن</label>
+                        <input type="text">
+                    </div>
+                    <!-- 3 -->
+                    <div class="info-subBox-item">
+                        <label for="">جنس بدنه</label>
+                        <input type="text">
+                    </div>
+                    <!-- 4 -->
+                    <div class="info-subBox-item">
+                        <label for="">سایر قابلیت ها</label>
+                        <input type="text">
+                    </div>
+                </div>
+                <!-- 7 -->
+                <div class="info-subBox">
+                    <h5 class="info-subBox-title">امکانات نرم افزاری</h5>
+                    <!-- 1 -->
+                    <div class="info-subBox-item">
+                        <label for="">سیستم عامل</label>
+                        <input type="text">
+                    </div>
+                    <!-- 2 -->
+                    <div class="info-subBox-item">
+                        <label for="">پشتیبانی از زبان فارسی</label>
+                        <input type="text">
+                    </div>
+                    <!-- 3 -->
+                    <div class="info-subBox-item">
+                        <label for="">منوی فارسی</label>
+                        <input type="text">
+                    </div>
+                    <!-- 4 -->
+                    <div class="info-subBox-item">
+                        <label for="">فرمت های پخش موسیقی</label>
+                        <input type="text">
+                    </div>
+                    <!-- 5 -->
+                    <div class="info-subBox-item">
+                        <label for="">فرمت های پخش ویدیو</label>
+                        <input type="text">
+                    </div>
+                </div>
+                <!-- 8 -->
+                <div class="info-subBox">
+                    <h5 class="info-subBox-title">ارتباطات</h5>
+                    <!-- 1 -->
+                    <div class="info-subBox-item">
+                        <label for="">شبکه های ارتباطی</label>
+                        <input type="text">
+                    </div>
+                    <!-- 2 -->
+                    <div class="info-subBox-item">
+                        <label for="">فناوری های ارتباطی</label>
+                        <input type="text">
+                    </div>
+                    <!-- 3 -->
+                    <div class="info-subBox-item">
+                        <label for="">wi-fi</label>
+                        <input type="text">
+                    </div>
+                    <!-- 4 -->
+                    <div class="info-subBox-item">
+                        <label for="">بلوتوث</label>
+                        <input type="text">
+                    </div>
+                    <!-- 5 -->
+                    <div class="info-subBox-item">
+                        <label for="">رادیو</label>
+                        <input type="text">
+                    </div>
+                    <!-- 6 -->
+                    <div class="info-subBox-item">
+                        <label for="">فناوری مکان یابی</label>
+                        <input type="text">
+                    </div>
+                    <!-- 7 -->
+                    <div class="info-subBox-item">
+                        <label for="">درگاه ارتباطی</label>
+                        <input type="text">
+                    </div>
+                </div>
+                <!-- 9 -->
+                <div class="info-subBox">
+                    <h5 class="info-subBox-title">صدا</h5>
+                    <!-- 1 -->
+                    <div class="info-subBox-item">
+                        <label for="">بلند گو</label>
+                        <input type="text">
+                    </div>
+                    <!-- 2 -->
+                    <div class="info-subBox-item">
+                        <label for="">خروجی صدا</label>
+                        <input type="text">
+                    </div>
+                    <!-- 3 -->
+                    <div class="info-subBox-item">
+                        <label for="">جک 3.5 میلیمتری صدا</label>
+                        <input type="text">
+                    </div>
+                </div>
+                <!-- 10 -->
+                <div class="info-subBox">
+                    <h5 class="info-subBox-title">باتری</h5>
+                    <!-- 1 -->
+                    <div class="info-subBox-item">
+                        <label for="">باتری قابل تعویض</label>
+                        <input type="text">
+                    </div>
+                    <!-- 2 -->
+                    <div class="info-subBox-item">
+                        <label for="">مشخصات باتری</label>
+                        <input type="text">
+                    </div>
+                    <!-- 3 -->
+                    <div class="info-subBox-item">
+                        <label for="">میزان شارژ پخش آهنگ</label>
+                        <input type="text">
+                    </div>
+                </div>
+                <!-- 11 -->
+                <div class="info-subBox">
+                    <h5 class="info-subBox-title">سایر مشخصات</h5>
+                    <!-- 1 -->
+                    <div class="info-subBox-item">
+                        <label for="">حسگر ها</label>
+                        <input type="text">
+                    </div>
+                    <!-- 2 -->
+                    <div class="info-subBox-item">
+                        <label for="">اقلام همراه</label>
+                        <input type="text">
+                    </div>
+                    <!-- 3 -->
+                    <div class="info-subBox-item">
+                        <label for="">سایر قابلیت ها</label>
+                        <input type="text">
+                    </div>
+                    <!-- 4 -->
+                    <div class="info-subBox-item">
+                        <label for="">بلوتوث</label>
+                        <input type="text">
+                    </div>
+                    <!-- 5 -->
+                    <div class="info-subBox-item">
+                        <label for="">رادیو</label>
+                        <input type="text">
+                    </div>
+                    <!-- 6 -->
+                    <div class="info-subBox-item">
+                        <label for="">فناوری مکان یابی</label>
+                        <input type="text">
+                    </div>
+                    <!-- 7 -->
+                    <div class="info-subBox-item">
+                        <label for="">درگاه ارتباطی</label>
+                        <input type="text">
+                    </div>
+                </div>
+            </div>
+            <div class="btn-box">
+                <button class="Padd button">اضافه کردن</button>
+            </div>
+        </div>
+
+        <!-- hint : add "active" class for show -->
+         <!-- LABTOP -->
+        <div class="labtop-info-box">
+            <div class="info-head">
+                <h3>مشخصات کلی لبتاب</h3>
+            </div>
+            <div class="info-container">
+                <!-- --1-- -->
+                <div class="info-subBox">
+                    <h5 class="info-subBox-title">مشخصات کلی</h5>
+                    <!-- 1 -->
+                    <div class="info-subBox-item">
+                        <label for="">مدل</label>
+                        <input type="text">
+                    </div>
+                    <!-- 2 -->
+                    <div class="info-subBox-item">
+                        <label for="">سال تولید</label>
+                        <input type="text">
+                    </div>
+                </div>
+                <!-- --2-- -->
+                <div class="info-subBox">
+                    <h5 class="info-subBox-title">بدنه</h5>
+                    <!-- 1 -->
+                    <div class="info-subBox-item">
+                        <label for="">ابعاد</label>
+                        <input type="text">
+                    </div>
+                    <!-- 2 -->
+                    <div class="info-subBox-item">
+                        <label for="">وزن</label>
+                        <input type="text">
+                    </div>
+                    <!-- 3 -->
+                    <div class="info-subBox-item">
+                        <label for="">تاچ پد</label>
+                        <input type="text">
+                    </div>
+                </div>
+                <!-- --3-- -->
+                <div class="info-subBox">
+                    <h5 class="info-subBox-title">پردازنده</h5>
+                    <!-- 1 -->
+                    <div class="info-subBox-item">
+                        <label for="">سازنده پردازنده</label>
+                        <input type="text">
+                    </div>
+                    <!-- 2 -->
+                    <div class="info-subBox-item">
+                        <label for="">سری پردازنده</label>
+                        <input type="text">
+                    </div>
+                    <!-- 3 -->
+                    <div class="info-subBox-item">
+                        <label for="">تعداد هسته پردازنده</label>
+                        <input type="text">
+                    </div>
+                    <!-- 4 -->
+                    <div class="info-subBox-item">
+                        <label for="">نوع پردازنده</label>
+                        <input type="text">
+                    </div>
+                </div>
+                <!-- --4-- -->
+                <div class="info-subBox">
+                    <h5 class="info-subBox-title">حافظه</h5>
+                    <!-- 1 -->
+                    <div class="info-subBox-item">
+                        <label for="">حافظه داخلی</label>
+                        <input type="text">
+                    </div>
+                    <!-- 2 -->
+                    <div class="info-subBox-item">
+                        <label for="">حافظه رم (RAM)</label>
+                        <input type="text">
+                    </div>
+                </div>
+                <!-- --5-- -->
+                <div class="info-subBox">
+                    <h5 class="info-subBox-title"> نرم افزار</h5>
+                    <!-- 1 -->
+                    <!-- 2 -->
+                    <div class="info-subBox-item">
+                        <label for="">کیبورد فارسی</label>
+                        <input type="text">
+                    </div>
+                </div>
+                <!-- --6-- -->
+                <div class="info-subBox">
+                    <h5 class="info-subBox-title">صفحه نمایش</h5>
+                    <!-- 1 -->
+                    <div class="info-subBox-item">
+                        <label for="">صفحه نمایش لمسی</label>
+                        <input type="text">
+                    </div>
+                    <!-- 2 -->
+                    <div class="info-subBox-item">
+                        <label for="">اندازه</label>
+                        <input type="text">
+                    </div>
+                    <!-- 3 -->
+                    <div class="info-subBox-item">
+                        <label for="">رزولوشن</label>
+                        <input type="text">
+                    </div>
+                </div>
+                <!-- --7-- -->
+                <div class="info-subBox">
+                    <h5 class="info-subBox-title">صدا</h5>
+                    <!-- 1 -->
+                    <div class="info-subBox-item">
+                        <label for="">اسپیکر</label>
+                        <input type="text">
+                    </div>
+                    <!-- 2 -->
+                    <div class="info-subBox-item">
+                        <label for="">جک 3.5 میلیمتری صدا</label>
+                        <input type="text">
+                    </div>
+                    <!-- 3 -->
+                    <div class="info-subBox-item">
+                        <label for="">جک 3.5 میلیمتری میکروفون</label>
+                        <input type="text">
+                    </div>
+                </div>
+                <!-- --8-- -->
+                <div class="info-subBox">
+                    <h5 class="info-subBox-title">ارتباطات</h5>
+                    <!-- 1 -->
+                    <div class="info-subBox-item">
+                        <label for="">ارتباطات بیسی</label>
+                        <input type="text">
+                    </div>
+                    <!-- 2 -->
+                    <div class="info-subBox-item">
+                        <label for="">wi-fi</label>
+                        <input type="text">
+                    </div>
+                    <!-- 3 -->
+                    <div class="info-subBox-item">
+                        <label for="">بلوتوث</label>
+                        <input type="text">
+                    </div>
+                    <!-- 4 -->
+                    <div class="info-subBox-item">
+                        <label for="">درگاه ارتباطی</label>
+                        <input type="text">
+                    </div>
+                </div>
+                <!-- --9-- -->
+                <div class="info-subBox">
+                    <h5 class="info-subBox-title">دوربین</h5>
+                    <!-- 1 -->
+                    <div class="info-subBox-item">
+                        <label for="">وبکم</label>
+                        <input type="text">
+                    </div>
+                    <!-- 2 -->
+                    <div class="info-subBox-item">
+                        <label for="">کیفیت فیلمبرداری</label>
+                        <input type="text">
+                    </div>
+                </div>
+                <!-- --10-- -->
+                <div class="info-subBox">
+                    <h5 class="info-subBox-title">باتری</h5>
+                    <!-- 1 -->
+                    <div class="info-subBox-item">
+                        <label for="">مشخصات باتری</label>
+                        <input type="text">
+                    </div>
+                </div>
+            </div>
+            <div class="btn-box">
+                <button class="Padd button">اضافه کردن</button>
+            </div>
+         </div>
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+
+   
 
 </body>
 </html>
