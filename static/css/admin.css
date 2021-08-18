@@ -67,7 +67,7 @@ header .admin-nav-box .caret-down {
   top: 3.5px;
 }
 .right-nav .right-nav-box:not(.white):hover {
-  background-color: #4d4d91;
+  background-color: #4d4d91
 }
 .right-nav .white {
   background-color: whitesmoke;
