@@ -17,6 +17,15 @@
 <div class="public-Pinfo">
     <form action="" class="Pinfo">
         <!-- name -->
+        <div class="Pinfo-item-box load-box">
+            <label for="">اضافه کردن تصویر :</label>
+            <!-- product image btn -->
+            <div class="load-Pimg-box">
+                <input type="file" id="filetag" style="display: none;" onchange="cc()">
+                <input class="button load-img" type="button" value=" ... Browse" onclick="document.getElementById('filetag').click();" />
+            </div>
+        </div>
+        <!-- name -->
         <div class="Pinfo-item-box">
             <label for="Pname">اسم محصول :</label>
             <input class="border-focus" type="text">
@@ -38,15 +47,20 @@
         </div>
     </form>
    
+    <!-- product image btn -->
+    <!-- <div class="load-Pimg-box">
+        <input type="file" id="filetag" style="display: none;" onchange="cc()">
+        <input class="button load-img" type="button" value=" ... Browse" onclick="document.getElementById('filetag').click();" />
+    </div> -->
+
      <!-- product image -->
      <div class="Pimage"> 
         
         <img src="" id="preview" >
         
-         <!-- doesn't show!!!!!!!!!!!!!!!! -->
-        <!-- <img src="/static/2.jpg" > -->
-     </div>
-     <input type="file" id="filetag" onchange="cc()">
+    </div>
+    
+
 </div>
 
 <!-- hint : add "active" class for show -->
