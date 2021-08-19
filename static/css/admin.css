@@ -324,14 +324,14 @@ header .admin-nav-box .caret-down {
 .Add-product .public-Pinfo .load-img {
   height: 2.2rem;
   width: 6.5rem !important;
-  position: absolute;
-  right: 11rem;
-  top: 5.3rem;
   text-align: center;
   line-height: 0.9rem;
 }
-.Add-product .public-Pinfo .load-box {
-  padding-bottom: 0.3rem;
+.Add-product .public-Pinfo .load-Pimg-box {
+  position: absolute;
+  right: 2rem;
+  top: 3rem;
+  min-width: 18.8%;
 }
 
 a {
