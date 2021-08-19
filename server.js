@@ -14,6 +14,7 @@ app.use("/static", express.static('./static/js'))
 app.use("/static", express.static('./static/css'))
 app.use("/static", express.static('./static/fonts'))
 app.use("/static", express.static('./static/scss'))
+app.use("/static", express.static('./static/img'))
 
 
 

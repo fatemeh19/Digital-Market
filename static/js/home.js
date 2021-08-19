@@ -40,20 +40,9 @@ function clode_signPage() {
     signPage.classList.remove('active');
     login();
 }
-// 
-// let invalid2 = document.getElementById('invalid2').style.display = 'block';
-// let invalid3 = document.getElementById('invalid3').style.display = 'block';
-// let invalid4 = document.getElementById('invalid4').style.display = 'block';
 
 let signin = document.getElementById('signIn');
 
-//let invelidPass = document.getElementById('password-login').classList.add('input-error');
-
-
-// if (true) {
-//     console.log("true")
-//     signin.style.height = '29rem';
-// }
 
 /*************************************************************************************************/
  
