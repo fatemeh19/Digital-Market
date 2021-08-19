@@ -94,7 +94,7 @@ reader = new FileReader();
 reader.onload = function(e) {
   var preview = document.getElementById("preview")
   preview.setAttribute('src', e.target.result)
-  preview.style.width='313px'
+//   preview.style.width='313px'
  
 }
 
