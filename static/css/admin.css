@@ -350,7 +350,7 @@ header .admin-nav-box .caret-down {
   border-radius: 5px;
   position: absolute;
   align-items: center;
-  top: 35vh;
+  top: 45vh;
   animation: popUp_move 1s ease-in-out;
   box-shadow: 0 0 6px green;
 }
@@ -361,7 +361,7 @@ header .admin-nav-box .caret-down {
   }
   to {
     display: block;
-    top: 35vh;
+    top: 45vh;
   }
 }
 
