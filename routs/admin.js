@@ -31,4 +31,10 @@ Router.get('/',(req, res) => {
   res.render('Admin/admin-page')
 })
 
+Router.post('/addMobile',(req, res) => {
+   console.log(req.body)
+  //  Mobile.createMobile(req.body)
+  
+})
+
 module.exports = Router

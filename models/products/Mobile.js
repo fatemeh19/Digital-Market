@@ -84,5 +84,17 @@ module.exports.MobileSchema = MobileSchema
 let MobileModel = mongoose.model('Mobile', MobileSchema)
 module.exports.MobileModel=MobileModel
 
+module.exports.createMobile = (obj)=>{
+    let newMobile = new MobileModel(obj)
+    // newMobile.Memory=
+    //  newMobile=obj
+    console.log(obj['Screen'])
+    // console.log(newMobile)
+    //  console.log(obj.name)
+    
+
+
+}
+
 
 

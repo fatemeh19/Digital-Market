@@ -28,7 +28,12 @@ module.exports.product = (add)=> {
         product_number: Number,
         brand:String,
         price:String,
-        colors:[]
+        colors:String,
+        img:{
+              data: Buffer,
+              contentType: String
+            }
+
 
     })
     if(add) {
