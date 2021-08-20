@@ -16,6 +16,7 @@ header {
     width: 100%;
     background-color: white;
     color: $blue-admin;
+    z-index: 10;
     .admin-nav-box {
         padding: 1.2rem 3rem;
         display: flex;
@@ -331,7 +332,38 @@ header {
             min-width: 18.8%;
         }
     }
-
+    .popUp-box {
+        // background-color: red;
+        height: 100vh !important;
+        position: sticky;
+        right: 40rem;
+        bottom: 0;
+        width: 20rem;
+        padding: 1rem;
+        transition: bottom 1s;
+        .popup {
+            background: rgba(14, 202, 50, 0.7);
+            padding: 1rem;
+            color: black;
+            border-radius: 5px;
+            position: absolute;
+            align-items: center;
+            top: 35vh;
+            animation: popUp_move 1s ease-in-out ;
+            box-shadow: 0 0 6px green;
+        }
+        @keyframes popUp_move {
+            from {
+                display: block;
+                top: -10rem;
+            }
+            to {
+                display: block;
+                top: 35vh;
+            }
+        }
+    }
+   
 }
 
 // -------------------------------------- defult 

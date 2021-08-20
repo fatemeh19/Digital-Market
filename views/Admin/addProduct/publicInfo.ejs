@@ -1,80 +1,82 @@
 <div class="Add-product " id="addProductDiv">
-<div class="head">
-    <!-- product category selecttion -->
-    <div class="Pcategory">
-        <div class="container">
-            <label for="Pcat">نوع محصول</label>
-            <select class="Pselect" name="category-list" id="selectTag" onchange="bb(this)">
-                <option class="Pselect-option" value="Pmobile">موبایل</option>
-                <option class="Pselect-option" value="Ptablet">تبلت</option>
-                <option class="Pselect-option" value="Plabtop">لپ تاپ</option>
-            </select>
-        </div>
-    </div>
-</div>
-
-
-<div class="public-Pinfo">
-    <form action="" class="Pinfo">
-        <!-- name -->
-        <div class="Pinfo-item-box load-Pimg-box">
-            <label for="">اضافه کردن تصویر :</label>
-            <!-- product image btn -->
-            <div>
-                <input type="file" id="filetag" style="display: none;" onchange="cc()">
-                <input class="button load-img" type="button" value=" ... Browse" onclick="document.getElementById('filetag').click();" />
+    <div class="head">
+        <!-- product category selecttion -->
+        <div class="Pcategory">
+            <div class="container">
+                <label for="Pcat">نوع محصول</label>
+                <select class="Pselect" name="category-list" id="selectTag" onchange="bb(this)">
+                    <option class="Pselect-option" value="Pmobile">موبایل</option>
+                    <option class="Pselect-option" value="Ptablet">تبلت</option>
+                    <option class="Pselect-option" value="Plabtop">لپ تاپ</option>
+                </select>
             </div>
         </div>
-        <!-- name -->
-        <div class="Pinfo-item-box">
-            <label for="Pname">اسم محصول :</label>
-            <input class="border-focus" id="productName" type="text">
-        </div>
-        <!-- brand -->
-        <div class="Pinfo-item-box">
-            <label for="Pbrand">برند محصول :</label>
-            <input class="border-focus" id="productBrand" type="text">
-        </div>
-        <!-- color -->
-        <div class="Pinfo-item-box">
-            <label for="Pcolor">رنگ بندی محصول :</label>
-            <input class="border-focus" id="productColor" type="text">
-        </div>
-        <!-- cost -->
-        <div class="Pinfo-item-box">
-            <label for="Pcost">قیمت محصول :</label>
-            <input class="border-focus" id="productPrice" type="text">
-        </div>
-    </form>
-   
-    <!-- product image btn -->
-    <!-- <div class="load-Pimg-box">
-        <input type="file" id="filetag" style="display: none;" onchange="cc()">
-        <input class="button load-img" type="button" value=" ... Browse" onclick="document.getElementById('filetag').click();" />
-    </div> -->
-
-     <!-- product image -->
-     <div class="Pimage"> 
-        
-        <img src="" id="preview" >
-        
     </div>
+
+
+    <div class="public-Pinfo">
+        <form action="" class="Pinfo">
+            <!-- name -->
+            <div class="Pinfo-item-box load-Pimg-box">
+                <label for="">اضافه کردن تصویر :</label>
+                <!-- product image btn -->
+                <div>
+                    <input type="file" id="filetag" style="display: none;" onchange="cc()">
+                    <input class="button load-img" type="button" value=" ... Browse" onclick="document.getElementById('filetag').click();" />
+                </div>
+            </div>
+            <!-- name -->
+            <div class="Pinfo-item-box">
+                <label for="Pname">اسم محصول :</label>
+                <input class="border-focus" id="productName" type="text">
+            </div>
+            <!-- brand -->
+            <div class="Pinfo-item-box">
+                <label for="Pbrand">برند محصول :</label>
+                <input class="border-focus" id="productBrand" type="text">
+            </div>
+            <!-- color -->
+            <div class="Pinfo-item-box">
+                <label for="Pcolor">رنگ بندی محصول :</label>
+                <input class="border-focus" id="productColor" type="text">
+            </div>
+            <!-- cost -->
+            <div class="Pinfo-item-box">
+                <label for="Pcost">قیمت محصول :</label>
+                <input class="border-focus" id="productPrice" type="text">
+            </div>
+        </form>
     
+        <!-- product image btn -->
+        <!-- <div class="load-Pimg-box">
+            <input type="file" id="filetag" style="display: none;" onchange="cc()">
+            <input class="button load-img" type="button" value=" ... Browse" onclick="document.getElementById('filetag').click();" />
+        </div> -->
 
-</div>
+        <!-- product image -->
+        <div class="Pimage"> 
+            
+            <img src="" id="preview" >
+            
+        </div>
+        
 
-<!-- hint : add "active" class for show -->
-<!-- MOBLILE -->
-<%- include ('./addMobile.ejs') %>
+    </div>
+
+    <!-- hint : add "active" class for show -->
+    <!-- MOBLILE -->
+    <%- include ('./addMobile.ejs') %>
 
 
-<!-- hint : add "active" class for show -->
- <!-- TABLET -->
- <%- include ('./addTablet.ejs') %>
+    <!-- hint : add "active" class for show -->
+    <!-- TABLET -->
+    <%- include ('./addTablet.ejs') %>
 
 
-<!-- hint : add "active" class for show -->
- <!-- LABTOP -->
- <%- include ('./addlaptop.ejs') %>
+    <!-- hint : add "active" class for show -->
+    <!-- LABTOP -->
+    <%- include ('./addlaptop.ejs') %>
 
+    <%- include ('./popUp.ejs') %>
+    
 </div>
