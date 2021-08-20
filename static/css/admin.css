@@ -67,7 +67,7 @@ header .admin-nav-box .caret-down {
   top: 3.5px;
 }
 .right-nav .right-nav-box:not(.white):hover {
-  background-color: #4d4d91
+  background-color: #4d4d91;
 }
 .right-nav .white {
   background-color: whitesmoke;
@@ -289,6 +289,7 @@ header .admin-nav-box .caret-down {
 .Add-product .public-Pinfo {
   background-color: white;
   border-radius: 5px;
+  position: relative;
 }
 .Add-product .public-Pinfo .Pinfo,
 .Add-product .public-Pinfo .Pcategory,
@@ -314,9 +315,23 @@ header .admin-nav-box .caret-down {
   border-radius: 3px;
 }
 .Add-product .public-Pinfo .Pimage {
-  border: 1px solid red;
-  width: 30%;
+  display: flex;
+  box-shadow: inset 0 0 9px rgba(0, 0, 0, 0.1);
+  width: 40%;
   height: 380px;
+  border-radius: 0.3rem;
+}
+.Add-product .public-Pinfo .load-img {
+  height: 2.2rem;
+  width: 6.5rem !important;
+  text-align: center;
+  line-height: 0.9rem;
+}
+.Add-product .public-Pinfo .load-Pimg-box {
+  position: absolute;
+  right: 2rem;
+  top: 3rem;
+  min-width: 18.8%;
 }
 
 a {

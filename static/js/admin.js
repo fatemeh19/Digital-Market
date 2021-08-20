@@ -73,7 +73,7 @@ var fileTag = document.getElementById("filetag")
 function cc(){
     
     changeImage(document.getElementById("filetag"));
-
+    fileTag.hide();
 }
 
 function changeImage(input) {
@@ -83,10 +83,11 @@ var reader;
 if (input.files && input.files[0]) {
 reader = new FileReader();
 
+
 reader.onload = function(e) {
   var preview = document.getElementById("preview")
   preview.setAttribute('src', e.target.result)
-  preview.style.width='313px'
+  preview.style.maxWidth='507px'
  
 }
 
