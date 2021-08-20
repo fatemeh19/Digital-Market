@@ -23,7 +23,6 @@ function UserSchema (add) {
 
 module.exports.product = (add)=> {   
     let schema =new mongoose.Schema({
-        type:String,  
         name:String,                            
         product_number: Number,
         brand:String,

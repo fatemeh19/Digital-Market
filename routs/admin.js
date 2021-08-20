@@ -32,9 +32,29 @@ Router.get('/',(req, res) => {
 })
 
 Router.post('/addMobile',(req, res) => {
-   console.log(req.body)
-  //  Mobile.createMobile(req.body)
+  
+    Mobile.createMobile(req.body,(mobileModel)=>{
+      mobileModel.save()
+
+      res.json({status:"true"})
+
+    })
+    
   
 })
 
+Router.post('/addTablet',(req, res) => {
+  console.log(req.body)
+  
+  Tablet.createTablet(req.body,(tabletModel)=>{
+    tabletModel.save()
+
+    res.json({status:"true"})
+
+  })
+  
+
+})
+
 module.exports = Router
+

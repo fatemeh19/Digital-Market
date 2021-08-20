@@ -87,7 +87,9 @@ reader = new FileReader();
 reader.onload = function(e) {
   var preview = document.getElementById("preview")
   preview.setAttribute('src', e.target.result)
-  preview.style.maxWidth='507px'
+  preview.style.width = '412px'
+  preview.style.height = '373px'
+//   preview.style.maxWidth='507px'
  
 }
 
@@ -99,7 +101,7 @@ let addProduct = (productType)=>{
 
     
    
-    console.log(productType)
+    
     switch (productType) {
         case "laptop":
             let laptop = new Laptop.LaptopModel({
@@ -108,9 +110,9 @@ let addProduct = (productType)=>{
 
             
             break;
+
         case "mobile" :
-            let mobile={
-                type:"mobile",  
+            let mobile={ 
                 name:document.getElementById("productName").value,                            
                 product_number: Math.floor(Math.random() * 10000000),
                 brand:document.getElementById("productBrand").value,
@@ -182,7 +184,15 @@ let addProduct = (productType)=>{
             }
             
             $.post('/admin/addMobile',{mobile:mobile},(data)=>{
-                console.log(data)
+
+                if(data.status){
+                    var elements = document.getElementsByTagName("input");
+                    for (var ii=0; ii < elements.length; ii++) {
+                        if (elements[ii].type == "text") {
+                          elements[ii].value = "";
+                        }
+                      }
+                }
 
             })
                                     
@@ -193,7 +203,87 @@ let addProduct = (productType)=>{
             break;
 
         case "tablet" :
-            let tablet = new Tablet.TabletModel({
+            console.log("tablet")
+            let tablet={ 
+                name:document.getElementById("productName").value,                            
+                product_number: Math.floor(Math.random() * 10000000),
+                brand:document.getElementById("productBrand").value,
+                price:document.getElementById("productPrice").value,
+                colors:document.getElementById("productColor").value,
+                General :{
+                    SimCardNumber :parseInt(document.getElementById("simCardNumber1").value) ,
+                    ProductYear : parseInt(document.getElementById("productYear1").value)
+                },
+                Processor :{
+                     Type : document.getElementById("processorType1").value,
+                    GraphicProcessor : document.getElementById("graphicProcessor1").value
+                },
+                Memory :{
+                    InternalMemory : document.getElementById("internalMemory1").value,
+                    Ram : document.getElementById("ram").value,
+                    ExternalMemSupporting :document.getElementById("externalMemSupporting1").value
+                },
+                Camera :{
+                    Type : document.getElementById("cameraType1").value,
+                    PicQuality : document.getElementById("cameraQuality1").value,
+                     Panorama : document.getElementById("panorama1").value,
+                    VideoQuality : document.getElementById("videoQuality1").value,
+                    SelfieCamera : document.getElementById("selfieCamera1").value
+                },
+                Screen :{
+                    Touch : document.getElementById("touchScreen1").value,
+                    Size : parseInt(document.getElementById("screenSize1").value),
+                    ScreenDimensions : document.getElementById("screenDimensions1").value,
+                    resolution : document.getElementById("resolution1").value ,
+                    ScreenProtector : document.getElementById("ScreenProtector1").value
+            
+                },
+                Body :{
+                    Dimensions : document.getElementById("dimensions1").value,
+                    Weight : document.getElementById("weight1").value,
+                    Material : document.getElementById("material1").value,
+                    ExteraAbility : document.getElementById("exteraAbility1").value
+                },
+                SoftwareAbility :{
+                    OperatingSystem : document.getElementById("operatingSystem1").value,
+                    PersianSupporting : document.getElementById("persianSupporting1").value,
+                    PersainMenu : document.getElementById("persianMenu1").value,
+                    PlayMusicFormats : document.getElementById("playMusicFormats1").value,
+                    PlayVideoFormats : document.getElementById("PlayVideoFormats1").value
+                },
+                Connections :{
+                    ConnectionNetWorks: document.getElementById("connectionNetworks1").value,
+                    ConnectionTechnology: document.getElementById("connectionTechnology1").value,
+                    Wifi : document.getElementById("wifi1").value,
+                    Bluetooth : document.getElementById("bluetooth1").value,
+                    Radio :document.getElementById("radio1").value,
+                    GpsTechnology : document.getElementById("gps1").value,
+                    ConnectionPort : document.getElementById("connectionPort1").value
+                },
+                Sound :{
+                    Speaker : document.getElementById("speaker1").value,
+                    SoundOutput : document.getElementById("soundOutput1").value,
+                    Jack : document.getElementById("jack1").value
+            
+                },
+                Battery :{
+                    Changable : document.getElementById("Changablebattery1").value,
+                    Property : document.getElementById("batteryProperty1").value,
+                    PlayMusiccharge: document.getElementById("playMusiccharge1").value
+                }
+            
+                
+            }
+            $.post('/admin/addTablet',{mobile:tablet},(data)=>{
+
+                if(data.status){
+                    var elements = document.getElementsByTagName("input");
+                    for (var ii=0; ii < elements.length; ii++) {
+                        if (elements[ii].type == "text") {
+                          elements[ii].value = "";
+                        }
+                      }
+                }
 
             })
             
