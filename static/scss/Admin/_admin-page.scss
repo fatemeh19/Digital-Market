@@ -116,48 +116,98 @@ header {
 }
 // producti managment page
 .Product-management {
-    .container {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        flex-direction: column;
-        .buttons {
-            display: flex;
-            justify-content: space-between;
-            width: 100%;
-            padding: 1rem 2rem;
-        }
-        .products {
-            width: 100%;
-            .Ptable {
-                width: 98.8%;
-                margin: 0 .5rem;
-                border: 1px solid #ddd;
-                border-collapse: collapse;
-                tr {
-                    td {
-                        border: 1px solid #ddd;
-                        padding: .5rem 1rem;
+    .container{
+        .table-list {
+            margin: 1rem;
+            box-shadow: 0 0 .4rem black;
+            .table-list-item {
+                border-bottom: 1px solid rgba(0, 0, 0, .4);
+                
+                .link-table {
+                    .link-table-container {
+                        .head {
+                            position: relative;
+                            background-color: $blue-admin;
+                            padding: .5rem 1.5rem .5rem 0;
+                            color: whitesmoke;
+                           
+                            i {
+                                top: .7rem;
+                                padding: 0.3rem;
+                                position: absolute;
+                                right: .3rem;
+                                font-size: .7rem;
+                            }
+                        }
+                        .head:hover {
+                            color: rgb(149, 149, 216);
+                            
+                        }
+                        .head:focus {
+                            background-color: red;
+                        }
+                        // product table
+                        .product-table-box {
+                            display: none;
+                            padding: 0 .5rem 1rem;
+                            .products-tabeles {
+                                display: flex;
+                                justify-content: space-between;
+                                align-items: center;
+                                flex-direction: column;
+                                .buttons {
+                                    display: flex;
+                                    justify-content: space-between;
+                                    width: 100%;
+                                    padding: 1rem 2rem;
+                                }
+                                .products {
+                                    width: 100%;
+                                    .Ptable {
+                                        width: 98.8%;
+                                        margin: 0 .5rem;
+                                        border: 1px solid #ddd;
+                                        border-collapse: collapse;
+                                        tr {
+                                            td {
+                                                border: 1px solid #ddd;
+                                                padding: .5rem 1rem;
+                                            }
+                                            td[class = "tcheckbox"]{
+                                                display: none;;
+                                            }
+                                        }
+                                        tr:not(.thead):hover {
+                                            background-color: rgb(207, 208, 216);
+                                        }
+                                    }
+                                    .Ptable .thead {
+                                        background-color: $blue-admin;
+                                        color: whitesmoke;
+                                        td {
+                                            p {
+                                                font-weight: 1.5rem;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        
                     }
-                    td[class = "tcheckbox"]{
-                        display: none;;
-                    }
+                    
                 }
-                tr:not(.thead):hover {
-                    background-color: rgb(207, 208, 216);
-                }
+                
             }
-            .Ptable .thead {
-                background-color: $blue-admin;
-                color: whitesmoke;
-                td {
-                    p {
-                        font-weight: 1.5rem;
-                    }
-                }
+            .table-list-item:last-child {
+                border-bottom: none;
             }
         }
     }
+    
+    
+    
+    
 }
 // order managment page
 .Order-management {
@@ -371,6 +421,7 @@ header {
 // -------------------------------------- defult 
 a {
     text-decoration: none;
+    cursor: pointer;
 }
 .empty {
     color: transparent;
