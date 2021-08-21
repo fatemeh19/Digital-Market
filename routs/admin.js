@@ -3,6 +3,18 @@ const Router = express.Router()
 const path = require('path')
 var User = require('../models/User');
 var session=require("express-session");
+var multer = require('multer');
+ 
+var storage = multer.diskStorage({
+    destination: (req, file, cb) => {
+        cb(null, 'uploads')
+    },
+    filename: (req, file, cb) => {
+        cb(null, file.fieldname + '-' + Date.now())
+    }
+});
+ 
+var upload = multer({ storage: storage });
 
 
 /* this module uses for delete,put,patch request handling */
@@ -32,10 +44,10 @@ Router.get('/',(req, res) => {
 })
 
 Router.post('/addMobile',(req, res) => {
-  
-    Mobile.createMobile(req.body,(mobileModel)=>{
-      mobileModel.save()
+  console.log(req.body)
 
+  Mobile.createMobile(req.body,(mobileModel)=>{
+    mobileModel.save()
       res.json({status:"true"})
 
     })
@@ -43,7 +55,7 @@ Router.post('/addMobile',(req, res) => {
   
 })
 
-Router.post('/addTablet',(req, res) => {
+Router.post('/addTablet',upload.single('file'),(req, res) => {
   console.log(req.body)
   
   Tablet.createTablet(req.body,(tabletModel)=>{

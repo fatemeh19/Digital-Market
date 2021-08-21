@@ -341,6 +341,7 @@ header {
         width: 20rem;
         padding: 1rem;
         transition: bottom 1s;
+        
         .popup {
             background: rgba(14, 202, 50, 0.7);
             padding: 1rem;
@@ -348,9 +349,10 @@ header {
             border-radius: 5px;
             position: absolute;
             align-items: center;
-            top: 45vh;
+            top: 10vh;
             animation: popUp_move 1s ease-in-out ;
             box-shadow: 0 0 6px green;
+           
         }
         @keyframes popUp_move {
             from {
@@ -359,7 +361,7 @@ header {
             }
             to {
                 display: block;
-                top: 45vh;
+                top: 10vh;
             }
         }
     }

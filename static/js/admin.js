@@ -73,11 +73,11 @@ var fileTag = document.getElementById("filetag")
 function cc(){
     
     changeImage(document.getElementById("filetag"));
-    fileTag.hide();
+    // fileTag.hide();
 }
 
 function changeImage(input) {
-    console.log(input.files)
+    
 var reader;
 
 if (input.files && input.files[0]) {
@@ -104,14 +104,15 @@ let addProduct = (productType)=>{
     
     switch (productType) {
         case "laptop":
-            let laptop = new Laptop.LaptopModel({
-
-            })
+           
 
             
             break;
 
         case "mobile" :
+            
+
+            
             let mobile={ 
                 name:document.getElementById("productName").value,                            
                 product_number: Math.floor(Math.random() * 10000000),
@@ -178,7 +179,8 @@ let addProduct = (productType)=>{
                     Changable : document.getElementById("Changablebattery").value,
                     Property : document.getElementById("batteryProperty").value,
                     PlayMusiccharge: document.getElementById("playMusiccharge").value
-                }
+                },
+                
             
                 
             }
@@ -186,12 +188,9 @@ let addProduct = (productType)=>{
             $.post('/admin/addMobile',{mobile:mobile},(data)=>{
 
                 if(data.status){
-                    var elements = document.getElementsByTagName("input");
-                    for (var ii=0; ii < elements.length; ii++) {
-                        if (elements[ii].type == "text") {
-                          elements[ii].value = "";
-                        }
-                      }
+                    clear()
+                    setPopUp()
+                    
                 }
 
             })
@@ -205,6 +204,7 @@ let addProduct = (productType)=>{
         case "tablet" :
             console.log("tablet")
             let tablet={ 
+                
                 name:document.getElementById("productName").value,                            
                 product_number: Math.floor(Math.random() * 10000000),
                 brand:document.getElementById("productBrand").value,
@@ -270,19 +270,19 @@ let addProduct = (productType)=>{
                     Changable : document.getElementById("Changablebattery1").value,
                     Property : document.getElementById("batteryProperty1").value,
                     PlayMusiccharge: document.getElementById("playMusiccharge1").value
-                }
+                },
+                
+               
             
                 
             }
             $.post('/admin/addTablet',{mobile:tablet},(data)=>{
 
                 if(data.status){
-                    var elements = document.getElementsByTagName("input");
-                    for (var ii=0; ii < elements.length; ii++) {
-                        if (elements[ii].type == "text") {
-                          elements[ii].value = "";
-                        }
-                      }
+
+                    clear()
+                    setPopUp()
+                     
                 }
 
             })
@@ -295,3 +295,24 @@ let addProduct = (productType)=>{
 
 
 }
+
+let setPopUp = ()=>{
+    document.getElementById("popUp").classList.add("popUp-box")
+    document.getElementById("popUp").style.display="block"
+    
+    setTimeout(function(){
+      document.getElementById("popUp").style.display="none" }
+         , 3000);
+
+
+}
+let clear = ()=>{
+    var elements = document.getElementsByTagName("input");
+    for (var ii=0; ii < elements.length; ii++) {
+        if (elements[ii].type == "text") {
+          elements[ii].value = "";
+        }
+      }
+
+}
+
