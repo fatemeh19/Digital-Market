@@ -318,17 +318,54 @@ let clear = ()=>{
 
 
 function showMobileTable() {
+    var table = document.getElementById("mobileTable")
+    $.post('/admin/getAllMobiles',{status:"true"},(mobiles)=>{
+        console.log(mobiles.mobiles[0])
+
+        for (let index = 0; index < mobiles.mobiles.length; index++) {
+            
+
+            var row = table.insertRow(index);
+            var cell0 = row.insertCell(0);
+            var cell1 = row.insertCell(1);
+            var cell2 = row.insertCell(2);
+            var cell3 = row.insertCell(3);
+            var cell4 = row.insertCell(4);
+            var cell5 = row.insertCell(5);
+            var cell6 = row.insertCell(4);
+            var cell7 = row.insertCell(7);
+            cell0.innerHTML = "pic"
+            cell1.innerHTML = mobiles.mobiles[index].name
+            cell2.innerHTML = mobiles.mobiles[index].brand
+            cell3.innerHTML = mobiles.mobiles[index].price
+            cell4.innerHTML = mobiles.mobiles[index].General.SimCardNumber
+            cell5.innerHTML = mobiles.mobiles[index].Memory.InternalMemory
+            cell6.innerHTML = mobiles.mobiles[index].Processor.Type
+            cell7.innerHTML = mobiles.mobiles[index].Camera.SelfieCamera
+
+            
+        }
+
+    })
+   
+
+
+    
+
     document.getElementById("PMtableM").classList.toggle("active");
-    document.getElementById("PMtableT").classList.remove("active");
-    document.getElementById("PMtableL").classList.remove("active");
+
+    // document.getElementById("PMtableT").classList.remove("active");
+    // document.getElementById("PMtableL").classList.remove("active");
 }
 function showTabletTable() {
-    document.getElementById("PMtableM").classList.remove("active");
+    
     document.getElementById("PMtableT").classList.toggle("active");
-    document.getElementById("PMtableL").classList.remove("active");
+    // document.getElementById("PMtableL").classList.remove("active");
+    // document.getElementById("PMtableM").classList.remove("active");
+
 }
 function showlabtopTable() {
-    document.getElementById("PMtableM").classList.remove("active");
-    document.getElementById("PMtableT").classList.remove("active");
+    // document.getElementById("PMtableM").classList.remove("active");
+    // document.getElementById("PMtableT").classList.remove("active");
     document.getElementById("PMtableL").classList.toggle("active");
 }

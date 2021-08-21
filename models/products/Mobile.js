@@ -175,6 +175,18 @@ module.exports.createMobile = (obj,callback)=>{
 
 }
 
+module.exports.getMobiles=(callback)=>{
+    MobileModel.find({},(err, mobiles)=> {
+        callback(mobiles)
+        // console.log(mobiles)
+
+
+
+    })
+        
+    
+}
+
 
 
 

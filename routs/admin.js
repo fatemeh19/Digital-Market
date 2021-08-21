@@ -55,7 +55,7 @@ Router.post('/addMobile',(req, res) => {
   
 })
 
-Router.post('/addTablet',upload.single('file'),(req, res) => {
+Router.post('/addTablet',(req, res) => {
   console.log(req.body)
   
   Tablet.createTablet(req.body,(tabletModel)=>{
@@ -65,6 +65,14 @@ Router.post('/addTablet',upload.single('file'),(req, res) => {
 
   })
   
+
+})
+Router.post('/getAllMobiles',(req,res)=>{
+  // console.log("heeeeey")
+  Mobile.getMobiles((mobiles)=>{
+    res.json({mobiles:mobiles})
+
+  })
 
 })
 
