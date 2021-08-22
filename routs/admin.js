@@ -76,5 +76,14 @@ Router.post('/getAllMobiles',(req,res)=>{
 
 })
 
+Router.post('/getAllTablets',(req,res)=>{
+  // console.log("heeeeey")
+  Tablet.getTablets((tablets)=>{
+    res.json({tablets:tablets})
+
+  })
+
+})
+
 module.exports = Router
 

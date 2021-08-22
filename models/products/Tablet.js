@@ -106,3 +106,15 @@ module.exports.createTablet = (obj,callback)=>{
 
 
 }
+
+module.exports.getTablets=(callback)=>{
+    TabletModel.find({},(err, tablets)=> {
+        callback(tablets)
+        // console.log(mobiles)
+
+
+
+    })
+        
+    
+}
