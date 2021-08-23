@@ -300,6 +300,7 @@ let addProduct = (productType)=>{
 
 let setPopUp = ()=>{
     document.getElementById("popUp").classList.add("popUp-box")
+    document.getElementById("p").style.display="block"
     document.getElementById("popUp").style.display="block"
     
     setTimeout(function(){
