@@ -369,8 +369,8 @@ function showMobileTable() {
 
     document.getElementById("PMtableM").classList.toggle("active");
 
-    // document.getElementById("PMtableT").classList.remove("active");
-    // document.getElementById("PMtableL").classList.remove("active");
+    document.getElementById("PMtableT").classList.remove("active");
+    document.getElementById("PMtableL").classList.remove("active");
 }
 function showTabletTable() {
     if(!globalVarTablet){
@@ -417,12 +417,12 @@ function showTabletTable() {
 
     
     document.getElementById("PMtableT").classList.toggle("active");
-    // document.getElementById("PMtableL").classList.remove("active");
-    // document.getElementById("PMtableM").classList.remove("active");
+    document.getElementById("PMtableL").classList.remove("active");
+    document.getElementById("PMtableM").classList.remove("active");
 
 }
 function showlabtopTable() {
-    // document.getElementById("PMtableM").classList.remove("active");
-    // document.getElementById("PMtableT").classList.remove("active");
+    document.getElementById("PMtableM").classList.remove("active");
+    document.getElementById("PMtableT").classList.remove("active");
     document.getElementById("PMtableL").classList.toggle("active");
 }
