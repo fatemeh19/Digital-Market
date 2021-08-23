@@ -9,6 +9,7 @@ body, html {
   height: 100vh;
   direction: rtl;
   font-family: "vazir";
+  overflow: hidden;
 }
 
 header {
@@ -86,32 +87,33 @@ header .admin-nav-box .caret-down {
   top: 4rem;
   width: 90.04%;
   height: 91.3vh;
+  overflow: auto;
 }
 
 .Add-product::after,
 .Order-management::after,
 .Product-management::after {
   position: absolute;
-  right: -0.82rem;
+  right: -0.7rem;
   width: 0px;
   height: 0px;
-  border-top: 13px solid transparent;
-  border-bottom: 11px solid transparent;
+  border-top: 27px solid transparent;
+  border-bottom: 27px solid transparent;
   border-left: 13px solid whitesmoke;
   display: inline-block;
   content: "";
 }
 
 .Product-management::after {
-  top: 5.35rem;
+  top: 4.35rem;
 }
 
 .Order-management::after {
-  top: 9.35rem;
+  top: 8.35rem;
 }
 
 .Add-product::after {
-  top: 13.35rem;
+  top: 12.35rem;
 }
 
 .Product-management .container .table-list {
@@ -143,6 +145,8 @@ header .admin-nav-box .caret-down {
 .Product-management .container .table-list .table-list-item .link-table .link-table-container .product-table-box {
   display: none;
   padding: 0 0.5rem 1rem;
+  max-height: 32rem;
+  overflow-y: auto;
 }
 .Product-management .container .table-list .table-list-item .link-table .link-table-container .product-table-box .products-tabeles {
   display: flex;
@@ -370,7 +374,7 @@ header .admin-nav-box .caret-down {
 .Add-product .popUp-box {
   height: 100vh !important;
   position: sticky;
-  right: 40rem;
+  right: 30rem;
   bottom: 0;
   width: 20rem;
   padding: 1rem;

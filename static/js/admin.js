@@ -300,6 +300,7 @@ let addProduct = (productType)=>{
 
 let setPopUp = ()=>{
     document.getElementById("popUp").classList.add("popUp-box")
+    document.getElementById("p").style.display="block"
     document.getElementById("popUp").style.display="block"
     
     setTimeout(function(){
@@ -369,8 +370,8 @@ function showMobileTable() {
 
     document.getElementById("PMtableM").classList.toggle("active");
 
-    // document.getElementById("PMtableT").classList.remove("active");
-    // document.getElementById("PMtableL").classList.remove("active");
+    document.getElementById("PMtableT").classList.remove("active");
+    document.getElementById("PMtableL").classList.remove("active");
 }
 function showTabletTable() {
     if(!globalVarTablet){
@@ -417,12 +418,12 @@ function showTabletTable() {
 
     
     document.getElementById("PMtableT").classList.toggle("active");
-    // document.getElementById("PMtableL").classList.remove("active");
-    // document.getElementById("PMtableM").classList.remove("active");
+    document.getElementById("PMtableL").classList.remove("active");
+    document.getElementById("PMtableM").classList.remove("active");
 
 }
 function showlabtopTable() {
-    // document.getElementById("PMtableM").classList.remove("active");
-    // document.getElementById("PMtableT").classList.remove("active");
+    document.getElementById("PMtableM").classList.remove("active");
+    document.getElementById("PMtableT").classList.remove("active");
     document.getElementById("PMtableL").classList.toggle("active");
 }
