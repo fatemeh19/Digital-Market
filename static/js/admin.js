@@ -19,7 +19,13 @@ function aa(a){
                 break   
         case 'اضافه کردن محصول' :
             document.getElementById("addProductDiv").classList.add('active')
-                break                     
+            document.querySelector('.Pcategory').classList.add('active')
+                break  
+        case 'ویرایش' :
+            document.getElementById("addProductDiv").classList.add('active')
+            document.querySelector('.Pcategory').classList.remove('active')
+            document.querySelector('#addMobileButton').textContent = "ذخیره تغییرات"
+                        
     
         default:
             break;
@@ -363,6 +369,7 @@ function showMobileTable() {
             btn.classList.add("Pedit")
             btn.classList.add("button")
             btn.innerHTML = "ویرایش"
+            btn.setAttribute('onclick', "aa('ویرایش')")
             cell9.appendChild(btn)
 
             
@@ -426,6 +433,7 @@ function showTabletTable() {
             btn.classList.add("Pedit")
             btn.classList.add("button")
             btn.innerHTML = "ویرایش"
+            btn.setAttribute('onclick', "aa('ویرایش')")
             cell9.appendChild(btn)
 
             

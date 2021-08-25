@@ -201,6 +201,7 @@ header .admin-nav-box .caret-down {
   margin-right: 1.5rem;
 }
 .Add-product .head .Pcategory {
+  display: none;
   align-items: flex-end;
   margin-right: 2rem;
 }
