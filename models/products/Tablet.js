@@ -118,3 +118,13 @@ module.exports.getTablets=(callback)=>{
         
     
 }
+
+module.exports.removeTablet = (removeList)=>{
+   
+    for (let index = 0; index < removeList.length; index++) {
+        TabletModel.find({ product_number:parseInt(removeList[index]) }).remove().exec()
+       
+    }
+    
+
+}

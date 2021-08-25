@@ -91,6 +91,12 @@ Router.post('/removeMobile',(req,res)=>{
   
 
 })
+Router.post('/removeTablet',(req,res)=>{
+   
+  Tablet.removeTablet(req.body['removeList[]'])
+ 
+
+})
 
 module.exports = Router
 

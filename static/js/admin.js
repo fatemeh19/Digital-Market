@@ -499,9 +499,13 @@ function remove(tableid){
             })
             
             break;
+        case "tabletTable" :
+            $.post('/admin/removeTablet',{removeList},()=>{
+
+            })
+            break;   
     
-        default:
-            break;
+       
     }
 
 
