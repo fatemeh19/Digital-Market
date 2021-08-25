@@ -14,8 +14,8 @@
                             <div class="products-tabeles">
                                 <!-- delete select buttons -->
                                 <div class="buttons">
-                                    <button class="select button" id="selectBtnM" onclick="remove(this)">علامت زدن</button>
-                                    <button class="remove button">حذف</button>
+                                    <button class="select button" id="selectBtnM" onclick="mark('mobileTable')">علامت زدن</button>
+                                    <button class="remove button" onclick="remove('mobileTable')">حذف</button>
                                 </div>
                                 <!-- product list -->
                                 <div class="products">
@@ -29,7 +29,7 @@
                                                         class to firs td of each tr -->
                                             <td class="tcheckbox">
                                                 <div class="center">
-                                                    <input type="checkbox" id="checkMobile" onchange="checkall(this)">
+                                                    <input type="checkbox" id="checkMobile" onchange="checkall(this,'mobileTable')">
                                                 </div>
                                             </td>
                                             <td><strong>عکس</strong></td>
@@ -130,7 +130,7 @@
                             <div class="products-tabeles">
                                 <!-- delete select buttons -->
                                 <div class="buttons">
-                                    <button class="select button" id="selectBtnT">علامت زدن</button>
+                                    <button class="select button" id="selectBtnT" onclick="mark('tabletTable')">علامت زدن</button>
                                     <button class="remove button">حذف</button>
                                 </div>
                                 <!-- product list -->
@@ -145,7 +145,7 @@
                                                         class to firs td of each tr -->
                                             <td class="tcheckbox">
                                                 <div class="center">
-                                                    <input type="checkbox" name="" id="">
+                                                    <input type="checkbox" id="checkTablet" onchange="checkall(this,'tabletTable')">
                                                 </div>
                                             </td>
                                             <td><strong>عکس</strong></td>

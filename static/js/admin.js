@@ -448,34 +448,55 @@ function showlabtopTable() {
     document.getElementById("PMtableL").classList.toggle("active");
 }
 
-function remove(obj){
-    switch (obj.id) {
-        case "selectBtnM":
-            var table = document.getElementById("mobileTable")
-            console.log(table.rows)
-            for (let index = 0; index < (table.rows.length)-1; index++) {
-                table.rows[index].cells[0].classList.add("active-table-cell")
+function mark(tableid){
+    
+        
+            var table = document.getElementById(tableid)
+            
+            for (let index = 0; index < (table.rows.length); index++) {
+                
+                table.rows[index].cells[0].classList.toggle("active-table-cell")
                 
             }
 
-            
-            break;
-    
-        default:
-            break;
-    }
+         
    
 }
 
-function checkall(checkType){
-    switch (checkType.id) {
-        case "checkMobile":
-            var table = document.getElementById("mobileTable")
+function checkall(checkType,table){
+   
+        
+                var table = document.getElementById(table)
+           
+                for (let index = 1; index < (table.rows.length); index++) {
+                    if(document.getElementById(checkType.id).checked){
+                        table.rows[index].cells[0].firstChild.firstChild.checked = true 
+                    }
+                    else{
+                        table.rows[index].cells[0].firstChild.firstChild.checked = false
+
+                    }
+                     
+                        
+                    }
+  
+   
+}
+
+function remove(tableid){
+    removeList = []
+    var table = document.getElementById(tableid)
+    for (let index = 1; index < (table.rows.length); index++) {
+        if(table.rows[index].cells[0].firstChild.firstChild.checked == true){
+            removeList.push(table.rows[index].cells[2].innerHTML)
             
-            for (let index = 1; index < (table.rows.length); index++) {
-            table.rows[index].cells[0].firstChild.firstChild.checked = true  
-                
-            }
+        }
+    }
+    switch (tableid) {
+        case "mobileTable":
+            $.post('/admin/removeMobile',{removeList},()=>{
+
+            })
             
             break;
     
@@ -483,5 +504,9 @@ function checkall(checkType){
             break;
     }
 
-   
+
+
+
+
+
 }
