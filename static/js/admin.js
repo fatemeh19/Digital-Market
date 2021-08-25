@@ -472,8 +472,8 @@ function checkall(checkType){
         case "checkMobile":
             var table = document.getElementById("mobileTable")
             
-            for (let index = 0; index < (table.rows.length); index++) {
-           console.log(table.rows[index].cells[0].firstChild.firstChild.checked)  
+            for (let index = 1; index < (table.rows.length); index++) {
+            table.rows[index].cells[0].firstChild.firstChild.checked = true  
                 
             }
             
