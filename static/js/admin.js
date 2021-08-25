@@ -328,32 +328,42 @@ function showMobileTable() {
         console.log(mobiles.mobiles[0])
 
         for (let index = 0; index < mobiles.mobiles.length; index++) {
+            let Divv = document.createElement('div')
+            Divv.classList.add("center")
+            let Input = document.createElement('input')
+            Input.type = "checkbox"
+            Divv.appendChild(Input)
             
 
             var row = table.insertRow(-1);
-            var cell0 = row.insertCell(0);
-            var cell1 = row.insertCell(1);
-            var cell2 = row.insertCell(2);
-            var cell3 = row.insertCell(3);
-            var cell4 = row.insertCell(4);
-            var cell5 = row.insertCell(5);
-            var cell6 = row.insertCell(4);
-            var cell7 = row.insertCell(7);
+            var cell0 = row.insertCell(0)
+            cell0.classList.add("tcheckbox")
+            // cell0.classList.add("active-table-cell")
+            cell0.appendChild(Divv)
+           
+            var cell1 = row.insertCell(1)
+            var cell2 = row.insertCell(2)
+            var cell3 = row.insertCell(3)
+            var cell4 = row.insertCell(4)
+            var cell5 = row.insertCell(5)
+            var cell6 = row.insertCell(4)
+            var cell7 = row.insertCell(7)
             var cell8 = row.insertCell(8)
-            cell0.innerHTML = "pic"
-            cell1.innerHTML = mobiles.mobiles[index].product_number
-            cell2.innerHTML = mobiles.mobiles[index].name
-            cell3.innerHTML = mobiles.mobiles[index].brand
-            cell4.innerHTML = mobiles.mobiles[index].price
-            cell5.innerHTML = mobiles.mobiles[index].Memory.InternalMemory
-            cell6.innerHTML = mobiles.mobiles[index].Processor.Type
-            cell7.innerHTML = mobiles.mobiles[index].Camera.SelfieCamera
+            var cell9 = row.insertCell(9)
+            cell1.innerHTML = "pic"
+            cell2.innerHTML = mobiles.mobiles[index].product_number
+            cell3.innerHTML = mobiles.mobiles[index].name
+            cell4.innerHTML = mobiles.mobiles[index].brand
+            cell5.innerHTML = mobiles.mobiles[index].price
+            cell6.innerHTML = mobiles.mobiles[index].Memory.InternalMemory
+            cell7.innerHTML = mobiles.mobiles[index].Processor.Type
+            cell8.innerHTML = mobiles.mobiles[index].Camera.SelfieCamera
 
             var btn = document.createElement('button')
             btn.classList.add("Pedit")
             btn.classList.add("button")
             btn.innerHTML = "ویرایش"
-            cell8.appendChild(btn)
+            cell9.appendChild(btn)
 
             
         }
@@ -379,34 +389,44 @@ function showTabletTable() {
         var table = document.getElementById("tabletTable")
     $.post('/admin/getAllTablets',{status:"true"},(tablets)=>{
         console.log(tablets.tablets[0])
+        
 
         for (let index = 0; index < tablets.tablets.length; index++) {
+            let Divv = document.createElement('div')
+            Divv.classList.add("center")
+            let Input = document.createElement('input')
+            Input.type = "checkbox"
+            Divv.appendChild(Input)
             
 
             var row = table.insertRow(-1);
-            var cell0 = row.insertCell(0);
+            var cell0 = row.insertCell(0)
+            cell0.classList.add("tcheckbox")
+            // cell0.classList.add("active-table-cell")
+            cell0.appendChild(Divv)
             var cell1 = row.insertCell(1);
             var cell2 = row.insertCell(2);
             var cell3 = row.insertCell(3);
             var cell4 = row.insertCell(4);
             var cell5 = row.insertCell(5);
-            var cell6 = row.insertCell(4);
+            var cell6 = row.insertCell(6);
             var cell7 = row.insertCell(7);
-            var cell8 = row.insertCell(8)
-            cell0.innerHTML = "pic"
-            cell1.innerHTML = tablets.tablets[index].product_number
-            cell2.innerHTML = tablets.tablets[index].name
-            cell3.innerHTML = tablets.tablets[index].brand
-            cell4.innerHTML = tablets.tablets[index].price
-            cell5.innerHTML = tablets.tablets[index].Memory.InternalMemory
-            cell6.innerHTML = tablets.tablets[index].Processor.Type
-            cell7.innerHTML = tablets.tablets[index].Camera.SelfieCamera
+            var cell8 = row.insertCell(8);
+            var cell9 = row.insertCell(9);
+            cell1.innerHTML = "pic"
+            cell2.innerHTML = tablets.tablets[index].product_number
+            cell3.innerHTML = tablets.tablets[index].name
+            cell4.innerHTML = tablets.tablets[index].brand
+            cell5.innerHTML = tablets.tablets[index].price
+            cell6.innerHTML = tablets.tablets[index].Memory.InternalMemory
+            cell7.innerHTML = tablets.tablets[index].Processor.Type
+            cell8.innerHTML = tablets.tablets[index].Camera.SelfieCamera
 
             var btn = document.createElement('button')
             btn.classList.add("Pedit")
             btn.classList.add("button")
             btn.innerHTML = "ویرایش"
-            cell8.appendChild(btn)
+            cell9.appendChild(btn)
 
             
         }
@@ -426,4 +446,42 @@ function showlabtopTable() {
     document.getElementById("PMtableM").classList.remove("active");
     document.getElementById("PMtableT").classList.remove("active");
     document.getElementById("PMtableL").classList.toggle("active");
+}
+
+function remove(obj){
+    switch (obj.id) {
+        case "selectBtnM":
+            var table = document.getElementById("mobileTable")
+            console.log(table.rows)
+            for (let index = 0; index < (table.rows.length)-1; index++) {
+                table.rows[index].cells[0].classList.add("active-table-cell")
+                
+            }
+
+            
+            break;
+    
+        default:
+            break;
+    }
+   
+}
+
+function checkall(checkType){
+    switch (checkType.id) {
+        case "checkMobile":
+            var table = document.getElementById("mobileTable")
+            
+            for (let index = 0; index < (table.rows.length); index++) {
+           console.log(table.rows[index].cells[0].firstChild.firstChild.checked)  
+                
+            }
+            
+            break;
+    
+        default:
+            break;
+    }
+
+   
 }
