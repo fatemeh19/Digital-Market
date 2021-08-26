@@ -509,8 +509,5 @@ function remove(tableid){
     }
 
 
-
-
-
-
 }
+
