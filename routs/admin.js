@@ -98,5 +98,36 @@ Router.post('/removeTablet',(req,res)=>{
 
 })
 
+Router.post('/getSpecialProduct',(req,res)=>{
+  
+  
+  Mobile.getMobile(req.body['product_number'],(result1)=>{
+    
+    Tablet.getTablet(req.body['product_number'],(result2)=>{
+      mainRes = result1 || result2
+      res.json({mainRes})
+      
+
+
+    })
+
+})
+
+Router.post('/updateMobile',(req, res)=>{
+  
+  Mobile.updateMobile(req.body,(MobileProduct)=>{
+    MobileProduct.save()
+    res.json({status:"true"})
+  })
+
+})
+
+  
+
+
+
+})
+
+
 module.exports = Router
 

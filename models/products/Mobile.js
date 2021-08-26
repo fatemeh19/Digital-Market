@@ -182,6 +182,7 @@ module.exports.getMobiles=(callback)=>{
 
 
 
+
     })
         
     
@@ -196,6 +197,95 @@ module.exports.removeMobile = (removeList)=>{
 
 }
 
+module.exports.getMobile = (product_number,callback)=>{
+   
+   MobileModel.findOne({ product_number:product_number},(err , product)=>{
+       
+       callback(product)
+   })
 
+}
+
+module.exports.updateMobile = (obj,callback)=>{
+    
+    MobileModel.findOne({ product_number:obj['mobile[product_number]']},(err , MobileProduct)=>{
+
+        MobileProduct.name = obj['mobile[name]']                         
+        MobileProduct.product_number=obj['mobile[product_number]'] 
+        MobileProduct.brand= obj['mobile[brand]'],
+        MobileProduct.price= obj['mobile[price]'],
+        MobileProduct.colors=obj['mobile[colors]'],
+        MobileProduct.General.SimCardNumber =parseInt(obj['mobile[General][SimCardNumber]'])
+        MobileProduct.General.ProductYear =parseInt(obj['mobile[General][ProductYear]'])    ,
+             
+        
+         
+        MobileProduct.Processor.Type = obj['mobile[Processor][Type]'],
+        MobileProduct.Processor.GraphicProcessor = obj['mobile[Processor][GraphicProcessor]']
+        
+        
+        MobileProduct.Memory.InternalMemory = obj['mobile[Memory][InternalMemory]'],
+        MobileProduct.Memory.Ram =obj['mobile[Memory][Ram]'],
+        MobileProduct.Memory.ExternalMemSupporting =obj['mobile[Memory][ExternalMemSupporting]']
+    
+        
+        MobileProduct.Camera.Type = obj['mobile[Camera][Type]'],
+        MobileProduct.Camera.PicQuality = obj['mobile[Camera][PicQuality]'],
+        MobileProduct.Camera.Panorama = obj['mobile[Camera][Panorama]'],
+        MobileProduct.Camera.VideoQuality = obj['mobile[Camera][VideoQuality]'],
+        MobileProduct.Camera.SelfieCamera = obj['mobile[Camera][SelfieCamera]']
+        
+        
+        MobileProduct.Screen.Touch = obj['mobile[Screen][Touch]'],
+        MobileProduct.Screen.Size =parseInt(obj['mobile[Screen][Size]']) ,
+        MobileProduct.Screen.ScreenDimensions = obj['mobile[Screen][ScreenDimensions]'],
+        MobileProduct.Screen.resolution = obj['mobile[Screen][resolution]'] ,
+        MobileProduct.Screen.ScreenProtector = obj['mobile[Screen][ScreenProtector]']
+
+        
+        
+        MobileProduct.Body.Dimensions = obj['mobile[Body][Dimensions]'],
+        MobileProduct.Body.Weight = obj['mobile[Body][Weight]'],
+        MobileProduct.Body.Material = obj['mobile[Body][Material]'],
+        MobileProduct.Body.ExteraAbility = obj['mobile[Body][ExteraAbility]']
+        
+       
+        MobileProduct.SoftwareAbility.OperatingSystem = obj['mobile[SoftwareAbility][OperatingSystem]'],
+        MobileProduct.SoftwareAbility.PersianSupporting = obj['mobile[SoftwareAbility][PersianSupporting]'],
+        MobileProduct.SoftwareAbility.PersainMenu = obj['mobile[SoftwareAbility][PersainMenu]'],
+        MobileProduct.SoftwareAbility.PlayMusicFormats = obj['mobile[SoftwareAbility][PlayMusicFormats]'],
+        MobileProduct.SoftwareAbility.PlayVideoFormats = obj['mobile[SoftwareAbility][PlayVideoFormats]']
+    
+        
+        MobileProduct.Connections.ConnectionNetWorks= obj['mobile[Connections][ConnectionNetWorks]'],
+        MobileProduct.Connections.ConnectionTechnology= obj['mobile[Connections][ConnectionTechnology]'],
+        MobileProduct.Connections.Wifi = obj['mobile[Connections][Wifi]'],
+        MobileProduct.Connections.Bluetooth = obj['mobile[Connections][Bluetooth]'],
+        MobileProduct.Connections.Radio =obj['mobile[Connections][Radio]'],
+        MobileProduct.Connections.GpsTechnology = obj['mobile[Connections][GpsTechnology]'],
+        MobileProduct.Connections.ConnectionPort = obj['mobile[Connections][ConnectionPort]']
+       
+       
+        MobileProduct.Sound.Speaker = obj['mobile[Sound][Speaker]'],
+        MobileProduct.Sound.SoundOutput = obj['mobile[Sound][SoundOutput]'],
+        MobileProduct.Sound.Jack = obj['mobile[Sound][Jack]']
+
+    
+         
+        MobileProduct.Battery.Changable = obj['mobile[Battery][Changable]'],
+        MobileProduct.Battery.Property = obj['mobile[Battery][Property]'],
+        MobileProduct.Battery.PlayMusiccharge = obj['mobile[Battery][PlayMusiccharge]']
+
+        callback(MobileProduct)
+    
+
+        
+    })
+    
+    
+   
+  
+ 
+ }
 
 

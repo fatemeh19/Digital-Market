@@ -128,3 +128,11 @@ module.exports.removeTablet = (removeList)=>{
     
 
 }
+
+module.exports.getTablet = (product_number,callback)=>{
+   
+    TabletModel.findOne({ product_number:product_number},(err,product)=>{
+        callback(product)
+    })
+ 
+ }
