@@ -196,7 +196,12 @@ let addProduct = (productType)=>{
                         if(data.status){
                             document.getElementById("addProductDiv").classList.remove('active')
                             document.getElementById("productManageDiv").classList.add('active')
+
+                            
                             showMobileTable()
+                            document.getElementById("PMtableM").classList.toggle("active");
+                            document.getElementById("PMtableT").classList.remove("active");
+                            document.getElementById("PMtableL").classList.remove("active");
                             
                         }
 
@@ -394,7 +399,7 @@ function showMobileTable() {
             btn.setAttribute('onclick', "aa('ویرایش',this)")
             cell9.appendChild(btn)
 
-
+            console.log("mobile table")
         }
         
        
