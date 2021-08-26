@@ -535,6 +535,10 @@ function remove(tableid){
                 if(data.status)
                 {
                     showMobileTable()
+                    document.getElementById("PMtableM").classList.toggle("active");
+                    document.getElementById("PMtableT").classList.remove("active");
+                    document.getElementById("PMtableL").classList.remove("active");
+                    
                 }
                 
 
