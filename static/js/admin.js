@@ -342,7 +342,11 @@ let clear = ()=>{
 
 function showMobileTable() {
     var table = document.getElementById("mobileTable")
-  
+    document.getElementById("sartitr").classList.remove("active-table-cell")
+    
+   
+        
+
     $("#mobileTable").find("tr:gt(0)").remove();
    
         
@@ -414,6 +418,8 @@ function showTabletTable() {
         var table = document.getElementById("tabletTable")
     $.post('/admin/getAllTablets',{status:"true"},(tablets)=>{
         console.log(tablets.tablets[0])
+
+
         
 
         for (let index = 0; index < tablets.tablets.length; index++) {
@@ -520,7 +526,12 @@ function remove(tableid){
     }
     switch (tableid) {
         case "mobileTable":
-            $.post('/admin/removeMobile',{removeList},()=>{
+            $.post('/admin/removeMobile',{removeList},(data)=>{
+                if(data.status)
+                {
+                    showMobileTable()
+                }
+                
 
             })
             
