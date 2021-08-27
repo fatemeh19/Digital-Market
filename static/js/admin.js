@@ -183,7 +183,7 @@ let addProduct = (productType)=>{
                     $.post('/admin/addMobile',{mobile:mobile},(data)=>{
 
                         if(data.status){
-                           
+                           showMobileTable()
                             clear()
                             setPopUp()
                             
@@ -307,6 +307,7 @@ let addProduct = (productType)=>{
             $.post('/admin/addTablet',{mobile:tablet},(data)=>{
 
                 if(data.status){
+                    showTabletTable()
 
                     clear()
                     setPopUp()
