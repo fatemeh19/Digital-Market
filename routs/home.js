@@ -30,39 +30,6 @@ Router.use(session({
 Router.get('/',(req, res) => {
   res.render('home')
 
-//   var tablet = new Tablet.TabletModel({
-        
-//         General:{
-//           SimCardNumber : 1000,
-//           ProductYear : 1111
-//         }
-   
-//   })
-
-//    tablet.save()
-
-//    var mobile = new Mobile.MobileModel({
-        
-//     General:{
-//       SimCardNumber : 1000,
-//       ProductYear : 1111
-//     }
-
-// })
-
-// mobile.save()
-
-// var laptop = new Laptop.LaptopModel({
-        
-//   Battery :{
-//     Property : "String,"
-   
-// }
-
-// })
-// laptop.save()
-
-// mobile.save()
 
 
 

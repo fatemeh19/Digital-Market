@@ -187,9 +187,14 @@ module.exports.getMobiles=(callback)=>{
         
     
 }
-module.exports.removeMobile = (removeList)=>{
+module.exports.removeMobile = (removeList,length)=>{
+    if(length==1){
+        MobileModel.find({ product_number:parseInt(removeList) }).remove().exec()
+
+
+    }
    
-    for (let index = 0; index < removeList.length; index++) {
+    for (let index = 0; index < length; index++) {
         MobileModel.find({ product_number:parseInt(removeList[index]) }).remove().exec()
        
     }
