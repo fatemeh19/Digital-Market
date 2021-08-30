@@ -28,10 +28,7 @@ module.exports.product = (add)=> {
         brand:String,
         price:String,
         colors:String,
-        img:{
-              data: Buffer,
-              contentType: String
-            }
+        img: String
 
 
     })

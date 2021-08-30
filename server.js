@@ -2,7 +2,9 @@ const express = require('express')
 const app =express()
 const home = require('./routs/home')
 const admin = require('./routs/admin')
-
+const bodyParser = require('body-parser');
+app.use(bodyParser.json({limit: "500mb"}));
+app.use(bodyParser.urlencoded({limit: "500mb", extended: true, parameterLimit:5000000}));
 /******************************************MiddleWares********************************************/
 app.set('views','./views')
 app.set('view engine','ejs')

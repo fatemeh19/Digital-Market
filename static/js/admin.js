@@ -161,10 +161,19 @@ reader.readAsDataURL(input.files[0]);
 }
 }
 
-let addProduct = (productType)=>{
+function getBase64Image(img) {
+    var canvas = document.createElement("canvas");
+    canvas.width = img.width;
+    canvas.height = img.height;
+    var ctx = canvas.getContext("2d");
+    ctx.drawImage(img, 0, 0);
+    var dataURL = canvas.toDataURL("image/png");
+    return dataURL.replace(/^data:image\/(png|jpg);base64,/, "")
+  }
 
-    
-   
+let addProduct = (productType)=>{
+  
+
     
     switch (productType) {
         case "laptop":
@@ -203,6 +212,8 @@ let addProduct = (productType)=>{
                             document.getElementById("PMtableM").classList.toggle("active");
                             document.getElementById("PMtableT").classList.remove("active");
                             document.getElementById("PMtableL").classList.remove("active");
+
+                            clear()
                             
                         }
 
@@ -238,6 +249,7 @@ let addProduct = (productType)=>{
                 brand:document.getElementById("productBrand").value,
                 price:document.getElementById("productPrice").value,
                 colors:document.getElementById("productColor").value,
+                img:getBase64Image(document.getElementById("preview")),
                 General :{
                     SimCardNumber :parseInt(document.getElementById("simCardNumber1").value) ,
                     ProductYear : parseInt(document.getElementById("productYear1").value)
@@ -367,6 +379,16 @@ function showMobileTable() {
             let Input = document.createElement('input')
             Input.type = "checkbox"
             Divv.appendChild(Input)
+
+            let picDiv = document.createElement('div')
+            picDiv.classList.add("Pimage")
+            let imgP = document.createElement('img')
+            imgP.src='data:image/jpeg;base64,' + mobiles.mobiles[index].img
+            imgP.style.width='50px'
+            imgP.style.height='50px'
+            
+
+            picDiv.appendChild(imgP)
             
 
             var row = table.insertRow(-1);
@@ -384,7 +406,7 @@ function showMobileTable() {
             var cell7 = row.insertCell(7)
             var cell8 = row.insertCell(8)
             var cell9 = row.insertCell(9)
-            cell1.innerHTML = "pic"
+            cell1.appendChild(picDiv)
             cell2.innerHTML = mobiles.mobiles[index].product_number
             cell3.innerHTML = mobiles.mobiles[index].name
             cell4.innerHTML = mobiles.mobiles[index].brand
@@ -440,6 +462,22 @@ function showTabletTable() {
             let Input = document.createElement('input')
             Input.type = "checkbox"
             Divv.appendChild(Input)
+
+            // picDiv = document.getElementById('div')
+            // picDiv.classList.add("Pimage")
+            // let imgP = document.getElementById('img')
+            // imgP.setAttribute('src',)
+            // picDiv.appendChild(imgP)
+
+            let picDiv = document.createElement('div')
+            picDiv.classList.add("Pimage")
+            let imgP = document.createElement('img')
+            imgP.src='data:image/jpeg;base64,' + tablets.tablets[index].img
+            imgP.style.width='50px'
+            imgP.style.height='50px'
+            
+
+            picDiv.appendChild(imgP)
             
 
             var row = table.insertRow(-1);
@@ -456,7 +494,7 @@ function showTabletTable() {
             var cell7 = row.insertCell(7);
             var cell8 = row.insertCell(8);
             var cell9 = row.insertCell(9);
-            cell1.innerHTML = "pic"
+            cell1.appendChild(picDiv)
             cell2.innerHTML = tablets.tablets[index].product_number
             cell3.innerHTML = tablets.tablets[index].name
             cell4.innerHTML = tablets.tablets[index].brand
@@ -577,6 +615,7 @@ function remove(tableid){
 }
 
 let addOrUpdate = (addOrUp,callback)=>{
+    
     let product_number
     if(addOrUp=='اضافه کردن'){
         product_number = Math.floor(Math.random() * 10000000)
@@ -586,7 +625,7 @@ let addOrUpdate = (addOrUp,callback)=>{
         product_number = productNumberofNowEdit
 
     }
-
+    
 
 
     let mobile={ 
@@ -595,6 +634,8 @@ let addOrUpdate = (addOrUp,callback)=>{
         brand:document.getElementById("productBrand").value,
         price:document.getElementById("productPrice").value,
         colors:document.getElementById("productColor").value,
+        img:getBase64Image(document.getElementById("preview")),
+        
         General :{
             SimCardNumber :parseInt(document.getElementById("simCardNumber").value) ,
             ProductYear : parseInt(document.getElementById("productYear").value)

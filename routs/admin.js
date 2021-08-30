@@ -4,6 +4,8 @@ const path = require('path')
 var User = require('../models/User');
 var session=require("express-session");
 var multer = require('multer');
+
+
  
 var storage = multer.diskStorage({
     destination: (req, file, cb) => {
@@ -27,6 +29,8 @@ const bodyParser = require('body-parser');
 const Tablet = require('../models/products/Tablet');
 const Laptop = require('../models/products/Laptop');
 
+// Router.use(express.bodyParser({limit: '50mb'}));
+
 /**************************************MiddleWares**************************************************/
 Router.use(bodyParser.urlencoded({extended:false}))
 Router.use(bodyParser.json())
@@ -44,7 +48,6 @@ Router.get('/',(req, res) => {
 })
 
 Router.post('/addMobile',(req, res) => {
-  console.log(req.body)
 
   Mobile.createMobile(req.body,(mobileModel)=>{
     mobileModel.save()
