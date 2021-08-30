@@ -6,11 +6,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- links -->
-    <link rel="stylesheet" href="/static/font-face.css">
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="/static/font-face.css">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
         integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
     <link rel="stylesheet" href="/static/style.css">
+    <link rel="stylesheet" href="/static/header.css">
+    <link rel="stylesheet" href="static/signup_login.css">
     <!--  -->
     
     <title>fa_digi_fa</title>
@@ -20,7 +22,7 @@
 <body>
     
     
-    <div class="site">
+    <div class="site" id="site">
         <!-- ------------------------------------------ header ------------------------------------------- -->
         <%- include ('./layouts/header') %>
 
@@ -67,7 +69,14 @@
 
 
         <section class="container">
-
+            <div class="btn-box" style="margin: 10rem 45rem; min-width: 10rem; border: none; padding: 1rem; border-radius: 5px;">
+                <a href="/product">
+                    <button style="min-width: 10rem; color: white; background-color: rgb(37, 35, 35); border: none; padding: 1rem; border-radius: 5px;">
+                        show product
+                    </button>
+                </a>
+            </div>
+            
         </section>
         <!-- footer -->
         <%- include ('./layouts/footer') %>
@@ -77,8 +86,9 @@
 
 
 
-
+    
     <script src="/static/home.js"></script>
+    <script src="/static/scroll-effect.js"></script>
 </body>
 
 </html>
