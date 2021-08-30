@@ -2,6 +2,7 @@ const express = require('express')
 const app =express()
 const home = require('./routs/home')
 const admin = require('./routs/admin')
+const product = require('./routs/product')
 
 
 /******************************************MiddleWares********************************************/
@@ -10,6 +11,7 @@ app.set('view engine','ejs')
 
 app.use('/',home)
 app.use("/admin",admin)
+app.use("/product",product)
 app.use("/static", express.static('./static'))
 app.use("/static", express.static('./static/js'))
 app.use("/static", express.static('./static/css'))

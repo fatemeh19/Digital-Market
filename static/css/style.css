@@ -43,6 +43,15 @@ html {
 
 #bottom_navbar {
   padding-top: 0.1rem !important;
+  position: sticky;
+  top: 5.2rem;
+  transition: all 0.4s ease;
+  box-shadow: 0 0 1.2rem rgba(0, 0, 0, 0.1);
+}
+
+.not-show-buttom_navbar {
+  transform: translateY(-100%);
+  transition: all 0.4s ease;
 }
 
 #top_navbar {
