@@ -86,15 +86,15 @@ Router.post('/getAllTablets',(req,res)=>{
 })
 
 Router.post('/removeMobile',(req,res)=>{
-   
-   Mobile.removeMobile(req.body['removeList[]'])
+
+   Mobile.removeMobile(req.body['removeList[]'],req.body.length)
    res.json({status:"true"})
   
 
 })
 Router.post('/removeTablet',(req,res)=>{
-   
-  Tablet.removeTablet(req.body['removeList[]'])
+  
+  Tablet.removeTablet(req.body['removeList[]'],req.body.length)
   res.json({status:"true"})
  
 

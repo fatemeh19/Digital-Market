@@ -119,12 +119,21 @@ module.exports.getTablets=(callback)=>{
     
 }
 
-module.exports.removeTablet = (removeList)=>{
-   
-    for (let index = 0; index < removeList.length; index++) {
+module.exports.removeTablet = (removeList,length)=>{
+    if(length==1){
+        TabletModel.find({ product_number:parseInt(removeList) }).remove().exec()
+
+    }
+    else{
+
+    for (let index = 0; index < length; index++) {
         TabletModel.find({ product_number:parseInt(removeList[index]) }).remove().exec()
        
     }
+
+    }
+   
+   
     
 
 }

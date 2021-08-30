@@ -183,6 +183,7 @@ let addProduct = (productType)=>{
                     $.post('/admin/addMobile',{mobile:mobile},(data)=>{
 
                         if(data.status){
+                           showMobileTable()
                             clear()
                             setPopUp()
                             
@@ -306,6 +307,7 @@ let addProduct = (productType)=>{
             $.post('/admin/addTablet',{mobile:tablet},(data)=>{
 
                 if(data.status){
+                    showTabletTable()
 
                     clear()
                     setPopUp()
@@ -419,8 +421,13 @@ function showMobileTable() {
     document.getElementById("PMtableL").classList.remove("active");
 }
 function showTabletTable() {
+    document.getElementById("sartitr1").classList.remove("active-table-cell")
+    
+
     $("#tabletTable").find("tr:gt(0)").remove();
+
         var table = document.getElementById("tabletTable")
+
     $.post('/admin/getAllTablets',{status:"true"},(tablets)=>{
         console.log(tablets.tablets[0])
 
@@ -523,15 +530,18 @@ function checkall(checkType,table){
 function remove(tableid){
     removeList = []
     var table = document.getElementById(tableid)
+    
     for (let index = 1; index < (table.rows.length); index++) {
         if(table.rows[index].cells[0].firstChild.firstChild.checked == true){
             removeList.push(table.rows[index].cells[2].innerHTML)
             
         }
     }
+  
+   
     switch (tableid) {
         case "mobileTable":
-            $.post('/admin/removeMobile',{removeList},(data)=>{
+            $.post('/admin/removeMobile',{removeList:removeList,length:removeList.length},(data)=>{
                 if(data.status)
                 {
                     showMobileTable()
@@ -546,7 +556,16 @@ function remove(tableid){
             
             break;
         case "tabletTable" :
-            $.post('/admin/removeTablet',{removeList},()=>{
+            
+            $.post('/admin/removeTablet',{removeList:removeList,length:removeList.length},(data)=>{
+                if(data.status)
+                {
+                    showTabletTable()
+                    document.getElementById("PMtableM").classList.remove("active");
+                    document.getElementById("PMtableT").classList.toggle("active");
+                    document.getElementById("PMtableL").classList.remove("active");
+                    
+                }
 
             })
             break;   
