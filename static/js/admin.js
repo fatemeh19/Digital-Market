@@ -24,64 +24,20 @@ function aa(a,btn){
             document.querySelector('.Pcategory').classList.add('active')
                 break  
         case 'ویرایش' :
-            console.log(btn.id) 
+            
             $.post("/admin/getSpecialProduct",{product_number: btn.id},
                  (data)=> {
-                     let product = data.mainRes
+                     let product = data.mainResult
                      productNumberofNowEdit = product.product_number
-                     
-
-                     document.getElementById("productName").value = product.name                           
-                     document.getElementById("productBrand").value = product.brand
-                     document.getElementById("productPrice").value = product.price
-                     document.getElementById("productColor").value = product.colors
-                     document.getElementById("simCardNumber").value = product.General.SimCardNumber
-                     document.getElementById("productYear").value = product.General.ProductYear
-                     document.getElementById("processorType").value = product.Processor.Type
-                     document.getElementById("graphicProcessor").value = product.Processor.GraphicProcessor
-                     document.getElementById("internalMemory").value = product.Memory.InternalMemory
-                     document.getElementById("ram").value = product.Memory.Ram
-                     document.getElementById("externalMemSupporting").value = product.Memory.ExternalMemSupporting
-                     document.getElementById("cameraType").value = product.Camera.Type
-                     document.getElementById("cameraQuality").value = product.Camera.PicQuality
-                     document.getElementById("panorama").value = product.Camera.Panorama
-                     document.getElementById("videoQuality").value = product.Camera.VideoQuality
-                     document.getElementById("selfieCamera").value = product.Camera.SelfieCamera
-                     document.getElementById("touchScreen").value = product.Screen.Touch
-                     document.getElementById("screenSize").value = product.Screen.Size
-                     document.getElementById("screenDimensions").value = product.Screen.ScreenDimensions
-                     document.getElementById("resolution").value = product.Screen.resolution
-                     document.getElementById("ScreenProtector").value = product.Screen.ScreenProtector
-                     document.getElementById("dimensions").value = product.Body.Dimensions
-                     document.getElementById("weight").value = product.Body.Weight
-                     document.getElementById("material").value = product.Body.Material
-                     document.getElementById("exteraAbility").value = product.Body.ExteraAbility
-                     document.getElementById("operatingSystem").value = product.SoftwareAbility.OperatingSystem
-                     document.getElementById("persianSupporting").value = product.SoftwareAbility.PersianSupporting
-                     document.getElementById("persianMenu").value = product.SoftwareAbility.PersainMenu
-                     document.getElementById("playMusicFormats").value = product.SoftwareAbility.PlayMusicFormats
-                     document.getElementById("PlayVideoFormats").value = product.SoftwareAbility.PlayVideoFormats
-                     document.getElementById("connectionNetworks").value = product.Connections.ConnectionNetWorks
-                     document.getElementById("connectionTechnology").value = product.Connections.ConnectionTechnology
-                     document.getElementById("wifi").value = product.Connections.Wifi
-                     document.getElementById("bluetooth").value = product.Connections.Bluetooth
-                     document.getElementById("radio").value = product.Connections.Radio
-                     document.getElementById("gps").value = product.Connections.GpsTechnology
-                     document.getElementById("connectionPort").value = product.Connections.ConnectionPort
-                     document.getElementById("speaker").value = product.Sound.Speaker
-                     document.getElementById("soundOutput").value = product.Sound.SoundOutput
-                     document.getElementById("jack").value = product.Sound.Jack
-                     document.getElementById("Changablebattery").value = product.Battery.Changable
-                     document.getElementById("batteryProperty").value = product.Battery.Property
-                     document.getElementById("playMusiccharge").value = product.Battery.PlayMusiccharge
+                     editProduct(data.type,product)
                      
 
                     
                 });
             document.getElementById("addProductDiv").classList.add('active')
             document.querySelector('.Pcategory').classList.remove('active')
-            document.querySelector('#addMobileButton').textContent = "ذخیره تغییرات"
-                        
+            
+            
     
         default:
             break;
@@ -185,7 +141,7 @@ let addProduct = (productType)=>{
         case "mobile" :
            
 
-            addOrUpdate(document.getElementById("addMobileButton").innerHTML,(mobile)=>{
+            addOrUpdate(document.getElementById("addMobileButton").innerHTML,"mobile",(mobile)=>{
 
                 if((document.getElementById("addMobileButton").innerHTML)=='اضافه کردن')
                 {
@@ -209,7 +165,7 @@ let addProduct = (productType)=>{
 
                             
                             showMobileTable()
-                            document.getElementById("PMtableM").classList.toggle("active");
+                            document.getElementById("PMtableM").classList.remove("active");
                             document.getElementById("PMtableT").classList.remove("active");
                             document.getElementById("PMtableL").classList.remove("active");
 
@@ -241,6 +197,51 @@ let addProduct = (productType)=>{
             break;
 
         case "tablet" :
+            addOrUpdate(document.getElementById("addTabletButton").innerHTML,"tablet",(tablet)=>{
+
+                if((document.getElementById("addTabletButton").innerHTML)=='اضافه کردن')
+                {
+                    $.post('/admin/addTablet',{mobile:tablet},(data)=>{
+
+                        if(data.status){
+                            showTabletTable()
+        
+                            clear()
+                            setPopUp()
+                             
+                        }
+        
+                    })
+
+
+                }
+                else{
+                    $.post('/admin/updateTablet',{tablet:tablet},(data)=>{
+                        if(data.status){
+                            document.getElementById("addProductDiv").classList.remove('active')
+                            document.getElementById("productManageDiv").classList.add('active')
+
+                            
+                            showTabletTable()
+                            document.getElementById("PMtableM").classList.remove("active");
+                            document.getElementById("PMtableT").classList.remove("active");
+                            document.getElementById("PMtableL").classList.remove("active");
+
+                            clear()
+                            
+                        }
+
+                        
+        
+                    })
+
+
+
+                }
+
+               
+
+            })
             console.log("tablet")
             let tablet={ 
                 
@@ -316,17 +317,7 @@ let addProduct = (productType)=>{
             
                 
             }
-            $.post('/admin/addTablet',{mobile:tablet},(data)=>{
-
-                if(data.status){
-                    showTabletTable()
-
-                    clear()
-                    setPopUp()
-                     
-                }
-
-            })
+            
             
             break;    
 
@@ -439,8 +430,6 @@ function showMobileTable() {
 
     document.getElementById("PMtableM").classList.toggle("active");
 
-    document.getElementById("PMtableT").classList.remove("active");
-    document.getElementById("PMtableL").classList.remove("active");
 }
 function showTabletTable() {
     document.getElementById("sartitr1").classList.remove("active-table-cell")
@@ -463,11 +452,7 @@ function showTabletTable() {
             Input.type = "checkbox"
             Divv.appendChild(Input)
 
-            // picDiv = document.getElementById('div')
-            // picDiv.classList.add("Pimage")
-            // let imgP = document.getElementById('img')
-            // imgP.setAttribute('src',)
-            // picDiv.appendChild(imgP)
+           
 
             let picDiv = document.createElement('div')
             picDiv.classList.add("Pimage")
@@ -507,10 +492,10 @@ function showTabletTable() {
             btn.classList.add("Pedit")
             btn.classList.add("button")
             btn.innerHTML = "ویرایش"
-            btn.setAttribute('onclick', "aa('ویرایش')")
+            btn.id=tablets.tablets[index].product_number
+            btn.setAttribute('onclick', "aa('ویرایش',this)")
             cell9.appendChild(btn)
 
-            
         }
 
     })
@@ -520,13 +505,13 @@ function showTabletTable() {
 
     
     document.getElementById("PMtableT").classList.toggle("active");
-    document.getElementById("PMtableL").classList.remove("active");
-    document.getElementById("PMtableM").classList.remove("active");
+    // document.getElementById("PMtableL").classList.remove("active");
+    // document.getElementById("PMtableM").classList.remove("active");
 
 }
 function showlabtopTable() {
-    document.getElementById("PMtableM").classList.remove("active");
-    document.getElementById("PMtableT").classList.remove("active");
+    // document.getElementById("PMtableM").classList.remove("active");
+    // document.getElementById("PMtableT").classList.remove("active");
     document.getElementById("PMtableL").classList.toggle("active");
 }
 
@@ -614,11 +599,12 @@ function remove(tableid){
 
 }
 
-let addOrUpdate = (addOrUp,callback)=>{
+let addOrUpdate = (addOrUp,prodeuctType,callback)=>{
     
     let product_number
     if(addOrUp=='اضافه کردن'){
         product_number = Math.floor(Math.random() * 10000000)
+        
 
     }
     else{
@@ -626,9 +612,11 @@ let addOrUpdate = (addOrUp,callback)=>{
 
     }
     
+    let product
+    switch (prodeuctType) {
+        case "mobile":
 
-
-    let mobile={ 
+    product={ 
         name:document.getElementById("productName").value,                            
         product_number: product_number,
         brand:document.getElementById("productBrand").value,
@@ -701,7 +689,93 @@ let addOrUpdate = (addOrUp,callback)=>{
     
         
     }
-    callback(mobile)
+            
+            break;
+        case "tablet":
+            product={ 
+                name:document.getElementById("productName").value,                            
+                product_number: product_number,
+                brand:document.getElementById("productBrand").value,
+                price:document.getElementById("productPrice").value,
+                colors:document.getElementById("productColor").value,
+                img:getBase64Image(document.getElementById("preview")),
+                
+                General :{
+                    SimCardNumber :parseInt(document.getElementById("simCardNumber1").value) ,
+                    ProductYear : parseInt(document.getElementById("productYear1").value)
+                },
+                Processor :{
+                     Type : document.getElementById("processorType1").value,
+                    GraphicProcessor : document.getElementById("graphicProcessor1").value
+                },
+                Memory :{
+                    InternalMemory : document.getElementById("internalMemory1").value,
+                    Ram : document.getElementById("ram1").value,
+                    ExternalMemSupporting :document.getElementById("externalMemSupporting1").value
+                },
+                Camera :{
+                    Type : document.getElementById("cameraType1").value,
+                    PicQuality : document.getElementById("cameraQuality1").value,
+                     Panorama : document.getElementById("panorama1").value,
+                    VideoQuality : document.getElementById("videoQuality1").value,
+                    SelfieCamera : document.getElementById("selfieCamera1").value
+                },
+                Screen :{
+                    Touch : document.getElementById("touchScreen1").value,
+                    Size : parseInt(document.getElementById("screenSize1").value),
+                    ScreenDimensions : document.getElementById("screenDimensions1").value,
+                    resolution : document.getElementById("resolution1").value ,
+                    ScreenProtector : document.getElementById("ScreenProtector1").value
+            
+                },
+                Body :{
+                    Dimensions : document.getElementById("dimensions1").value,
+                    Weight : document.getElementById("weight1").value,
+                    Material : document.getElementById("material1").value,
+                    ExteraAbility : document.getElementById("exteraAbility1").value
+                },
+                SoftwareAbility :{
+                    OperatingSystem : document.getElementById("operatingSystem1").value,
+                    PersianSupporting : document.getElementById("persianSupporting1").value,
+                    PersainMenu : document.getElementById("persianMenu1").value,
+                    PlayMusicFormats : document.getElementById("playMusicFormats1").value,
+                    PlayVideoFormats : document.getElementById("PlayVideoFormats1").value
+                },
+                Connections :{
+                    ConnectionNetWorks: document.getElementById("connectionNetworks1").value,
+                    ConnectionTechnology: document.getElementById("connectionTechnology1").value,
+                    Wifi : document.getElementById("wifi1").value,
+                    Bluetooth : document.getElementById("bluetooth1").value,
+                    Radio :document.getElementById("radio1").value,
+                    GpsTechnology : document.getElementById("gps1").value,
+                    ConnectionPort : document.getElementById("connectionPort1").value
+                },
+                Sound :{
+                    Speaker : document.getElementById("speaker1").value,
+                    SoundOutput : document.getElementById("soundOutput1").value,
+                    Jack : document.getElementById("jack1").value
+            
+                },
+                Battery :{
+                    Changable : document.getElementById("Changablebattery1").value,
+                    Property : document.getElementById("batteryProperty1").value,
+                    PlayMusiccharge: document.getElementById("playMusiccharge1").value
+                }
+                
+            
+                
+            }
+            
+            break;
+        case "laptop":
+            
+            break;
+        
+    }
+    
+
+
+    callback(product)
 
 }
 // table = document.getElementById("mobileTable")
@@ -710,3 +784,119 @@ let addOrUpdate = (addOrUp,callback)=>{
 // document.getElementById("myBtn").addEventListener("click", ()=>{
 
 // });
+let editProduct = (productType,product)=>{
+    switch (productType) {
+        case "mobile":
+            document.getElementById("preview").src='data:image/jpeg;base64,' + product.img
+            document.getElementById("productName").value = product.name                           
+            document.getElementById("productBrand").value = product.brand
+            document.getElementById("productPrice").value = product.price
+            document.getElementById("productColor").value = product.colors
+            document.getElementById("simCardNumber").value = product.General.SimCardNumber
+            document.getElementById("productYear").value = product.General.ProductYear
+            document.getElementById("processorType").value = product.Processor.Type
+            document.getElementById("graphicProcessor").value = product.Processor.GraphicProcessor
+            document.getElementById("internalMemory").value = product.Memory.InternalMemory
+            document.getElementById("ram").value = product.Memory.Ram
+            document.getElementById("externalMemSupporting").value = product.Memory.ExternalMemSupporting
+            document.getElementById("cameraType").value = product.Camera.Type
+            document.getElementById("cameraQuality").value = product.Camera.PicQuality
+            document.getElementById("panorama").value = product.Camera.Panorama
+            document.getElementById("videoQuality").value = product.Camera.VideoQuality
+            document.getElementById("selfieCamera").value = product.Camera.SelfieCamera
+            document.getElementById("touchScreen").value = product.Screen.Touch
+            document.getElementById("screenSize").value = product.Screen.Size
+            document.getElementById("screenDimensions").value = product.Screen.ScreenDimensions
+            document.getElementById("resolution").value = product.Screen.resolution
+            document.getElementById("ScreenProtector").value = product.Screen.ScreenProtector
+            document.getElementById("dimensions").value = product.Body.Dimensions
+            document.getElementById("weight").value = product.Body.Weight
+            document.getElementById("material").value = product.Body.Material
+            document.getElementById("exteraAbility").value = product.Body.ExteraAbility
+            document.getElementById("operatingSystem").value = product.SoftwareAbility.OperatingSystem
+            document.getElementById("persianSupporting").value = product.SoftwareAbility.PersianSupporting
+            document.getElementById("persianMenu").value = product.SoftwareAbility.PersainMenu
+            document.getElementById("playMusicFormats").value = product.SoftwareAbility.PlayMusicFormats
+            document.getElementById("PlayVideoFormats").value = product.SoftwareAbility.PlayVideoFormats
+            document.getElementById("connectionNetworks").value = product.Connections.ConnectionNetWorks
+            document.getElementById("connectionTechnology").value = product.Connections.ConnectionTechnology
+            document.getElementById("wifi").value = product.Connections.Wifi
+            document.getElementById("bluetooth").value = product.Connections.Bluetooth
+            document.getElementById("radio").value = product.Connections.Radio
+            document.getElementById("gps").value = product.Connections.GpsTechnology
+            document.getElementById("connectionPort").value = product.Connections.ConnectionPort
+            document.getElementById("speaker").value = product.Sound.Speaker
+            document.getElementById("soundOutput").value = product.Sound.SoundOutput
+            document.getElementById("jack").value = product.Sound.Jack
+            document.getElementById("Changablebattery").value = product.Battery.Changable
+            document.getElementById("batteryProperty").value = product.Battery.Property
+            document.getElementById("playMusiccharge").value = product.Battery.PlayMusiccharge
+            document.querySelector('#addMobileButton').textContent = "ذخیره تغییرات"
+            document.getElementById("addMobile").classList.add('active')
+            document.getElementById("addTablet").classList.remove('active')
+            document.getElementById("addLaptop").classList.remove('active')
+
+
+            
+            break;
+        case "tablet":
+            document.getElementById("preview").src ='data:image/jpeg;base64,' + product.img
+            document.getElementById("productName").value = product.name                           
+            document.getElementById("productBrand").value = product.brand
+            document.getElementById("productPrice").value = product.price
+            document.getElementById("productColor").value = product.colors
+            document.getElementById("simCardNumber1").value = product.General.SimCardNumber
+            document.getElementById("productYear1").value = product.General.ProductYear
+            document.getElementById("processorType1").value = product.Processor.Type
+            document.getElementById("graphicProcessor1").value = product.Processor.GraphicProcessor
+            document.getElementById("internalMemory1").value = product.Memory.InternalMemory
+            document.getElementById("ram1").value = product.Memory.Ram
+            document.getElementById("externalMemSupporting1").value = product.Memory.ExternalMemSupporting
+            document.getElementById("cameraType1").value = product.Camera.Type
+            document.getElementById("cameraQuality1").value = product.Camera.PicQuality
+            document.getElementById("panorama1").value = product.Camera.Panorama
+            document.getElementById("videoQuality1").value = product.Camera.VideoQuality
+            document.getElementById("selfieCamera1").value = product.Camera.SelfieCamera
+            document.getElementById("touchScreen1").value = product.Screen.Touch
+            document.getElementById("screenSize1").value = product.Screen.Size
+            document.getElementById("screenDimensions1").value = product.Screen.ScreenDimensions
+            document.getElementById("resolution1").value = product.Screen.resolution
+            document.getElementById("ScreenProtector1").value = product.Screen.ScreenProtector
+            document.getElementById("dimensions1").value = product.Body.Dimensions
+            document.getElementById("weight1").value = product.Body.Weight
+            document.getElementById("material1").value = product.Body.Material
+            document.getElementById("exteraAbility1").value = product.Body.ExteraAbility
+            document.getElementById("operatingSystem1").value = product.SoftwareAbility.OperatingSystem
+            document.getElementById("persianSupporting1").value = product.SoftwareAbility.PersianSupporting
+            document.getElementById("persianMenu1").value = product.SoftwareAbility.PersainMenu
+            document.getElementById("playMusicFormats1").value = product.SoftwareAbility.PlayMusicFormats
+            document.getElementById("PlayVideoFormats1").value = product.SoftwareAbility.PlayVideoFormats
+            document.getElementById("connectionNetworks1").value = product.Connections.ConnectionNetWorks
+            document.getElementById("connectionTechnology1").value = product.Connections.ConnectionTechnology
+            document.getElementById("wifi1").value = product.Connections.Wifi
+            document.getElementById("bluetooth1").value = product.Connections.Bluetooth
+            document.getElementById("radio1").value = product.Connections.Radio
+            document.getElementById("gps1").value = product.Connections.GpsTechnology
+            document.getElementById("connectionPort1").value = product.Connections.ConnectionPort
+            document.getElementById("speaker1").value = product.Sound.Speaker
+            document.getElementById("soundOutput1").value = product.Sound.SoundOutput
+            document.getElementById("jack1").value = product.Sound.Jack
+            document.getElementById("Changablebattery1").value = product.Battery.Changable
+            document.getElementById("batteryProperty1").value = product.Battery.Property
+            document.getElementById("playMusiccharge1").value = product.Battery.PlayMusiccharge
+            document.querySelector('#addTabletButton').textContent = "ذخیره تغییرات"
+            document.getElementById("addMobile").classList.remove('active')
+            document.getElementById("addTablet").classList.add('active')
+            document.getElementById("addLaptop").classList.remove('active')
+
+            
+            break;
+        case "laptop":
+            
+            break;    
+    
+        default:
+            break;
+    }
+
+}

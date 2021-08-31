@@ -89,15 +89,16 @@ Router.post('/getAllTablets',(req,res)=>{
 })
 
 Router.post('/removeMobile',(req,res)=>{
+  
 
-   Mobile.removeMobile(req.body['removeList[]'],req.body.length)
+   Mobile.removeMobile(req.body.removeList,req.body.length)
    res.json({status:"true"})
   
 
 })
 Router.post('/removeTablet',(req,res)=>{
   
-  Tablet.removeTablet(req.body['removeList[]'],req.body.length)
+  Tablet.removeTablet(req.body.removeList,req.body.length)
   res.json({status:"true"})
  
 
@@ -106,11 +107,19 @@ Router.post('/removeTablet',(req,res)=>{
 Router.post('/getSpecialProduct',(req,res)=>{
   
   
-  Mobile.getMobile(req.body['product_number'],(result1)=>{
+  Mobile.getMobile(req.body.product_number,(result1)=>{
     
-    Tablet.getTablet(req.body['product_number'],(result2)=>{
+    Tablet.getTablet(req.body.product_number,(result2)=>{
       mainRes = result1 || result2
-      res.json({mainRes})
+      if(result1){
+        res.json({mainResult:result1,type:"mobile"})
+
+      }
+      else{
+        res.json({mainResult:result2,type:"tablet"})
+
+      }
+      
       
 
 
@@ -120,8 +129,17 @@ Router.post('/getSpecialProduct',(req,res)=>{
 
 Router.post('/updateMobile',(req, res)=>{
   
-  Mobile.updateMobile(req.body,(MobileProduct)=>{
+  Mobile.updateMobile(req.body.mobile,(MobileProduct)=>{
     MobileProduct.save()
+    res.json({status:"true"})
+  })
+
+})
+
+Router.post('/updateTablet',(req, res)=>{
+  
+  Tablet.updateTablet(req.body.tablet,(TabletProduct)=>{
+    TabletProduct.save()
     res.json({status:"true"})
   })
 

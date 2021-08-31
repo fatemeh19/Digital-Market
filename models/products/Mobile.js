@@ -217,73 +217,74 @@ module.exports.getMobile = (product_number,callback)=>{
 
 module.exports.updateMobile = (obj,callback)=>{
     
-    MobileModel.findOne({ product_number:obj['mobile[product_number]']},(err , MobileProduct)=>{
+    MobileModel.findOne({ product_number:obj.product_number},(err , MobileProduct)=>{
 
-        MobileProduct.name = obj['mobile[name]']                         
-        MobileProduct.product_number=obj['mobile[product_number]'] 
-        MobileProduct.brand= obj['mobile[brand]'],
-        MobileProduct.price= obj['mobile[price]'],
-        MobileProduct.colors=obj['mobile[colors]'],
-        MobileProduct.General.SimCardNumber =parseInt(obj['mobile[General][SimCardNumber]'])
-        MobileProduct.General.ProductYear =parseInt(obj['mobile[General][ProductYear]'])    ,
+        MobileProduct.name = obj.name                         
+        MobileProduct.product_number=obj.product_number 
+        MobileProduct.brand= obj.brand,
+        MobileProduct.price= obj.price,
+        MobileProduct.colors=obj.colors,
+        MobileProduct.img=obj.img
+        MobileProduct.General.SimCardNumber =parseInt(obj.General.SimCardNumber)
+        MobileProduct.General.ProductYear =parseInt(obj.General.ProductYear),
              
         
          
-        MobileProduct.Processor.Type = obj['mobile[Processor][Type]'],
-        MobileProduct.Processor.GraphicProcessor = obj['mobile[Processor][GraphicProcessor]']
+        MobileProduct.Processor.Type = obj.Processor.Type,
+        MobileProduct.Processor.GraphicProcessor = obj.Processor.GraphicProcessor
         
         
-        MobileProduct.Memory.InternalMemory = obj['mobile[Memory][InternalMemory]'],
-        MobileProduct.Memory.Ram =obj['mobile[Memory][Ram]'],
-        MobileProduct.Memory.ExternalMemSupporting =obj['mobile[Memory][ExternalMemSupporting]']
+        MobileProduct.Memory.InternalMemory = obj.Memory.InternalMemory,
+        MobileProduct.Memory.Ram =obj.Memory.Ram ,
+        MobileProduct.Memory.ExternalMemSupporting =obj.Memory.ExternalMemSupporting
     
         
-        MobileProduct.Camera.Type = obj['mobile[Camera][Type]'],
-        MobileProduct.Camera.PicQuality = obj['mobile[Camera][PicQuality]'],
-        MobileProduct.Camera.Panorama = obj['mobile[Camera][Panorama]'],
-        MobileProduct.Camera.VideoQuality = obj['mobile[Camera][VideoQuality]'],
-        MobileProduct.Camera.SelfieCamera = obj['mobile[Camera][SelfieCamera]']
+        MobileProduct.Camera.Type = obj.Camera.Type,
+        MobileProduct.Camera.PicQuality = obj.Camera.PicQuality,
+        MobileProduct.Camera.Panorama = obj.Camera.Panorama,
+        MobileProduct.Camera.VideoQuality = obj.Camera.VideoQuality ,
+        MobileProduct.Camera.SelfieCamera = obj.Camera.SelfieCamera 
         
         
-        MobileProduct.Screen.Touch = obj['mobile[Screen][Touch]'],
-        MobileProduct.Screen.Size =parseInt(obj['mobile[Screen][Size]']) ,
-        MobileProduct.Screen.ScreenDimensions = obj['mobile[Screen][ScreenDimensions]'],
-        MobileProduct.Screen.resolution = obj['mobile[Screen][resolution]'] ,
-        MobileProduct.Screen.ScreenProtector = obj['mobile[Screen][ScreenProtector]']
+        MobileProduct.Screen.Touch = obj.Screen.Touch,
+        MobileProduct.Screen.Size =parseInt(obj.Screen.Size ) ,
+        MobileProduct.Screen.ScreenDimensions = obj.Screen.ScreenDimensions ,
+        MobileProduct.Screen.resolution = obj.Screen.resolution ,
+        MobileProduct.Screen.ScreenProtector = obj.Screen.ScreenProtector
 
         
         
-        MobileProduct.Body.Dimensions = obj['mobile[Body][Dimensions]'],
-        MobileProduct.Body.Weight = obj['mobile[Body][Weight]'],
-        MobileProduct.Body.Material = obj['mobile[Body][Material]'],
-        MobileProduct.Body.ExteraAbility = obj['mobile[Body][ExteraAbility]']
+        MobileProduct.Body.Dimensions = obj.Body.Dimensions,
+        MobileProduct.Body.Weight = obj.Body.Weight,
+        MobileProduct.Body.Material = obj.Body.Material,
+        MobileProduct.Body.ExteraAbility = obj.Body.ExteraAbility
         
        
-        MobileProduct.SoftwareAbility.OperatingSystem = obj['mobile[SoftwareAbility][OperatingSystem]'],
-        MobileProduct.SoftwareAbility.PersianSupporting = obj['mobile[SoftwareAbility][PersianSupporting]'],
-        MobileProduct.SoftwareAbility.PersainMenu = obj['mobile[SoftwareAbility][PersainMenu]'],
-        MobileProduct.SoftwareAbility.PlayMusicFormats = obj['mobile[SoftwareAbility][PlayMusicFormats]'],
-        MobileProduct.SoftwareAbility.PlayVideoFormats = obj['mobile[SoftwareAbility][PlayVideoFormats]']
+        MobileProduct.SoftwareAbility.OperatingSystem = obj.SoftwareAbility.OperatingSystem,
+        MobileProduct.SoftwareAbility.PersianSupporting = obj.SoftwareAbility.PersianSupporting,
+        MobileProduct.SoftwareAbility.PersainMenu = obj.SoftwareAbility.PersainMenu ,
+        MobileProduct.SoftwareAbility.PlayMusicFormats = obj.SoftwareAbility.PlayMusicFormats,
+        MobileProduct.SoftwareAbility.PlayVideoFormats = obj.SoftwareAbility.PlayVideoFormats
     
         
-        MobileProduct.Connections.ConnectionNetWorks= obj['mobile[Connections][ConnectionNetWorks]'],
-        MobileProduct.Connections.ConnectionTechnology= obj['mobile[Connections][ConnectionTechnology]'],
-        MobileProduct.Connections.Wifi = obj['mobile[Connections][Wifi]'],
-        MobileProduct.Connections.Bluetooth = obj['mobile[Connections][Bluetooth]'],
-        MobileProduct.Connections.Radio =obj['mobile[Connections][Radio]'],
-        MobileProduct.Connections.GpsTechnology = obj['mobile[Connections][GpsTechnology]'],
-        MobileProduct.Connections.ConnectionPort = obj['mobile[Connections][ConnectionPort]']
+        MobileProduct.Connections.ConnectionNetWorks= obj.Connections.ConnectionNetWorks,
+        MobileProduct.Connections.ConnectionTechnology= obj.Connections.ConnectionTechnology,
+        MobileProduct.Connections.Wifi = obj.Connections.Wifi ,
+        MobileProduct.Connections.Bluetooth = obj.Connections.Bluetooth ,
+        MobileProduct.Connections.Radio =obj.Connections.Radio,
+        MobileProduct.Connections.GpsTechnology = obj.Connections.GpsTechnology,
+        MobileProduct.Connections.ConnectionPort = obj.Connections.ConnectionPort
        
        
-        MobileProduct.Sound.Speaker = obj['mobile[Sound][Speaker]'],
-        MobileProduct.Sound.SoundOutput = obj['mobile[Sound][SoundOutput]'],
-        MobileProduct.Sound.Jack = obj['mobile[Sound][Jack]']
+        MobileProduct.Sound.Speaker = obj.Sound.Speaker,
+        MobileProduct.Sound.SoundOutput = obj.Sound.SoundOutput,
+        MobileProduct.Sound.Jack = obj.Sound.Jack 
 
     
          
-        MobileProduct.Battery.Changable = obj['mobile[Battery][Changable]'],
-        MobileProduct.Battery.Property = obj['mobile[Battery][Property]'],
-        MobileProduct.Battery.PlayMusiccharge = obj['mobile[Battery][PlayMusiccharge]']
+        MobileProduct.Battery.Changable = obj.Battery.Changable,
+        MobileProduct.Battery.Property = obj.Battery.Property,
+        MobileProduct.Battery.PlayMusiccharge = obj.Battery.PlayMusiccharge 
 
         callback(MobileProduct)
     

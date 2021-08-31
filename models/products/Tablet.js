@@ -151,3 +151,86 @@ module.exports.getTablet = (product_number,callback)=>{
     })
  
  }
+
+ module.exports.updateTablet = (obj,callback)=>{
+    
+    TabletModel.findOne({ product_number:obj.product_number},(err , MobileProduct)=>{
+
+        MobileProduct.name = obj.name                         
+        MobileProduct.product_number=obj.product_number 
+        MobileProduct.brand= obj.brand,
+        MobileProduct.price= obj.price,
+        MobileProduct.colors=obj.colors,
+        MobileProduct.img=obj.img
+        MobileProduct.General.SimCardNumber =parseInt(obj.General.SimCardNumber)
+        MobileProduct.General.ProductYear =parseInt(obj.General.ProductYear),
+             
+        
+         
+        MobileProduct.Processor.Type = obj.Processor.Type,
+        MobileProduct.Processor.GraphicProcessor = obj.Processor.GraphicProcessor
+        
+        
+        MobileProduct.Memory.InternalMemory = obj.Memory.InternalMemory,
+        MobileProduct.Memory.Ram =obj.Memory.Ram ,
+        MobileProduct.Memory.ExternalMemSupporting =obj.Memory.ExternalMemSupporting
+    
+        
+        MobileProduct.Camera.Type = obj.Camera.Type,
+        MobileProduct.Camera.PicQuality = obj.Camera.PicQuality,
+        MobileProduct.Camera.Panorama = obj.Camera.Panorama,
+        MobileProduct.Camera.VideoQuality = obj.Camera.VideoQuality ,
+        MobileProduct.Camera.SelfieCamera = obj.Camera.SelfieCamera 
+        
+        
+        MobileProduct.Screen.Touch = obj.Screen.Touch,
+        MobileProduct.Screen.Size =parseInt(obj.Screen.Size ) ,
+        MobileProduct.Screen.ScreenDimensions = obj.Screen.ScreenDimensions ,
+        MobileProduct.Screen.resolution = obj.Screen.resolution ,
+        MobileProduct.Screen.ScreenProtector = obj.Screen.ScreenProtector
+
+        
+        
+        MobileProduct.Body.Dimensions = obj.Body.Dimensions,
+        MobileProduct.Body.Weight = obj.Body.Weight,
+        MobileProduct.Body.Material = obj.Body.Material,
+        MobileProduct.Body.ExteraAbility = obj.Body.ExteraAbility
+        
+       
+        MobileProduct.SoftwareAbility.OperatingSystem = obj.SoftwareAbility.OperatingSystem,
+        MobileProduct.SoftwareAbility.PersianSupporting = obj.SoftwareAbility.PersianSupporting,
+        MobileProduct.SoftwareAbility.PersainMenu = obj.SoftwareAbility.PersainMenu ,
+        MobileProduct.SoftwareAbility.PlayMusicFormats = obj.SoftwareAbility.PlayMusicFormats,
+        MobileProduct.SoftwareAbility.PlayVideoFormats = obj.SoftwareAbility.PlayVideoFormats
+    
+        
+        MobileProduct.Connections.ConnectionNetWorks= obj.Connections.ConnectionNetWorks,
+        MobileProduct.Connections.ConnectionTechnology= obj.Connections.ConnectionTechnology,
+        MobileProduct.Connections.Wifi = obj.Connections.Wifi ,
+        MobileProduct.Connections.Bluetooth = obj.Connections.Bluetooth ,
+        MobileProduct.Connections.Radio =obj.Connections.Radio,
+        MobileProduct.Connections.GpsTechnology = obj.Connections.GpsTechnology,
+        MobileProduct.Connections.ConnectionPort = obj.Connections.ConnectionPort
+       
+       
+        MobileProduct.Sound.Speaker = obj.Sound.Speaker,
+        MobileProduct.Sound.SoundOutput = obj.Sound.SoundOutput,
+        MobileProduct.Sound.Jack = obj.Sound.Jack 
+
+    
+         
+        MobileProduct.Battery.Changable = obj.Battery.Changable,
+        MobileProduct.Battery.Property = obj.Battery.Property,
+        MobileProduct.Battery.PlayMusiccharge = obj.Battery.PlayMusiccharge 
+
+        callback(MobileProduct)
+    
+
+        
+    })
+    
+    
+   
+  
+ 
+ }
