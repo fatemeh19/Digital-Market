@@ -1,0 +1,144 @@
+.Pcontainer {
+  width: 80%;
+  margin: 0.3rem auto;
+}
+.Pcontainer .columns {
+  display: flex;
+  flex-direction: column;
+}
+.Pcontainer .columns .column {
+  margin-bottom: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+}
+.Pcontainer .columns .column .gallary {
+  width: 35%;
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  padding-left: 0.5rem;
+}
+.Pcontainer .columns .column .gallary .gallary__item {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.Pcontainer .columns .column .gallary .gallary__item .gallary__option {
+  width: 10%;
+  min-height: 30vh;
+}
+.Pcontainer .columns .column .gallary .gallary__item .gallary__option ul .heart, .Pcontainer .columns .column .gallary .gallary__item .gallary__option ul .share, .Pcontainer .columns .column .gallary .gallary__item .gallary__option ul .My_list {
+  width: 90%;
+  min-height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  position: relative;
+  border-radius: 50%;
+  margin: 0.4rem 0;
+}
+.Pcontainer .columns .column .gallary .gallary__item .gallary__option ul .heart i, .Pcontainer .columns .column .gallary .gallary__item .gallary__option ul .share i, .Pcontainer .columns .column .gallary .gallary__item .gallary__option ul .My_list i {
+  font-size: 1.25rem;
+  font-weight: lighter;
+}
+.Pcontainer .columns .column .gallary .gallary__item .gallary__option ul .heart span, .Pcontainer .columns .column .gallary .gallary__item .gallary__option ul .share span, .Pcontainer .columns .column .gallary .gallary__item .gallary__option ul .My_list span {
+  display: none;
+  position: absolute;
+  font-size: 0.8rem;
+  right: 3.5rem;
+  white-space: nowrap;
+  background-color: #6f6f6f;
+  color: white;
+  padding: 0.5rem;
+}
+.Pcontainer .columns .column .gallary .gallary__item .gallary__option ul .heart span::before, .Pcontainer .columns .column .gallary .gallary__item .gallary__option ul .share span::before, .Pcontainer .columns .column .gallary .gallary__item .gallary__option ul .My_list span::before {
+  border-width: 10px 0 12px 11px;
+  border-color: transparent transparent transparent #6f6f6f;
+  right: -10px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  position: absolute;
+  content: "";
+}
+.Pcontainer .columns .column .gallary .gallary__item .gallary__option ul li:nth-child(2) i, .Pcontainer .columns .column .gallary .gallary__item .gallary__option ul li:nth-child(3) i {
+  transform: rotate(180deg);
+}
+.Pcontainer .columns .column .gallary .gallary__item .gallary__option ul .heart:hover, .Pcontainer .columns .column .gallary .gallary__item .gallary__option ul .share:hover, .Pcontainer .columns .column .gallary .gallary__item .gallary__option ul .My_list:hover {
+  background-color: rgba(192, 192, 192, 0.2);
+}
+.Pcontainer .columns .column .gallary .gallary__item .gallary__option ul .heart:hover span, .Pcontainer .columns .column .gallary .gallary__item .gallary__option ul .share:hover span, .Pcontainer .columns .column .gallary .gallary__item .gallary__option ul .My_list:hover span {
+  display: block;
+}
+.Pcontainer .columns .column .gallary .gallary__item .gallary__option ul .heart_is_active {
+  font-weight: 900 !important;
+  color: #fb3449;
+}
+.Pcontainer .columns .column .gallary .gallary__item .gallary__option ul > :first-child {
+  margin: 0 !important;
+}
+.Pcontainer .columns .column .gallary .gallary__item .gallary__image {
+  border: 1px solid lightpink;
+  width: 90%;
+  min-height: 66vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.Pcontainer .columns .column .gallary .gallary__image_list {
+  display: flex;
+  flex-direction: row;
+  min-height: 14vh;
+  justify-content: space-between;
+}
+.Pcontainer .columns .column .gallary .gallary__image_list .gallary__image_list_item {
+  border: 1px solid silver;
+  border-radius: 10px;
+  min-height: 12.5vh;
+  min-width: calc((100%/4) - 1rem);
+  margin: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.Pcontainer .columns .column .gallary .gallary__image_list .gallary__image_list_item:last-child {
+  margin-left: 0;
+}
+.Pcontainer .columns .column .product__attributes {
+  width: 65%;
+  border: 1px solid royalblue;
+  min-height: 80vh;
+  padding: 0.2rem 0.5rem 0 0;
+}
+.Pcontainer .columns .column .product__attributes .pNameEn {
+  color: #e5e6e7;
+}
+.Pcontainer .columns .column .product__attributes .pNameEn::after {
+  width: 42%;
+  height: 1px;
+  background-color: rgba(229, 229, 229, 0.5);
+  display: inline-block;
+  margin-right: 8px;
+  position: absolute;
+  top: 11.6rem;
+  content: "";
+}
+
+@media (max-width: 64rem) {
+  .Pcontainer {
+    width: 100%;
+  }
+}
+@media (max-width: 50.5rem) {
+  .column {
+    flex-direction: column;
+  }
+  .column .gallary, .column .product__attributes {
+    width: 100% !important;
+    min-height: 80vh;
+  }
+}
+
+/*# sourceMappingURL=product.css.map */

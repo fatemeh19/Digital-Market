@@ -9,14 +9,80 @@
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
         integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
     <link rel="stylesheet" href="/static/style.css">
+    <link rel="stylesheet" href="/static/header.css">
+    <link rel="stylesheet" href="/static/product.css">
     <title>Document</title>
 </head>
 <body>
     <%- include ('../layouts/header') %>
-    <p>hi</p>
 
+    <div class="Pcontainer">
+        <div class="columns">
+            <!-- column 1 -->
+            <div class="column">
+                <div class="gallary">
+                    <div class="gallary__item">
+                        <div class="gallary__option">
+                            <ul>
+                                <li class="heart" onclick="addFaverite()">
+                                    <i class="far fa-heart heart-icon"></i>
+                                    <span>افزودن به علاقه مندی ها</span>
+                                </li>
+                                <li class="share">
+                                    <i class="far fa-share-alt"></i>
+                                    <span>اشتراک گذاری</span>
+                                </li>
+                                <li class="My_list">
+                                    <i class="far fa-list"></i>
+                                    <span>لیست های عمومی</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="gallary__image">
+                            <img src="" alt="product-imge">
+                        </div>
+                    </div>
+                    
+                    <div class="gallary__image_list">
+                        <div class="gallary__image_list_item">
+                            <img src="" alt="img" class="image_list__img">
+                        </div>
+                        <div class="gallary__image_list_item">
+                            <img src="" alt="img" class="image_list__img">
+                        </div>
+                        <div class="gallary__image_list_item">
+                            <img src="" alt="img" class="image_list__img">
+                        </div>
+                        <div class="gallary__image_list_item">
+                            <img src="" alt="img" class="image_list__img">
+                        </div>
+                    </div>
+                </div>
+                <div class="product__attributes">
+                    <h3 class="pName">اسم محصول</h3>
+                    <p class="pNameEn">product name</p>
+                    
 
+                </div>
+            </div>
+            
+            <!-- column 2 -->
+            <div class="column">
+               
+            </div>
 
+            <!-- column 3 -->
+            <div class="column">
+              
+            </div>
+
+            <!-- column 4 -->
+            <div class="column">
+          
+            </div>
+            
+        </div>
+    </div>
 
 
 

@@ -9,7 +9,7 @@ html {
     min-width: 22.6rem;
     direction: rtl;
     font-family: "Vazir";
-    background-color: whitesmoke;
+    background-color: white;
 }
 .site {
     // background-color: lightblue;
@@ -51,7 +51,7 @@ html {
     position: sticky;
     top: 5.2rem; 
     transition: all .4s ease;
-    box-shadow: 0 0 1.2rem rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 1.5rem rgba(0, 0, 0, 0.1);
 }
 .not-show-buttom_navbar {
     transform: translateY(-100%);
