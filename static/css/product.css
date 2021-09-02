@@ -118,7 +118,7 @@
 .Pcontainer .columns .column .product__attributes .pNameEn::after {
   width: 42%;
   height: 1px;
-  background-color: rgba(229, 229, 229, 0.5);
+  background-color: #e5e5e5;
   display: inline-block;
   margin-right: 8px;
   position: absolute;
